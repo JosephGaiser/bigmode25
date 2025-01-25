@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b7s35dmdfglkr"]
+[gd_scene load_steps=20 format=4 uid="uid://b7s35dmdfglkr"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_yeiim"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="2_kser7"]
@@ -13,6 +13,7 @@
 [ext_resource type="TileSet" uid="uid://dnchfrlmh2ep" path="res://tilesets/office.tres" id="9_17t8n"]
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="9_psngx"]
 [ext_resource type="PackedScene" uid="uid://bva07wdhq2jgt" path="res://scenes/things/chair.tscn" id="10_ax7r3"]
+[ext_resource type="PackedScene" uid="uid://dsenf41d5nhyc" path="res://scenes/carl.tscn" id="14_67kns"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lex3h"]
 shader = ExtResource("2_kser7")
@@ -56,6 +57,7 @@ transition = 0
 ease = 2
 
 [node name="main" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_yeiim")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -101,9 +103,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Palette" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="DitherPalette" type="ColorRect" parent="Camera2D/Palette"]
+visible = false
 material = SubResource("ShaderMaterial_vhaqu")
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,3 +138,6 @@ tile_set = ExtResource("9_psngx")
 
 [node name="Player" parent="." instance=ExtResource("2_veukb")]
 position = Vector2(320, 128)
+
+[node name="Carl" parent="." instance=ExtResource("14_67kns")]
+position = Vector2(320, 288)

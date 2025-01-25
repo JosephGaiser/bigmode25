@@ -77,7 +77,8 @@ func update_animation(direction: Vector2) -> void:
 		Vector2.RIGHT:
 			anim_name = "walk_right"
 
-	if animated_sprite_2d.animation != anim_name:
+	if !animated_sprite_2d.is_playing() or animated_sprite_2d.animation != anim_name:
+		print("Playing animation: ", anim_name)
 		animated_sprite_2d.play(anim_name)
 
 
@@ -91,6 +92,7 @@ func move(direction: Vector2) -> void:
 
 
 func stop_moving() -> void:
+	print("Stopped moving")
 	match last_dir:
 		Vector2.UP:
 			animated_sprite_2d.play("idle_up")
@@ -108,6 +110,7 @@ func interact() -> void:
 	var interactables: Array[Node2D] = interaction_area.get_overlapping_bodies()
 
 	for obj in interactables:
+		print(obj)
 		if obj.has_method("interact"):
 			obj.call("interact")
 			break

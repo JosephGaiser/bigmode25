@@ -313,7 +313,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -386,7 +386,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyhkk"]
-size = Vector2(16, 8)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vf28p"]
 size = Vector2(16, 16)
@@ -394,7 +394,6 @@ size = Vector2(16, 16)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_7eovw")
-speed = 0.3
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.168627)
@@ -405,10 +404,12 @@ texture = SubResource("CurveTexture_gaoq3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -8)
 sprite_frames = SubResource("SpriteFrames_35k6m")
-animation = &"walk_up"
+animation = &"walk_down"
+frame = 3
+frame_progress = 0.24234
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 4)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_xyhkk")
 
 [node name="InteractionArea" type="Area2D" parent="."]
@@ -421,5 +422,5 @@ shape = SubResource("RectangleShape2D_vf28p")
 debug_color = Color(0.729412, 0.913725, 0, 0.0666667)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(8, 8)
 target_position = Vector2(0, -16)

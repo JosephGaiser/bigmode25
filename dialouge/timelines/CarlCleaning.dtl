@@ -1,0 +1,7 @@
+join Carl left
+join boss right
+Carl (neutral): what?... need something cleaned up?
+- yes
+	Carl (angry): Fine...
+- no
+	Then stop bothering me.
