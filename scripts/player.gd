@@ -7,7 +7,7 @@ var last_dir: Vector2 = Vector2.ZERO
 var tile_size: int     = 16
 var moving: bool       = false
 
-@export var speed: float = .2
+@export var speed: float = .4
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 

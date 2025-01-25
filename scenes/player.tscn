@@ -218,7 +218,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 15.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -241,7 +241,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -264,7 +264,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,7 +287,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -310,7 +310,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 15.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -333,7 +333,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 15.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -356,7 +356,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 15.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -379,11 +379,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 15.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyhkk"]
-size = Vector2(16, 8)
+size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7eovw")
@@ -391,8 +391,8 @@ script = ExtResource("1_7eovw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -8)
 sprite_frames = SubResource("SpriteFrames_35k6m")
-animation = &"idle_right"
+animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 4)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_xyhkk")
