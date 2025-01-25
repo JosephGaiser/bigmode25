@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b7s35dmdfglkr"]
+[gd_scene load_steps=15 format=4 uid="uid://b7s35dmdfglkr"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_yeiim"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="2_kser7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cv6cf3l2448j1" path="res://assets/rosy-42-32x.png" id="8_kgl43"]
 [ext_resource type="TileSet" uid="uid://dnchfrlmh2ep" path="res://tilesets/office.tres" id="9_17t8n"]
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="9_psngx"]
+[ext_resource type="PackedScene" uid="uid://bva07wdhq2jgt" path="res://scenes/things/chair.tscn" id="10_ax7r3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lex3h"]
 shader = ExtResource("2_kser7")
@@ -44,6 +45,7 @@ ease = 2
 script = ExtResource("1_yeiim")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_lex3h")
 offset_left = -876.0
 offset_top = -551.0
@@ -64,6 +66,7 @@ process_physics_priority = 300
 script = ExtResource("5_dklqa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
 material = SubResource("ShaderMaterial_6cy63")
@@ -89,8 +92,11 @@ tile_map_data = PackedByteArray("AAAGAAgAAAALAAoAAAAHAAgAAAALAAoAAAAQAAcAAAALAAk
 tile_set = ExtResource("9_17t8n")
 
 [node name="chairs" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAA2AAQAAQACAAgAAAA2AAUAAQACAAkAAAAvAAQAAQACAAgAAAAvAAUAAQACAAkAAAA3ABIAAQAMABYAAAA3ABMAAQAMABcAAAA3ABQAAQAMABgAAAA4ABIAAQANABYAAAA4ABMAAQANABcAAAA4ABQAAQANABgAAAA3ABYAAQAMABYAAAA3ABcAAQAMABcAAAA3ABgAAQAMABgAAAA4ABYAAQANABYAAAA4ABcAAQANABcAAAA4ABgAAQANABgAAAAlABQAAQAIACYAAAAlABUAAQAIACcAAAAlABYAAQAIACgAAAAmABQAAQAJACYAAAAmABUAAQAJACcAAAAmABYAAQAJACgAAAA=")
+tile_map_data = PackedByteArray("AAAvAAQAAQACAAgAAAAvAAUAAQACAAkAAAA3ABIAAQAMABYAAAA3ABMAAQAMABcAAAA3ABQAAQAMABgAAAA4ABIAAQANABYAAAA4ABMAAQANABcAAAA4ABQAAQANABgAAAA3ABYAAQAMABYAAAA3ABcAAQAMABcAAAA3ABgAAQAMABgAAAA4ABYAAQANABYAAAA4ABcAAQANABcAAAA4ABgAAQANABgAAAAlABQAAQAIACYAAAAlABUAAQAIACcAAAAlABYAAQAIACgAAAAmABQAAQAJACYAAAAmABUAAQAJACcAAAAmABYAAQAJACgAAAA=")
 tile_set = ExtResource("9_psngx")
+
+[node name="chair" parent="." instance=ExtResource("10_ax7r3")]
+position = Vector2(880, 64)
 
 [node name="furniture" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAuAAQAAQAGAAkAAAAuAAMAAQAGAAgAAAAvAAIAAQAHAAwAAAAvAAMAAQAHAA0AAAAvAAQAAQAHAA4AAAAwAAIAAQAIAAwAAAAwAAMAAQAIAA0AAAAwAAQAAQAIAA4AAAAlABEAAQAHAAwAAAAlABIAAQAHAA0AAAAlABMAAQAHAA4AAAAmABEAAQAIAAwAAAAmABIAAQAIAA0AAAAmABMAAQAIAA4AAAApABIAAQACABEAAAApABMAAQACABIAAAAqABIAAQADABEAAAAqABMAAQADABIAAAAqABQAAQADABMAAAArABIAAQAEABEAAAArABMAAQAEABIAAAArABQAAQAEABMAAAAnAAsAAQACABcAAAAnAAwAAQACABgAAAAnAA0AAQACABkAAAAoAAsAAQADABcAAAAoAAwAAQADABgAAAAoAA0AAQADABkAAAApAAsAAQACABcAAAApAAwAAQACABgAAAApAA0AAQACABkAAAAqAAsAAQADABcAAAAqAAwAAQADABgAAAAqAA0AAQADABkAAAAuAAUAAQAHABwAAAAuAAYAAQAHAB0AAAAvAAUAAQAIABwAAAAvAAYAAQAIAB0AAAAwAAUAAQAJABwAAAAwAAYAAQAJAB0AAAA1AAUAAQAGAAAAAAA1AAYAAQAGAAEAAAA1AAcAAQAGAAIAAAA2AAYAAQAHAAEAAAA2AAcAAQAHAAIAAAA3AAUAAQAIAAAAAAA3AAYAAQAIAAEAAAA3AAcAAQAIAAIAAAAzAAIAAQAGAAcAAAAzAAMAAQAGAAgAAAAzAAQAAQAGAAkAAAA5AAIAAQAGAAcAAAA5AAMAAQAGAAgAAAA5AAQAAQAGAAkAAAA2AAUAAQAHAAAAAAA=")

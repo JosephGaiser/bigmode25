@@ -70,6 +70,11 @@ cancel={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="office"
+2d_physics/layer_2="interactables"
+
 [physics]
 
 common/physics_interpolation=true

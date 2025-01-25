@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bva07wdhq2jgt"]
+
+[ext_resource type="Script" path="res://scripts/chair.gd" id="1_pk3ot"]
+[ext_resource type="Texture2D" uid="uid://hgd6fnl15axs" path="res://assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_106.png" id="1_xwy2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fv8q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jepih"]
+size = Vector2(16, 16)
+
+[node name="chair" type="StaticBody2D"]
+position = Vector2(16, -14)
+collision_layer = 3
+script = ExtResource("1_pk3ot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("1_xwy2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 22)
+shape = SubResource("RectangleShape2D_7fv8q")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, 14)
+shape = SubResource("RectangleShape2D_jepih")
+debug_color = Color(0.729412, 0.913725, 0, 0.0666667)
