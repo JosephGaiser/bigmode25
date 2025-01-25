@@ -1,7 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://dtb1vpuaceedn"]
+[gd_scene load_steps=55 format=3 uid="uid://dtb1vpuaceedn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7eovw"]
 [ext_resource type="Texture2D" uid="uid://8j42awfmndmf" path="res://assets/sprites/player.png" id="2_r2arc"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_gaoq3"]
+width = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_800wv"]
 atlas = ExtResource("2_r2arc")
@@ -392,6 +395,12 @@ size = Vector2(16, 16)
 collision_mask = 3
 script = ExtResource("1_7eovw")
 speed = 0.3
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.168627)
+position = Vector2(8, 8)
+scale = Vector2(0.390625, 5.75)
+texture = SubResource("CurveTexture_gaoq3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -8)
