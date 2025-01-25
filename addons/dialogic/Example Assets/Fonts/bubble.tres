@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=8 format=3 uid="uid://clngs0sh6omj8"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_vjuwu"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="2_xgbpm"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="3_ci2g2"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="4_e8o0u"]
+
+[sub_resource type="Resource" id="Resource_ecmna"]
+script = ExtResource("1_vjuwu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_dwh12"]
+script = ExtResource("1_vjuwu")
+scene = ExtResource("2_xgbpm")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_82lyw"]
+script = ExtResource("1_vjuwu")
+scene = ExtResource("3_ci2g2")
+overrides = {}
+
+[resource]
+script = ExtResource("4_e8o0u")
+name = "bubble"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_ecmna"),
+"10": SubResource("Resource_dwh12"),
+"11": SubResource("Resource_82lyw")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_vjuwu")]([])
+metadata/_latest_layer = ""

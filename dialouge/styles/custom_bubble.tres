@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=11 format=3 uid="uid://dlshvts0g3wi4"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_fd8ou"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_jf350"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="2_cwh0m"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="3_i60ji"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="4_bj5c0"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="4_v2oy7"]
+
+[sub_resource type="Resource" id="Resource_e81di"]
+script = ExtResource("1_jf350")
+scene = ExtResource("1_fd8ou")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_a5o08"]
+script = ExtResource("1_jf350")
+scene = ExtResource("2_cwh0m")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_o7gtk"]
+script = ExtResource("1_jf350")
+scene = ExtResource("3_i60ji")
+overrides = {
+"box_corner_radius": "1.0",
+"box_modulate": "Color(0, 0, 0, 1)",
+"choices_layout_force_lines": "true",
+"choices_text_color": "Color(1, 1, 1, 1)",
+"choices_text_color_hover": "Color(1, 1, 1, 1)",
+"choices_text_font": "\"res://dialouge/styles/Vaticanus-G3yVG.ttf\"",
+"choices_text_size": "24.0",
+"name_label_box_modulate": "Color(0, 0, 0, 1)",
+"name_label_color": "Color(1, 1, 1, 1)",
+"name_label_font": "\"res://dialouge/styles/Vaticanus-G3yVG.ttf\"",
+"normal_font": "\"res://dialouge/styles/Vaticanus-G3yVG.ttf\"",
+"text_color": "Color(1, 1, 1, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_xqv7y"]
+script = ExtResource("1_jf350")
+scene = ExtResource("4_v2oy7")
+overrides = {}
+
+[resource]
+script = ExtResource("4_bj5c0")
+name = "custom_bubble"
+layer_list = Array[String](["10", "11", "12"])
+layer_info = {
+"": SubResource("Resource_e81di"),
+"10": SubResource("Resource_a5o08"),
+"11": SubResource("Resource_o7gtk"),
+"12": SubResource("Resource_xqv7y")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_jf350")]([])
+metadata/_latest_layer = "11"

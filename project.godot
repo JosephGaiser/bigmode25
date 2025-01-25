@@ -31,8 +31,8 @@ directories/dtl_directory={
 "CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://dialouge/styles/custom_bubble.tres"]
+layout/default_style="res://dialouge/styles/custom_bubble.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
