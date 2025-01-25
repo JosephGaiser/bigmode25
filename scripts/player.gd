@@ -45,16 +45,19 @@ func update_interaction_area() -> void:
 
 func handle_movement_input() -> void:
 	if Input.is_action_pressed("move_up"):
-		attempt_move(Vector2.UP)
+		try_change_direction(Vector2.UP)
 	elif Input.is_action_pressed("move_down"):
-		attempt_move(Vector2.DOWN)
+		try_change_direction(Vector2.DOWN)
 	elif Input.is_action_pressed("move_left"):
-		attempt_move(Vector2.LEFT)
+		try_change_direction(Vector2.LEFT)
 	elif Input.is_action_pressed("move_right"):
-		attempt_move(Vector2.RIGHT)
+		try_change_direction(Vector2.RIGHT)
 
 
-func attempt_move(direction: Vector2) -> void:
+func try_change_direction(direction: Vector2) -> void:
+	last_dir = direction
+	update_animation(direction)
+
 	ray_cast.target_position = direction * tile_size
 	ray_cast.force_raycast_update()
 
@@ -62,19 +65,24 @@ func attempt_move(direction: Vector2) -> void:
 		move(direction)
 
 
-func move(direction: Vector2) -> void:
-	last_dir = direction
-	moving = true
-
+func update_animation(direction: Vector2) -> void:
+	var anim_name: String = ""
 	match direction:
 		Vector2.UP:
-			animated_sprite_2d.play("walk_up")
+			anim_name = "walk_up"
 		Vector2.DOWN:
-			animated_sprite_2d.play("walk_down")
+			anim_name = "walk_down"
 		Vector2.LEFT:
-			animated_sprite_2d.play("walk_left")
+			anim_name = "walk_left"
 		Vector2.RIGHT:
-			animated_sprite_2d.play("walk_right")
+			anim_name = "walk_right"
+
+	if animated_sprite_2d.animation != anim_name:
+		animated_sprite_2d.play(anim_name)
+
+
+func move(direction: Vector2) -> void:
+	moving = true
 
 	var tween: Tween        = create_tween()
 	var target_pos: Vector2 = position + direction * tile_size
