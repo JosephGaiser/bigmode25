@@ -79,7 +79,6 @@ func update_animation(direction: Vector2) -> void:
 			anim_name = "walk_right"
 
 	if !animated_sprite_2d.is_playing() or animated_sprite_2d.animation != anim_name:
-		print("Playing animation: ", anim_name)
 		animated_sprite_2d.play(anim_name)
 
 
@@ -93,7 +92,6 @@ func move(direction: Vector2) -> void:
 
 
 func stop_moving() -> void:
-	print("Stopped moving")
 	match last_dir:
 		Vector2.UP:
 			animated_sprite_2d.play("idle_up")

@@ -3,6 +3,10 @@ Carl (neutral): what?... need something cleaned up?
 	Carl: Ugh...
 	[wait time="1.5"]
 	Carl (neutral): Where is it?
+	do power_manager.lose_moral()
+	do power_manager.gain_authority()
 - no
 	Carl (angry): Then stop bothering me.
+	do power_manager.lose_authority()
+	do power_manager.gain_moral()
 [signal arg="end"]

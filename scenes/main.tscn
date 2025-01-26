@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=4 uid="uid://b7s35dmdfglkr"]
+[gd_scene load_steps=25 format=4 uid="uid://b7s35dmdfglkr"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_yeiim"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="2_kser7"]
+[ext_resource type="PackedScene" uid="uid://ycbyy6kn1yln" path="res://scenes/ui.tscn" id="2_rfd70"]
 [ext_resource type="PackedScene" uid="uid://dtb1vpuaceedn" path="res://scenes/player.tscn" id="2_veukb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_moanx"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_71xna"]
@@ -77,9 +78,21 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(400, 256)
-zoom = Vector2(3, 3)
+position = Vector2(208, 288)
+zoom = Vector2(2, 2)
 process_callback = 0
+
+[node name="UI" parent="Camera2D" instance=ExtResource("2_rfd70")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 96.0
+offset_top = -170.0
+offset_right = 96.0
+offset_bottom = -170.0
+grow_vertical = 1
+size_flags_horizontal = 4
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -87,7 +100,6 @@ process_physics_priority = 300
 script = ExtResource("5_dklqa")
 
 [node name="Dither" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="Steinberg" type="ColorRect" parent="Camera2D/Dither"]
 material = SubResource("ShaderMaterial_d4ssr")
@@ -108,7 +120,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Palette" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="DitherPalette" type="ColorRect" parent="Camera2D/Palette"]
 material = SubResource("ShaderMaterial_vhaqu")
@@ -120,11 +131,11 @@ grow_vertical = 2
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(400, 256)
+position = Vector2(208, 288)
 script = ExtResource("3_moanx")
 follow_mode = 1
 follow_target = NodePath("../Player")
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_13vx8")
 draw_limits = true
@@ -167,7 +178,7 @@ tile_map_data = PackedByteArray("AAAhABYAAAAAACUAAAAhABcAAAAAACYAAAAhABgAAAAAACc
 tile_set = ExtResource("13_qdgaa")
 
 [node name="Player" parent="." instance=ExtResource("2_veukb")]
-position = Vector2(400, 256)
+position = Vector2(208, 288)
 
 [node name="rae" parent="." instance=ExtResource("15_hpwqc")]
 position = Vector2(192, 288)

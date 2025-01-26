@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+power_manager="*res://scripts/PowerDynamicsManager.gd"
 
 [dialogic]
 
@@ -34,7 +35,6 @@ directories/dtl_directory={
 "BillyTech": "res://dialouge/timelines/BillyTech.dtl",
 "CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl",
 "ChetChurch": "res://dialouge/timelines/ChetChurch.dtl",
-"JimmyTech": "res://dialouge/timelines/JimmyTech.dtl",
 "RaePinter": "res://dialouge/timelines/RaePrinter.dtl"
 }
 glossary/default_case_sensitive=true

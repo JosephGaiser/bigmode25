@@ -4,7 +4,7 @@ extends Node2D
 @export var tile_size: int = 16
 @export var speed: float = 0.4
 @export var move_interval: float = 3.0
-@export var max_tiles_per_move: int = 3
+@export var max_tiles_per_move: int = 2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
@@ -19,6 +19,8 @@ func _ready():
 	timer.wait_time = move_interval
 	timer.timeout.connect(attempt_random_move)
 	timer.start()
+	
+	Dialogic.Styles.load_style("custom_bubble")
 
 func setup_initial_state():
 	animated_sprite_2d.play("idle_down")
@@ -74,6 +76,10 @@ func toggle_wandering(enable: bool):
 		timer.stop()
 	else:
 		timer.start()
+
+func _on_dialogic_signal(arg: String):
+	# Placeholder for NPC behavior
+	pass
 
 func on_movement_blocked():
 	# Placeholder for specific NPC behavior when movement is blocked

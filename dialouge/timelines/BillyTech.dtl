@@ -12,15 +12,15 @@ billy: Hey Boss! What's up!?
 - Ask him about his weekend
 	[wait time="1.0"]
 	billy: I have been spending a lot of time stocking and bonding.
-	billy: Typicaly stuff for a trader.
+	billy: Typically stuff for a trader.
 	[wait time="0.5"]
 	billy: A night trader.
 	billy: I would never trade while on the clock, of course.
-	billy: Two weeks ago though, I met the lead tokeneneconimist over at... what was it?
+	billy: Two weeks ago though, I met the lead tokenonimist over at... what was it?
 	[text_input var="shitcoin"]
 	billy: Yea! Fuck.
 	billy: sorry... sorry! That was unprofessional, sorry.
-	billy: That reall sucked. Anyway that coin...
+	billy: That really sucked. Anyway that coin...
 - Be Honest
 	billy: Im good too...
 	[wait time="0.3"]

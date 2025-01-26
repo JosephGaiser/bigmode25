@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://ycbyy6kn1yln"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_blk7w"]
+[ext_resource type="Theme" uid="uid://bghathf6glpnu" path="res://misc/ui_theme.tres" id="2_nw3mq"]
+[ext_resource type="FontFile" uid="uid://v51lfg2pxryq" path="res://dialouge/styles/Vaticanus-G3yVG.ttf" id="3_j3kob"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fekwl"]
+font = ExtResource("3_j3kob")
+font_size = 8
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_blk7w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 3.0
+offset_right = 209.0
+offset_bottom = 43.0
+
+[node name="MoraleBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_nw3mq")
+value = 10.0
+show_percentage = false
+
+[node name="ProfitsBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_nw3mq")
+value = 10.0
+show_percentage = false
+
+[node name="ReputationBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_nw3mq")
+value = 10.0
+show_percentage = false
+
+[node name="AuthorithyBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_nw3mq")
+value = 10.0
+show_percentage = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 44.0
+
+[node name="Morale" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Morale"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Profit" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Profit"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Reputation" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Reputation"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Authority" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Authority
+"
+label_settings = SubResource("LabelSettings_fekwl")
