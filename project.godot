@@ -25,10 +25,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Carl": "res://dialouge/characters/Carl.dch",
-"boss": "res://dialouge/characters/boss.dch"
+"Rae": "res://dialouge/characters/Rae.dch",
+"billy": "res://dialouge/characters/billy.dch",
+"boss": "res://dialouge/characters/boss.dch",
+"chet": "res://dialouge/characters/chet.dch"
 }
 directories/dtl_directory={
-"CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl"
+"BillyTech": "res://dialouge/timelines/BillyTech.dtl",
+"CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl",
+"ChetChurch": "res://dialouge/timelines/ChetChurch.dtl",
+"JimmyTech": "res://dialouge/timelines/JimmyTech.dtl",
+"RaePinter": "res://dialouge/timelines/RaePrinter.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialouge/styles/custom_bubble.tres"]

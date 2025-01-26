@@ -1,0 +1,33 @@
+chet: .. so, I know you Uhh..
+chet: ...
+[wait time="0.6"]
+chet: Uhh.. Would you maybe...
+chet: Well... It would be an honor if you vistied my church for service... with me.
+[wait time="1.0"]
+chet: or.. just I would see you there. I guess.
+- Say you will go, but don't.
+	[wait time="1.0"]
+	chet: Really?
+	chet: ...
+- Respectfully decline.
+	chet: I understand, just know we are always happy to have you when you change your mind.
+	chet: I mean if.... Ha
+	[wait time="1.0"]
+	chet: Do you want to hear a scripture?
+	- Listen
+		chet: hold on, let me find it...  Its dog earred in my copy of the holy book
+		[signal arg="read"]
+		chet: wait... I'll tell you later.
+	- Refuse
+		chet: I understand, just know I am always happy to tell you when you change your mind.
+- Lie that you already have a church.
+	[text_input var="church_name"]
+	chet: Oh...
+	chet: Just maye don't bring it up at the office...
+	chet: Remeber; that training we had.
+- Offer for Carl to go in your place
+	chet: He did just lose his family...
+	chet: That will be so great for him, he is going to be so grateful.
+	[wait time="0.4"]
+	chet: You are doing a good thing, Boss.
+[signal arg="end"]

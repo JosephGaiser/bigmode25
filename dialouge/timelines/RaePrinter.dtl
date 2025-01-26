@@ -1,0 +1,16 @@
+Rae: I hate this printer.
+Rae: I really wish it would just work for once.
+[wait time="1.0"]
+Rae: Seems like every day there is a new issue around here.
+Rae: Can anyone here fix it?
+- Call a handyman
+	Rae: I will have someone come by as soon as possible.
+- Buy a new printer
+	Rae: Seriously! Wow.
+	[wait time="0.5"]
+	Rae: I did not expect that
+- Have Carl take a look
+	Rae: This is why nothing around here works.
+- Hit the printer
+	Rae: What was that supposed to do?
+[signal arg="end"]

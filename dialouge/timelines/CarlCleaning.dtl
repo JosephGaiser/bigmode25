@@ -1,4 +1,3 @@
-join Carl (neutral) center
 Carl (neutral): what?... need something cleaned up?
 - yes
 	Carl: Ugh...
@@ -7,4 +6,3 @@ Carl (neutral): what?... need something cleaned up?
 - no
 	Carl (angry): Then stop bothering me.
 [signal arg="end"]
-[end_timeline]
