@@ -221,7 +221,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -244,7 +244,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -267,7 +267,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -290,7 +290,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -336,7 +336,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -359,7 +359,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -382,7 +382,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 6.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyhkk"]
@@ -394,6 +394,7 @@ size = Vector2(16, 16)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_7eovw")
+speed = 0.3
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.168627)
@@ -404,9 +405,7 @@ texture = SubResource("CurveTexture_gaoq3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -8)
 sprite_frames = SubResource("SpriteFrames_35k6m")
-animation = &"walk_down"
-frame = 3
-frame_progress = 0.24234
+animation = &"idle_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
