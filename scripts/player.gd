@@ -106,6 +106,9 @@ func stop_moving() -> void:
 
 
 func interact() -> void:
+	if interacting:
+		return
+
 	var interactables: Array[Node2D] = interaction_area.get_overlapping_bodies()
 	for obj in interactables:
 		if obj.has_method("interact"):

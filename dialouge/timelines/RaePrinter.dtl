@@ -1,24 +1,26 @@
-Rae: I hate this printer.
-Rae: I really wish it would just work for once.
-[wait time="1.0"]
-Rae: Seems like every day there is a new issue around here.
-Rae: Can anyone here fix it?
-- Call a handyman
-	do power_manager.lose_profits()
-	do power_manager.gain_authority()
-	Rae: I will have someone come by as soon as possible.
-- Buy a new printer
-	do power_manager.lose_profits()
-	do power_manager.gain_moral()
-	Rae: Seriously! Wow.
-	[wait time="0.5"]
-	Rae: I did not expect that
-- Have Carl take a look
-	do power_manager.lose_moral()
-	do power_manager.gain_authority()
-	Rae: This is why nothing around here works.
-- Hit the printer
-	do power_manager.lose_reputation()
-	do power_manager.gain_authority()
-	Rae: What was that supposed to do?
+if {Rae.day_1} == true:
+	Rae: now what do you need?
+else:
+	set {Rae.day_1} = true
+	Rae: I hate our printer.
+	Rae: I really wish it would just work for once.
+	Rae: Seems like every day there is a new issue around here.
+	- Call a handyman
+		do power_manager.lose_profits()
+		do power_manager.gain_authority()
+		Rae: I will have someone come by as soon as possible.
+	- Buy a new printer
+		do power_manager.lose_profits()
+		do power_manager.gain_moral()
+		Rae: Seriously! Wow.
+		[wait time="0.5"]
+		Rae: I did not expect that
+	- Have Carl take a look
+		do power_manager.lose_moral()
+		do power_manager.gain_authority()
+		Rae: This is why nothing around here works.
+	- Hit the printer
+		do power_manager.lose_reputation()
+		do power_manager.gain_authority()
+		Rae: What was that supposed to do?
 [signal arg="end"]
