@@ -9,6 +9,7 @@ var last_dir: Vector2  = Vector2.ZERO
 
 var moving: bool   = false
 var can_move: bool = true
+var interacting: bool = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
@@ -20,7 +21,7 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	if !moving:
+	if !moving and !interacting:
 		handle_movement_input()
 
 	update_interaction_area()
@@ -108,9 +109,11 @@ func stop_moving() -> void:
 
 func interact() -> void:
 	var interactables: Array[Node2D] = interaction_area.get_overlapping_bodies()
-
 	for obj in interactables:
-		print(obj)
 		if obj.has_method("interact"):
-			obj.call("interact")
+			interacting = true
+			obj.call("interact", self)
 			break
+
+func end_interaction():
+	interacting = false

@@ -1,7 +1,10 @@
-[style name="custom_bubble"]
 join Carl (neutral) center
 Carl (neutral): what?... need something cleaned up?
 - yes
-	Carl (neutral): Where is it then?
+	Carl: Ugh...
+	[wait time="1.5"]
+	Carl (neutral): Where is it?
 - no
 	Carl (angry): Then stop bothering me.
+[signal arg="end"]
+[end_timeline]
