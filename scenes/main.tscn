@@ -70,7 +70,6 @@ script = ExtResource("1_yeiim")
 environment = ExtResource("2_r3f8h")
 
 [node name="Background" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_lex3h")
 offset_left = -876.0
 offset_top = -551.0
@@ -82,7 +81,7 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
 position = Vector2(400, 192)
-zoom = Vector2(2.5, 3)
+zoom = Vector2(2.5, 2.5)
 process_callback = 0
 
 [node name="UI" parent="Camera2D" instance=ExtResource("2_rfd70")]
@@ -137,7 +136,7 @@ position = Vector2(400, 192)
 script = ExtResource("3_moanx")
 follow_mode = 1
 follow_target = NodePath("../Player")
-zoom = Vector2(2.5, 3)
+zoom = Vector2(2.5, 2.5)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_13vx8")
 draw_limits = true

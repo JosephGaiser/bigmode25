@@ -4,6 +4,11 @@
 [ext_resource type="Theme" uid="uid://bghathf6glpnu" path="res://misc/ui_theme.tres" id="2_nw3mq"]
 [ext_resource type="FontFile" uid="uid://v51lfg2pxryq" path="res://dialouge/styles/Vaticanus-G3yVG.ttf" id="3_j3kob"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_yk1jc"]
+line_spacing = -10.0
+font = ExtResource("3_j3kob")
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_fekwl"]
 font = ExtResource("3_j3kob")
 font_size = 8
@@ -16,12 +21,6 @@ font = ExtResource("3_j3kob")
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_duc72"]
-font = ExtResource("3_j3kob")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_yk1jc"]
-line_spacing = -10.0
 font = ExtResource("3_j3kob")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
@@ -42,29 +41,55 @@ grow_vertical = 0
 size_flags_horizontal = 4
 script = ExtResource("1_blk7w")
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 287.0
+offset_right = 95.0
+offset_bottom = 327.0
+scale = Vector2(1.24175, 2.34757)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 290.0
+offset_right = 98.0
+offset_bottom = 330.0
+scale = Vector2(1.07566, 3.48784)
+
+[node name="Day" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 292.0
+offset_right = 145.0
+offset_bottom = 315.0
+text = "MON"
+label_settings = SubResource("LabelSettings_yk1jc")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 321.0
-offset_top = 212.0
-offset_right = 361.0
-offset_bottom = 252.0
+offset_left = 327.0
+offset_top = 237.0
+offset_right = 367.0
+offset_bottom = 277.0
 scale = Vector2(5.70714, 4.89162)
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 324.0
-offset_top = 215.0
-offset_right = 364.0
-offset_bottom = 255.0
+offset_left = 330.0
+offset_top = 240.0
+offset_right = 370.0
+offset_bottom = 280.0
 scale = Vector2(5.55523, 4.70311)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 369.0
-offset_top = 241.0
-offset_right = 538.0
-offset_bottom = 281.0
+offset_left = 375.0
+offset_top = 266.0
+offset_right = 544.0
+offset_bottom = 306.0
 
 [node name="MoraleBar" type="ProgressBar" parent="VBoxContainer"]
 layout_mode = 2
@@ -92,10 +117,10 @@ show_percentage = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 329.0
-offset_top = 241.0
-offset_right = 369.0
-offset_bottom = 285.0
+offset_left = 335.0
+offset_top = 266.0
+offset_right = 375.0
+offset_bottom = 310.0
 
 [node name="Morale" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -118,29 +143,20 @@ text = "Authority
 "
 label_settings = SubResource("LabelSettings_fekwl")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 328.0
-offset_top = 219.0
-offset_right = 462.0
-offset_bottom = 242.0
+offset_left = 334.0
+offset_top = 244.0
+offset_right = 468.0
+offset_bottom = 267.0
 text = "IMPORTANT REPORT"
 label_settings = SubResource("LabelSettings_6b4v8")
 
-[node name="Label2" type="Label" parent="."]
+[node name="sub label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 329.0
-offset_top = 232.0
-offset_right = 481.0
-offset_bottom = 255.0
+offset_left = 335.0
+offset_top = 257.0
+offset_right = 487.0
+offset_bottom = 280.0
 text = "Import-tant co. ltd."
 label_settings = SubResource("LabelSettings_duc72")
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 501.0
-offset_top = 219.0
-offset_right = 581.0
-offset_bottom = 242.0
-text = "bigmode 25"
-label_settings = SubResource("LabelSettings_yk1jc")
