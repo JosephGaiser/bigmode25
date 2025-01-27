@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ycbyy6kn1yln"]
+[gd_scene load_steps=8 format=3 uid="uid://ycbyy6kn1yln"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_blk7w"]
 [ext_resource type="Theme" uid="uid://bghathf6glpnu" path="res://misc/ui_theme.tres" id="2_nw3mq"]
@@ -11,32 +11,60 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_0aw1q"]
+[sub_resource type="LabelSettings" id="LabelSettings_6b4v8"]
 font = ExtResource("3_j3kob")
-font_size = 64
-outline_size = 16
-outline_color = Color(0, 0, 0, 1)
+font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_g01cj"]
+[sub_resource type="LabelSettings" id="LabelSettings_duc72"]
 font = ExtResource("3_j3kob")
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yk1jc"]
+line_spacing = -10.0
+font = ExtResource("3_j3kob")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -720.0
+offset_right = -640.0
+offset_bottom = -720.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+size_flags_horizontal = 4
 script = ExtResource("1_blk7w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 212.0
+offset_right = 361.0
+offset_bottom = 252.0
+scale = Vector2(5.70714, 4.89162)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 215.0
+offset_right = 364.0
+offset_bottom = 255.0
+scale = Vector2(5.55523, 4.70311)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 440.0
-offset_top = 11.0
-offset_right = 609.0
-offset_bottom = 51.0
+offset_left = 369.0
+offset_top = 241.0
+offset_right = 538.0
+offset_bottom = 281.0
 
 [node name="MoraleBar" type="ProgressBar" parent="VBoxContainer"]
 layout_mode = 2
@@ -64,10 +92,10 @@ show_percentage = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 8.0
-offset_right = 440.0
-offset_bottom = 52.0
+offset_left = 329.0
+offset_top = 241.0
+offset_right = 369.0
+offset_bottom = 285.0
 
 [node name="Morale" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -90,31 +118,29 @@ text = "Authority
 "
 label_settings = SubResource("LabelSettings_fekwl")
 
-[node name="GameOver" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_left = 176.0
-offset_top = 96.0
-offset_right = 216.0
-offset_bottom = 136.0
-
-[node name="gameover_label" type="Label" parent="GameOver"]
-visible = false
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 29.0
-offset_right = 326.0
-offset_bottom = 93.0
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_0aw1q")
+offset_left = 328.0
+offset_top = 219.0
+offset_right = 462.0
+offset_bottom = 242.0
+text = "IMPORTANT REPORT"
+label_settings = SubResource("LabelSettings_6b4v8")
 
-[node name="reason_label" type="Label" parent="GameOver"]
-visible = false
+[node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 83.0
-offset_right = 317.0
-offset_bottom = 106.0
-text = "you failed."
-label_settings = SubResource("LabelSettings_g01cj")
-horizontal_alignment = 1
+offset_left = 329.0
+offset_top = 232.0
+offset_right = 481.0
+offset_bottom = 255.0
+text = "Import-tant co. ltd."
+label_settings = SubResource("LabelSettings_duc72")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 219.0
+offset_right = 581.0
+offset_bottom = 242.0
+text = "bigmode 25"
+label_settings = SubResource("LabelSettings_yk1jc")

@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3 uid="uid://wqtv320kmbni"]
+
+[resource]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.25
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 18.4
+fog_sun_scatter = 16.05
+fog_density = 0.4155
+fog_height = -273.7
+fog_height_density = 0.361
+adjustment_enabled = true
+adjustment_saturation = 1.81

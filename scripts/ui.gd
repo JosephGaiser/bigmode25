@@ -6,12 +6,7 @@ extends Control
 @onready var reputation_bar: ProgressBar = $VBoxContainer/ReputationBar
 @onready var authorithy_bar: ProgressBar = $VBoxContainer/AuthorithyBar
 
-@onready var gameover_label: Label = $GameOver/gameover_label
-@onready var reason_label: Label = $GameOver/reason_label
-
 func _ready():
-	gameover_label.visible = false
-	reason_label.visible = false
 	
 	power_manager.update_ui_values.connect(Callable(self, "_on_update_ui_values"))
 	power_manager.game_over.connect(_on_game_over)
@@ -22,9 +17,6 @@ func _ready():
 	update_ui_values()
 
 func _on_game_over(reason: String) -> void:
-	gameover_label.visible = true
-	reason_label.text = reason
-	reason_label.visible = true
 	return
 
 
