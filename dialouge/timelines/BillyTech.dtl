@@ -1,3 +1,7 @@
+if {Billy.day_1} == true:
+	billy: hold on.. trading...
+	[end_timeline]
+set {Billy.day_1} = true
 billy: Hey Boss! What's up!?
 - Say nothing
 	do power_manager.lose_moral()

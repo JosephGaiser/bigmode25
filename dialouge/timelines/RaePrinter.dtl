@@ -1,7 +1,8 @@
 if {Rae.day_1} == true:
 	Rae: now what do you need?
+	[end_timeline]
+set {Rae.day_1} = true
 else:
-	set {Rae.day_1} = true
 	Rae: I hate our printer.
 	Rae: I really wish it would just work for once.
 	Rae: Seems like every day there is a new issue around here.

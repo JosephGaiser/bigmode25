@@ -41,11 +41,20 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://dialouge/styles/custom_bubble.tres", "res://misc/New_File.tres"]
 layout/default_style="res://dialouge/styles/custom_bubble.tres"
 variables={
+"Billy": {
+"day_1": false
+},
+"Carl": {
+"day_1": false
+},
+"Chet": {
+"day_1": false
+},
 "Rae": {
 "day_1": false
 },
-"church_name": "boob church",
-"coin_name": "foocoin"
+"church_name": "foo church",
+"coin_name": "foo coin"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.04

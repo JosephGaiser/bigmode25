@@ -1,3 +1,7 @@
+if {Carl.day_1} == true:
+	Carl: ...
+	[end_timeline]
+set {Carl.day_1} = true
 Carl (neutral): what?... need something cleaned up?
 - yes
 	Carl: Ugh...

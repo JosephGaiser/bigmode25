@@ -84,7 +84,8 @@ visible_characters_behavior = 1
 script = ExtResource("3_syv35")
 textbox_root = NodePath("..")
 
-[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DialogText"]
+[node name="DialogicNode_TypeSounds_Bubble" type="AudioStreamPlayer" parent="DialogText"]
+unique_name_in_owner = true
 script = ExtResource("4_7bm4b")
 
 [node name="NameLabelPositioner" type="HBoxContainer" parent="DialogText"]

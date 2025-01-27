@@ -1,3 +1,7 @@
+if {Chet.day_1} == true:
+	chet: we can talk later.
+	[end_timeline]
+set {Chet.day_1} = true
 chet: .. so, I know you Uhh..
 chet: ...
 [wait time="0.6"]
