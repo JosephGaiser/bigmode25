@@ -38,7 +38,7 @@ directories/dtl_directory={
 "RaePinter": "res://dialouge/timelines/RaePrinter.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialouge/styles/custom_bubble.tres"]
+layout/style_list=["res://dialouge/styles/custom_bubble.tres", "res://misc/New_File.tres"]
 layout/default_style="res://dialouge/styles/custom_bubble.tres"
 variables={
 "Rae": {

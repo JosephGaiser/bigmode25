@@ -4,6 +4,8 @@ extends Node
 signal game_over(reason: String)
 signal update_ui_values()
 
+const GAME_OVER = preload("res://scenes/days/game_over.tscn")
+
 # Power axes
 var morale: float     = 50.0
 var profits: float    = 50.0
@@ -73,6 +75,7 @@ func trigger_game_over(failed_axis: String) -> void:
 										}
 
 	emit_signal("game_over", game_over_reasons[failed_axis])
+	get_tree().change_scene_to_packed(GAME_OVER)
 
 
 func get_current_status() -> Dictionary:
