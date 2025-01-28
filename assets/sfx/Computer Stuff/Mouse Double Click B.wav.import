@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvfpwtttqsxd7"
+path="res://.godot/imported/Mouse Double Click B.wav-8ba2ca9362ecf96ecae621f5bb41ecf6.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Computer Stuff/Mouse Double Click B.wav"
+dest_files=["res://.godot/imported/Mouse Double Click B.wav-8ba2ca9362ecf96ecae621f5bb41ecf6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhphi03r8j50g"
+path="res://.godot/imported/Place Drag Medium Loop A.wav-ae74b2d362684eba3bf532628e22ae29.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Place Drag Medium Loop A.wav"
+dest_files=["res://.godot/imported/Place Drag Medium Loop A.wav-ae74b2d362684eba3bf532628e22ae29.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

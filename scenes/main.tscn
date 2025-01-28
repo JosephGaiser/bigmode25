@@ -1,11 +1,13 @@
-[gd_scene load_steps=25 format=4 uid="uid://b7s35dmdfglkr"]
+[gd_scene load_steps=27 format=4 uid="uid://b7s35dmdfglkr"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_yeiim"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="2_kser7"]
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="2_r3f8h"]
 [ext_resource type="PackedScene" uid="uid://ycbyy6kn1yln" path="res://scenes/ui.tscn" id="2_rfd70"]
+[ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="2_sikfj"]
 [ext_resource type="PackedScene" uid="uid://dtb1vpuaceedn" path="res://scenes/player.tscn" id="2_veukb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_moanx"]
+[ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="3_yv5i5"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_71xna"]
 [ext_resource type="Shader" path="res://shaders/dither.gdshader" id="5_3md62"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_dklqa"]
@@ -65,6 +67,15 @@ ease = 2
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_yeiim")
+
+[node name="WorldAudioManager" type="Node" parent="."]
+script = ExtResource("2_sikfj")
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="WorldAudioManager"]
+stream = ExtResource("3_yv5i5")
+volume_db = -5.0
+autoplay = true
+bus = &"Ambient"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_r3f8h")

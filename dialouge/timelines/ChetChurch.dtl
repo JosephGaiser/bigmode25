@@ -10,14 +10,12 @@ chet: Well... It would be an honor if you visited my church for service... with 
 [wait time="1.0"]
 chet: or.. just I would see you there. I guess.
 - Say you will go, but don't.
-	do power_manager.lose_authority()
-	do power_manager.gain_moral()
 	[wait time="1.0"]
 	chet: Really?
 	chet: ...
+	do power_manager.lose_authority()
+	do power_manager.gain_moral()
 - Respectfully decline.
-	do power_manager.lose_moral()
-	do power_manager.gain_authority()
 	chet: I understand, just know we are always happy to have you when you change your mind.
 	chet: I mean if.... Ha
 	[wait time="1.0"]
@@ -26,21 +24,25 @@ chet: or.. just I would see you there. I guess.
 		chet: hold on, let me find it...  Its dogeared in my copy of the holy book
 		[signal arg="read"]
 		chet: wait... I'll tell you later.
+		do power_manager.lose_moral()
+		do power_manager.gain_authority()
 	- Refuse
 		chet: I understand, just know I am always happy to tell you when you change your mind.
+		do power_manager.lose_authority()
+		do power_manager.gain_moral()
 - Lie that you already have a church.
-	do power_manager.lose_reputation()
-	do power_manager.gain_authority()
 	[text_input var="church_name"]
 	chet: Oh... {church_name}...
 	[wait time="0.3"]
 	chet: Just maybe don't bring {church_name} up at the office...
 	chet: Remember; that training we had.
-- Offer for Carl to go in your place
-	do power_manager.lose_moral()
+	do power_manager.lose_reputation()
 	do power_manager.gain_authority()
+- Offer for Carl to go in your place
 	chet: He did just lose his family...
 	chet: That will be so great for him, he is going to be so grateful.
 	[wait time="0.4"]
 	chet: You are doing a good thing, Boss.
+	do power_manager.lose_moral()
+	do power_manager.gain_authority()
 [signal arg="end"]

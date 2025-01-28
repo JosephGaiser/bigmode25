@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cexcssk0n01l8"
+path="res://.godot/imported/Place Drag Slow Loop A.wav-ecf7b29056304fc4674880f62d828fea.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Place Drag Slow Loop A.wav"
+dest_files=["res://.godot/imported/Place Drag Slow Loop A.wav-ecf7b29056304fc4674880f62d828fea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

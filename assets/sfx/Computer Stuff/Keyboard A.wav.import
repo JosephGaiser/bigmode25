@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs30rj03o35ki"
+path="res://.godot/imported/Keyboard A.wav-06a10d744c71451c819dbfa6b303d72a.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Computer Stuff/Keyboard A.wav"
+dest_files=["res://.godot/imported/Keyboard A.wav-06a10d744c71451c819dbfa6b303d72a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

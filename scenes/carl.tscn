@@ -1,7 +1,13 @@
-[gd_scene load_steps=67 format=3 uid="uid://dsenf41d5nhyc"]
+[gd_scene load_steps=73 format=3 uid="uid://dsenf41d5nhyc"]
 
 [ext_resource type="Script" path="res://scripts/carl.gd" id="1_hqohi"]
 [ext_resource type="Texture2D" uid="uid://bnmplpouvv5cc" path="res://assets/sprites/carl.png" id="1_w4o6l"]
+[ext_resource type="PackedScene" uid="uid://dxwb1rs2anlj6" path="res://components/footstep_component.tscn" id="3_gahom"]
+[ext_resource type="AudioStream" uid="uid://1xpa7kb27wei" path="res://assets/sfx/Shoe Step Stone Medium A.wav" id="4_spfrv"]
+[ext_resource type="AudioStream" uid="uid://koai304wqcus" path="res://assets/sfx/Shoe Step Stone Medium B.wav" id="5_jbh1r"]
+[ext_resource type="AudioStream" uid="uid://1dvn6i50upn1" path="res://assets/sfx/Shoe Step Stone Medium C.wav" id="6_on8l1"]
+[ext_resource type="AudioStream" uid="uid://bbhuwpp2febdv" path="res://assets/sfx/Shoe Step Stone Medium D.wav" id="7_4xfxl"]
+[ext_resource type="AudioStream" uid="uid://dbmpioi776p7t" path="res://assets/sfx/Shoe Step Stone Medium E.wav" id="8_jvfnk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3n3c"]
 atlas = ExtResource("1_w4o6l")
@@ -513,3 +519,6 @@ debug_color = Color(0.729412, 0.913725, 0, 0.0666667)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
 target_position = Vector2(0, -16)
+
+[node name="FootstepComponent" parent="." instance=ExtResource("3_gahom")]
+footstep_sounds = Array[AudioStream]([ExtResource("4_spfrv"), ExtResource("5_jbh1r"), ExtResource("6_on8l1"), ExtResource("7_4xfxl"), ExtResource("8_jvfnk")])

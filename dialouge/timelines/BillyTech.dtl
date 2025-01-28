@@ -4,8 +4,6 @@ if {Billy.day_1} == true:
 set {Billy.day_1} = true
 billy: Hey Boss! What's up!?
 - Say nothing
-	do power_manager.lose_moral()
-	do power_manager.gain_authority()
 	billy: ...
 	[wait time="1.4"]
 	billy: Ahh the silent treatment.
@@ -15,9 +13,9 @@ billy: Hey Boss! What's up!?
 	[wait time="3.0"]
 	billy: You're CRAZY man, like really! Really had me going there...
 	billy: ha.
+	do power_manager.lose_moral()
+	do power_manager.gain_authority()
 - Ask him about his weekend
-	do power_manager.lose_profits()
-	do power_manager.gain_moral()
 	[wait time="1.0"]
 	billy: I have been spending a lot of time stocking and bonding.
 	billy: Typically stuff for a trader.
@@ -29,19 +27,21 @@ billy: Hey Boss! What's up!?
 	billy: Yea {coin_name}! Fuckin A!
 	billy: sorry... sorry! That was unprofessional, sorry.
 	billy: That really sucked. Anyway about {coin_name}...
-- Be Honest
-	do power_manager.lose_reputation()
+	do power_manager.lose_profits()
 	do power_manager.gain_moral()
+- Be Honest
 	billy: Im good too...
 	[wait time="0.3"]
 	billy: You are still planning on "cutting the fat" right?
 	billy: I love highly dynamic workplace environments!
 	billy: LETS GET DYNAMIC!
+	do power_manager.lose_reputation()
+	do power_manager.gain_moral()
 - Discuss work
-	do power_manager.lose_moral()
-	do power_manager.gain_profits()
 	billy: Oh you need those reports done already?
 	billy: I was actually just parking, most of this morning. so...
 	[wait time="0.6"]
 	billy: I actually need to go make sure I still have the best spot.
+	do power_manager.lose_moral()
+	do power_manager.gain_profits()
 [signal arg="end"]

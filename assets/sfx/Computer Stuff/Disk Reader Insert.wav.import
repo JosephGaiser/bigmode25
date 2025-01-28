@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxtjwquqetrqp"
+path="res://.godot/imported/Disk Reader Insert.wav-7a4e2c5c0528ceaeb872925164ec8c01.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Computer Stuff/Disk Reader Insert.wav"
+dest_files=["res://.godot/imported/Disk Reader Insert.wav-7a4e2c5c0528ceaeb872925164ec8c01.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

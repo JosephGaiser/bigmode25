@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d274ltgy5xjti"
+path="res://.godot/imported/Mine Loop.wav-15864367f0d6531a492b06f928851cf4.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Mine Loop.wav"
+dest_files=["res://.godot/imported/Mine Loop.wav-15864367f0d6531a492b06f928851cf4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
