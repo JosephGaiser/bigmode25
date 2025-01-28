@@ -1,0 +1,18 @@
+[gd_scene load_steps=13 format=3 uid="uid://cd3jux3dhnio"]
+
+[ext_resource type="Script" path="res://components/random_ambient_sfx.gd" id="1_pr08f"]
+[ext_resource type="AudioStream" uid="uid://cs30rj03o35ki" path="res://assets/sfx/Computer Stuff/Keyboard A.wav" id="2_kpq61"]
+[ext_resource type="AudioStream" uid="uid://olpum7kmn528" path="res://assets/sfx/Computer Stuff/Keyboard B.wav" id="3_mwgee"]
+[ext_resource type="AudioStream" uid="uid://ba3rhxp8iy7st" path="res://assets/sfx/Computer Stuff/Keyboard C.wav" id="4_w8vor"]
+[ext_resource type="AudioStream" uid="uid://botnc73lfdkm1" path="res://assets/sfx/Computer Stuff/Keyboard D.wav" id="5_pde6e"]
+[ext_resource type="AudioStream" uid="uid://c48dod3cnbd7v" path="res://assets/sfx/Computer Stuff/Keyboard E.wav" id="6_qvlvo"]
+[ext_resource type="AudioStream" uid="uid://c28i277r7jk6t" path="res://assets/sfx/Computer Stuff/Mouse Click A.wav" id="7_0oiwq"]
+[ext_resource type="AudioStream" uid="uid://cxkktfiid0a4c" path="res://assets/sfx/Computer Stuff/Mouse Click B.wav" id="8_u65t4"]
+[ext_resource type="AudioStream" uid="uid://cvfpwtttqsxd7" path="res://assets/sfx/Computer Stuff/Mouse Double Click B.wav" id="9_g8esd"]
+[ext_resource type="AudioStream" uid="uid://chgax4uxqofh" path="res://assets/sfx/Computer Stuff/Mouse Double Click A.wav" id="10_sqgqe"]
+[ext_resource type="AudioStream" uid="uid://bbmbeoqe1kfs6" path="res://assets/sfx/Computer Stuff/Disk Insert A.wav" id="11_0is7g"]
+[ext_resource type="AudioStream" uid="uid://cy785fu1ifj3x" path="res://assets/sfx/Computer Stuff/Disk Reader Button A.wav" id="14_12usl"]
+
+[node name="RandomAmbientSfx" type="Node2D"]
+script = ExtResource("1_pr08f")
+sounds = Array[AudioStream]([ExtResource("2_kpq61"), ExtResource("3_mwgee"), ExtResource("4_w8vor"), ExtResource("5_pde6e"), ExtResource("6_qvlvo"), ExtResource("7_0oiwq"), ExtResource("8_u65t4"), ExtResource("9_g8esd"), ExtResource("10_sqgqe"), ExtResource("11_0is7g"), ExtResource("14_12usl")])

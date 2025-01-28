@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://ycbyy6kn1yln"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_blk7w"]
+[ext_resource type="AudioStream" uid="uid://hps00hj2vda3" path="res://assets/sfx/Scroll Boop Single A.wav" id="2_dqhyj"]
 [ext_resource type="Theme" uid="uid://bghathf6glpnu" path="res://misc/ui_theme.tres" id="2_nw3mq"]
-[ext_resource type="AudioStream" uid="uid://0phn13ho2ts8" path="res://assets/sfx/Place Drag Slow Loop B.wav" id="2_og30y"]
-[ext_resource type="AudioStream" uid="uid://br0b34hn7ak1" path="res://assets/sfx/Place Drag Medium Loop B.wav" id="3_8npui"]
 [ext_resource type="FontFile" uid="uid://v51lfg2pxryq" path="res://dialouge/styles/Vaticanus-G3yVG.ttf" id="3_j3kob"]
-[ext_resource type="AudioStream" uid="uid://b5fl1021woi48" path="res://assets/sfx/Place Drag Fast Loop B.wav" id="4_bffwt"]
+[ext_resource type="AudioStream" uid="uid://c4s0p755r8jgy" path="res://assets/sfx/Scroll Boop Single B.wav" id="3_xfh00"]
+[ext_resource type="AudioStream" uid="uid://dr4yculremc4x" path="res://assets/sfx/Scroll Boop Single C.wav" id="4_rl17i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yk1jc"]
 line_spacing = -10.0
@@ -43,9 +43,9 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 script = ExtResource("1_blk7w")
-slow_change_sound = ExtResource("2_og30y")
-medium_change_sound = ExtResource("3_8npui")
-fast_change_sound = ExtResource("4_bffwt")
+slow_change_sound = ExtResource("2_dqhyj")
+medium_change_sound = ExtResource("3_xfh00")
+fast_change_sound = ExtResource("4_rl17i")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 layout_mode = 0
@@ -168,3 +168,5 @@ text = "Import-tant co. ltd."
 label_settings = SubResource("LabelSettings_duc72")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -9.0
+bus = &"Sfx"

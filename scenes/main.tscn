@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b7s35dmdfglkr"]
+[gd_scene load_steps=40 format=4 uid="uid://b7s35dmdfglkr"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_yeiim"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="2_kser7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_moanx"]
 [ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="3_yv5i5"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_71xna"]
+[ext_resource type="AudioStream" uid="uid://dtwp7hs8by6jn" path="res://assets/sfx/Inverter Buzz Loop.wav" id="4_ve2x1"]
 [ext_resource type="Shader" path="res://shaders/dither.gdshader" id="5_3md62"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_dklqa"]
 [ext_resource type="Texture2D" uid="uid://dj4in72c40yjb" path="res://assets/toasted40-32x.png" id="6_cher8"]
@@ -18,9 +19,21 @@
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="9_psngx"]
 [ext_resource type="TileSet" uid="uid://jjg3gcm10oh6" path="res://tilesets/bathroom.tres" id="13_qdgaa"]
 [ext_resource type="PackedScene" uid="uid://dsenf41d5nhyc" path="res://scenes/carl.tscn" id="14_67kns"]
+[ext_resource type="PackedScene" uid="uid://cd3jux3dhnio" path="res://components/random_ambient_sfx.tscn" id="15_foy0e"]
 [ext_resource type="PackedScene" uid="uid://dcp3mwi5vdrui" path="res://scenes/Rae.tscn" id="15_hpwqc"]
+[ext_resource type="AudioStream" uid="uid://cs30rj03o35ki" path="res://assets/sfx/Computer Stuff/Keyboard A.wav" id="16_r7oec"]
+[ext_resource type="AudioStream" uid="uid://olpum7kmn528" path="res://assets/sfx/Computer Stuff/Keyboard B.wav" id="17_hflpm"]
 [ext_resource type="PackedScene" uid="uid://cofqirycwlylf" path="res://scenes/chet.tscn" id="17_w55sk"]
 [ext_resource type="PackedScene" uid="uid://ckyid1ktvlc6s" path="res://scenes/billy.tscn" id="18_3vrat"]
+[ext_resource type="AudioStream" uid="uid://ba3rhxp8iy7st" path="res://assets/sfx/Computer Stuff/Keyboard C.wav" id="18_6800i"]
+[ext_resource type="AudioStream" uid="uid://botnc73lfdkm1" path="res://assets/sfx/Computer Stuff/Keyboard D.wav" id="19_nkhwt"]
+[ext_resource type="AudioStream" uid="uid://c48dod3cnbd7v" path="res://assets/sfx/Computer Stuff/Keyboard E.wav" id="20_ff258"]
+[ext_resource type="AudioStream" uid="uid://c28i277r7jk6t" path="res://assets/sfx/Computer Stuff/Mouse Click A.wav" id="21_jagc7"]
+[ext_resource type="AudioStream" uid="uid://cxkktfiid0a4c" path="res://assets/sfx/Computer Stuff/Mouse Click B.wav" id="22_cu87x"]
+[ext_resource type="AudioStream" uid="uid://cvfpwtttqsxd7" path="res://assets/sfx/Computer Stuff/Mouse Double Click B.wav" id="23_yv2o3"]
+[ext_resource type="AudioStream" uid="uid://chgax4uxqofh" path="res://assets/sfx/Computer Stuff/Mouse Double Click A.wav" id="24_pq17c"]
+[ext_resource type="AudioStream" uid="uid://bbmbeoqe1kfs6" path="res://assets/sfx/Computer Stuff/Disk Insert A.wav" id="25_pruc5"]
+[ext_resource type="AudioStream" uid="uid://cuibervjg6tfw" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 2.wav" id="26_op8e3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lex3h"]
 shader = ExtResource("2_kser7")
@@ -71,7 +84,7 @@ script = ExtResource("1_yeiim")
 [node name="WorldAudioManager" type="Node" parent="."]
 script = ExtResource("2_sikfj")
 
-[node name="Ambiance" type="AudioStreamPlayer" parent="WorldAudioManager"]
+[node name="Office Ambiance" type="AudioStreamPlayer" parent="WorldAudioManager"]
 stream = ExtResource("3_yv5i5")
 volume_db = -5.0
 autoplay = true
@@ -91,7 +104,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(400, 192)
+position = Vector2(576, 416)
 zoom = Vector2(2.5, 2.5)
 process_callback = 0
 
@@ -143,7 +156,7 @@ grow_vertical = 2
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(400, 192)
+position = Vector2(576, 416)
 script = ExtResource("3_moanx")
 follow_mode = 1
 follow_target = NodePath("../Player")
@@ -151,6 +164,37 @@ zoom = Vector2(2.5, 2.5)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_13vx8")
 draw_limits = true
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Fridge_buzz" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(576, 256)
+stream = ExtResource("4_ve2x1")
+volume_db = -2.84
+autoplay = true
+max_distance = 200.0
+attenuation = 9.18959
+bus = &"Ambient"
+
+[node name="RandomAmbientSfx" parent="Audio" instance=ExtResource("15_foy0e")]
+position = Vector2(208, 272)
+sounds = Array[AudioStream]([ExtResource("16_r7oec"), ExtResource("17_hflpm"), ExtResource("18_6800i"), ExtResource("19_nkhwt"), ExtResource("20_ff258"), ExtResource("21_jagc7"), ExtResource("22_cu87x"), ExtResource("23_yv2o3")])
+
+[node name="RandomAmbientSfx2" parent="Audio" instance=ExtResource("15_foy0e")]
+position = Vector2(352, 320)
+sounds = Array[AudioStream]([ExtResource("16_r7oec"), ExtResource("17_hflpm"), ExtResource("18_6800i"), ExtResource("19_nkhwt"), ExtResource("20_ff258"), ExtResource("21_jagc7"), ExtResource("22_cu87x"), ExtResource("23_yv2o3"), ExtResource("24_pq17c"), ExtResource("25_pruc5")])
+audio_max_distance = 150.0
+
+[node name="Radio" type="AudioStreamPlayer2D" parent="Audio"]
+visible = false
+position = Vector2(448, 240)
+stream = ExtResource("26_op8e3")
+volume_db = -10.145
+autoplay = true
+max_distance = 250.0
+attenuation = 5.65687
+panning_strength = 2.18
+bus = &"Ambient"
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -167,7 +211,7 @@ tile_map_data = PackedByteArray("AAARAAgAAQAGAAAAAAARAAkAAQAGAAEAAAARAAoAAQAGAAI
 tile_set = ExtResource("9_psngx")
 
 [node name="decoration1" type="TileMapLayer" parent="Tiles"]
-tile_map_data = PackedByteArray("AAASAAgAAQAMAAgAAAARAAgAAQAKAAkAAAARAAkAAQABAA8AAAALABAAAQAKAB4AAAALABEAAQAKAB8AAAAMABAAAQALAB4AAAAMABEAAQALAB8AAAANABAAAQAMAB4AAAANABEAAQAMAB8AAAATABMAAQAHAB4AAAATABQAAQAHAB8AAAAUABMAAQAIAB4AAAAUABQAAQAIAB8AAAAVABMAAQAJAB4AAAAVABQAAQAJAB8AAAAWABMAAQAHAB4AAAAWABQAAQAHAB8AAAAXABMAAQAIAB4AAAAXABQAAQAIAB8AAAAYABMAAQAJAB4AAAAYABQAAQAJAB8AAAAYAAgAAQAHABwAAAAYAAkAAQAHAB0AAAAZAAgAAQAIABwAAAAZAAkAAQAIAB0AAAAaAAgAAQAIABwAAAAaAAkAAQAIAB0AAAAbAAgAAQAIABwAAAAbAAkAAQAIAB0AAAAcAAgAAQAIABwAAAAcAAkAAQAIAB0AAAAdAAgAAQAIABwAAAAdAAkAAQAIAB0AAAAeAAgAAQAJABwAAAAeAAkAAQAJAB0AAAAOABEAAQAKABAAAAAOABIAAQAJADEAAAATABcAAQAHABwAAAATABgAAQAHAB0AAAAUABcAAQAIABwAAAAUABgAAQAIAB0AAAAVABcAAQAJABwAAAAVABgAAQAJAB0AAAAWABcAAQAHABwAAAAWABgAAQAHAB0AAAAXABcAAQAIABwAAAAXABgAAQAIAB0AAAAYABcAAQAJABwAAAAYABgAAQAJAB0AAAAOABMAAQAJADIAAAAPAAcAAQAMADEAAAAPAAgAAQAMADIAAAAQAAcAAQANADEAAAAQAAgAAQANADIAAAAUAAcAAQAMADEAAAAUAAgAAQAMADIAAAAVAAcAAQANADEAAAAVAAgAAQANADIAAAAPAAoAAQAMAC8AAAAPAAsAAQAMADAAAAAVAAkAAQAMAC8AAAAVAAoAAQAMADAAAAA=")
+tile_map_data = PackedByteArray("AAASAAgAAQAMAAgAAAARAAgAAQAKAAkAAAARAAkAAQABAA8AAAALABAAAQAKAB4AAAALABEAAQAKAB8AAAAMABAAAQALAB4AAAAMABEAAQALAB8AAAANABAAAQAMAB4AAAANABEAAQAMAB8AAAATABMAAQAHAB4AAAATABQAAQAHAB8AAAAUABMAAQAIAB4AAAAUABQAAQAIAB8AAAAVABMAAQAJAB4AAAAVABQAAQAJAB8AAAAWABMAAQAHAB4AAAAWABQAAQAHAB8AAAAXABMAAQAIAB4AAAAXABQAAQAIAB8AAAAYABMAAQAJAB4AAAAYABQAAQAJAB8AAAAYAAgAAQAHABwAAAAYAAkAAQAHAB0AAAAZAAgAAQAIABwAAAAZAAkAAQAIAB0AAAAaAAgAAQAIABwAAAAaAAkAAQAIAB0AAAAbAAgAAQAIABwAAAAbAAkAAQAIAB0AAAAcAAgAAQAIABwAAAAcAAkAAQAIAB0AAAAdAAgAAQAIABwAAAAdAAkAAQAIAB0AAAAeAAgAAQAJABwAAAAeAAkAAQAJAB0AAAAOABEAAQAKABAAAAAOABIAAQAJADEAAAATABcAAQAHABwAAAATABgAAQAHAB0AAAAUABcAAQAIABwAAAAUABgAAQAIAB0AAAAVABcAAQAJABwAAAAVABgAAQAJAB0AAAAWABcAAQAHABwAAAAWABgAAQAHAB0AAAAXABcAAQAIABwAAAAXABgAAQAIAB0AAAAYABcAAQAJABwAAAAYABgAAQAJAB0AAAAOABMAAQAJADIAAAAPAAcAAQAMADEAAAAPAAgAAQAMADIAAAAQAAcAAQANADEAAAAQAAgAAQANADIAAAAUAAcAAQAMADEAAAAUAAgAAQAMADIAAAAVAAcAAQANADEAAAAVAAgAAQANADIAAAAPAAoAAQAMAC8AAAAPAAsAAQAMADAAAAAVAAkAAQAMAC8AAAAVAAoAAQAMADAAAAAbAA4AAwAAACcAAAAbAA8AAwAAACgAAAA=")
 tile_set = ExtResource("9_psngx")
 
 [node name="decoration2" type="TileMapLayer" parent="Tiles"]
@@ -187,7 +231,7 @@ tile_map_data = PackedByteArray("AAAhABYAAAAAACUAAAAhABcAAAAAACYAAAAhABgAAAAAACc
 tile_set = ExtResource("13_qdgaa")
 
 [node name="Player" parent="." instance=ExtResource("2_veukb")]
-position = Vector2(400, 192)
+position = Vector2(576, 416)
 
 [node name="rae" parent="." instance=ExtResource("15_hpwqc")]
 position = Vector2(192, 288)

@@ -8,20 +8,20 @@ else:
 	Rae: Seems like every day there is a new issue around here.
 	- Call a handyman
 		Rae: I will have someone come by as soon as possible.
-		do power_manager.lose_profits()
-		do power_manager.gain_authority()
+		do power_manager.lose_profits(5.0)
+		do power_manager.gain_authority(1.0)
 	- Buy a new printer
 		Rae: Seriously! Wow.
 		[wait time="0.5"]
 		Rae: I did not expect that
-		do power_manager.lose_profits()
-		do power_manager.gain_moral()
+		do power_manager.lose_profits(1.0)
+		do power_manager.gain_moral(5.0)
 	- Have Carl take a look
 		Rae: This is why nothing around here works.
-		do power_manager.lose_moral()
-		do power_manager.gain_authority()
+		do power_manager.lose_moral(3.0)
+		do power_manager.gain_authority(1.0)
 	- Hit the printer
 		Rae: What was that supposed to do?
-		do power_manager.lose_reputation()
-		do power_manager.gain_authority()
+		do power_manager.lose_reputation(3.0)
+		do power_manager.gain_authority(1.0)
 [signal arg="end"]

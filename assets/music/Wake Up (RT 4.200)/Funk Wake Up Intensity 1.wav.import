@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c84e4h2sg31lc"
+path="res://.godot/imported/Funk Wake Up Intensity 1.wav-b01c0ad64e952fd44a57271efbd760c5.sample"
+
+[deps]
+
+source_file="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 1.wav"
+dest_files=["res://.godot/imported/Funk Wake Up Intensity 1.wav-b01c0ad64e952fd44a57271efbd760c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

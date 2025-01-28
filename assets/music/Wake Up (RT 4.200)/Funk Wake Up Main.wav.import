@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wtlosq43ksxi"
+path="res://.godot/imported/Funk Wake Up Main.wav-ecbafe76698836a30f0adf1366f9171b.sample"
+
+[deps]
+
+source_file="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Main.wav"
+dest_files=["res://.godot/imported/Funk Wake Up Main.wav-ecbafe76698836a30f0adf1366f9171b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
