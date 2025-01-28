@@ -21,9 +21,11 @@ overrides = {}
 script = ExtResource("1_jf350")
 scene = ExtResource("3_i60ji")
 overrides = {
+"behaviour_direction": "Vector2(0.1, -1)",
+"behaviour_distance": "20.0",
 "box_corner_radius": "1.0",
 "box_modulate": "Color(0, 0, 0, 1)",
-"box_padding": "Vector2(50, 20)",
+"box_padding": "Vector2(75, 20)",
 "choices_base_theme": "\"res://misc/custom_choices.tres\"",
 "choices_layout_alignment": "0",
 "choices_layout_force_lines": "true",
@@ -32,10 +34,14 @@ overrides = {
 "choices_text_color_hover": "Color(0.929688, 0.929688, 0.929688, 1)",
 "choices_text_font": "\"Vaticanus-G3yVG.ttf\"",
 "choices_text_size": "32.0",
+"name_label_alignment": "1",
 "name_label_box_modulate": "Color(0, 0, 0, 1)",
 "name_label_color": "Color(1, 1, 1, 1)",
 "name_label_font": "\"res://dialouge/styles/Vaticanus-G3yVG.ttf\"",
-"name_label_offset": "Vector2(0, -20)",
+"name_label_font_size": "32.0",
+"name_label_offset": "Vector2(0, -9)",
+"name_label_padding": "Vector2(5, 5)",
+"name_label_use_character_color": "false",
 "normal_font": "\"res://dialouge/styles/Vaticanus-G3yVG.ttf\"",
 "text_color": "Color(1, 1, 1, 1)",
 "text_size": "24.0"

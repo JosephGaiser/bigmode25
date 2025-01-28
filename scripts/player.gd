@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 var input_dir: Vector2 = Vector2.ZERO
-var last_dir: Vector2  = Vector2.ZERO
+var last_dir: Vector2  = Vector2.DOWN  # Set default direction to down
 
 @export var tile_size: int = 16
 @export var speed: float = .4
@@ -45,28 +45,39 @@ func update_interaction_area() -> void:
 
 
 func handle_movement_input() -> void:
+	var direction = Vector2.ZERO
+
 	if Input.is_action_pressed("move_up"):
-		try_change_direction(Vector2.UP)
+		direction = Vector2.UP
 	elif Input.is_action_pressed("move_down"):
-		try_change_direction(Vector2.DOWN)
+		direction = Vector2.DOWN
 	elif Input.is_action_pressed("move_left"):
-		try_change_direction(Vector2.LEFT)
+		direction = Vector2.LEFT
 	elif Input.is_action_pressed("move_right"):
-		try_change_direction(Vector2.RIGHT)
+		direction = Vector2.RIGHT
+
+	if direction != Vector2.ZERO:
+		try_change_direction(direction)
+	else:
+		# If no movement input, play idle animation
+		play_idle_animation()
 
 
 func try_change_direction(direction: Vector2) -> void:
 	last_dir = direction
-	update_animation(direction)
 
 	ray_cast.target_position = direction * tile_size
 	ray_cast.force_raycast_update()
 
 	if !ray_cast.is_colliding():
 		move(direction)
+		play_walk_animation(direction)
+	else:
+		# If movement is blocked, play idle animation
+		play_idle_animation()
 
 
-func update_animation(direction: Vector2) -> void:
+func play_walk_animation(direction: Vector2) -> void:
 	var anim_name: String = ""
 	match direction:
 		Vector2.UP:
@@ -82,27 +93,34 @@ func update_animation(direction: Vector2) -> void:
 		animated_sprite_2d.play(anim_name)
 
 
+func play_idle_animation() -> void:
+	var anim_name: String = ""
+	match last_dir:
+		Vector2.UP:
+			anim_name = "idle_up"
+		Vector2.DOWN:
+			anim_name = "idle_down"
+		Vector2.LEFT:
+			anim_name = "idle_left"
+		Vector2.RIGHT:
+			anim_name = "idle_right"
+
+	if animated_sprite_2d.animation != anim_name:
+		animated_sprite_2d.play(anim_name)
+
+
 func move(direction: Vector2) -> void:
 	moving = true
 
-	var tween: Tween        = create_tween()
+	var tween: Tween = create_tween()
 	var target_pos: Vector2 = position + direction * tile_size
 	tween.tween_property(self, "position", target_pos, speed)
 	tween.tween_callback(stop_moving)
 
 
 func stop_moving() -> void:
-	match last_dir:
-		Vector2.UP:
-			animated_sprite_2d.play("idle_up")
-		Vector2.DOWN:
-			animated_sprite_2d.play("idle_down")
-		Vector2.LEFT:
-			animated_sprite_2d.play("idle_left")
-		Vector2.RIGHT:
-			animated_sprite_2d.play("idle_right")
-
 	moving = false
+	play_idle_animation()
 
 
 func interact() -> void:
@@ -113,8 +131,11 @@ func interact() -> void:
 	for obj in interactables:
 		if obj.has_method("interact"):
 			interacting = true
+			play_idle_animation()  # Ensure we're in idle state when starting interaction
 			obj.call("interact", self)
 			break
 
+
 func end_interaction():
 	interacting = false
+	play_idle_animation()  # Ensure we return to idle state after interaction
