@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bghathf6glpnu"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bghathf6glpnu"]
 
 [ext_resource type="StyleBox" uid="uid://cenqq86ax7ggv" path="res://misc/custom_bar.tres" id="1_lc501"]
+[ext_resource type="FontFile" uid="uid://v51lfg2pxryq" path="res://dialouge/styles/Vaticanus-G3yVG.ttf" id="2_gom5q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j6yq"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7q6b"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,5 +16,8 @@ shadow_size = 2
 anti_aliasing = false
 
 [resource]
+default_font = ExtResource("2_gom5q")
+LineEdit/font_sizes/font_size = 24
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_3j6yq")
 ProgressBar/styles/background = ExtResource("1_lc501")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_v7q6b")

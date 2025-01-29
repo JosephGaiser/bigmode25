@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="2_cwh0m"]
 [ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="3_i60ji"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="4_bj5c0"]
-[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="6_7xy0x"]
+[ext_resource type="PackedScene" uid="uid://c6gr8utcwqexg" path="res://dialouge/styles/SimpleTextInputBox/custom_simple_text_input_box.tscn" id="5_7opee"]
 
 [sub_resource type="Resource" id="Resource_e81di"]
 script = ExtResource("1_jf350")
@@ -49,7 +49,7 @@ overrides = {
 
 [sub_resource type="Resource" id="Resource_lv6l6"]
 script = ExtResource("1_jf350")
-scene = ExtResource("6_7xy0x")
+scene = ExtResource("5_7opee")
 overrides = {}
 
 [resource]
@@ -64,4 +64,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_jf350")]([])
-metadata/_latest_layer = "11"
+metadata/_latest_layer = "13"

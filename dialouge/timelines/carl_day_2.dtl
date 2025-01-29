@@ -1,4 +1,4 @@
-set 
+set {Carl.day_2} = true
 Carl: Not feeling well today
 [wait time="1.0"]
 Carl: I guess I have not felt well in... a while.

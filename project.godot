@@ -31,6 +31,7 @@ directories/dch_directory={
 "boss": "res://dialouge/characters/boss.dch",
 "chet": "res://dialouge/characters/chet.dch",
 "director": "res://dialouge/characters/director.dch",
+"samuel": "res://dialouge/characters/samuel.dch",
 "vendor": "res://dialouge/characters/vendor.dch"
 }
 directories/dtl_directory={
@@ -41,6 +42,8 @@ directories/dtl_directory={
 "carl_day_1": "res://dialouge/timelines/carl_day_1.dtl",
 "carl_day_2": "res://dialouge/timelines/carl_day_2.dtl",
 "intro": "res://dialouge/timelines/intro.dtl",
+"samuel": "res://dialouge/timelines/day_1/samuel.dtl",
+"samuel_day_1": "res://dialouge/timelines/samuel_day_1.dtl",
 "vendor": "res://dialouge/timelines/vendor.dtl",
 "vendor_sell": "res://dialouge/timelines/vendor_sell.dtl"
 }
@@ -64,28 +67,36 @@ variables={
 },
 "Chet": {
 "day_1": false,
-"day_2": "",
-"day_3": "",
-"day_4": "",
-"day_5": ""
+"day_2": false,
+"day_3": false,
+"day_4": false,
+"day_5": false
 },
 "Director": {
-"day_1": "",
-"day_2": "",
-"day_3": "",
-"day_4": "",
-"day_5": "",
+"day_1": false,
+"day_2": false,
+"day_3": false,
+"day_4": false,
+"day_5": false,
 "intro": false
 },
 "Rae": {
 "day_1": false,
-"day_2": "",
-"day_3": "",
-"day_4": "",
-"day_5": ""
+"day_2": false,
+"day_3": false,
+"day_4": false,
+"day_5": false
+},
+"Samuel": {
+"day_1": false,
+"day_2": false,
+"day_3": false,
+"day_4": false,
+"day_5": false
 },
 "church_name": "foo church",
-"coin_name": "foo coin"
+"coin_name": "foo coin",
+"sons_name": "foo"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.04
@@ -121,6 +132,10 @@ window/stretch/scale_mode="integer"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+
+[gui]
+
+theme/custom_font="res://dialouge/styles/Vaticanus-G3yVG.ttf"
 
 [input]
 

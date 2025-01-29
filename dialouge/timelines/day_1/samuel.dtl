@@ -1,0 +1,36 @@
+if {Samuel.day_1} == true:
+	samuel: Pretty busy right now...
+	[end_timeline]
+set {Samuel.day_1} = true
+samuel: Yes, Monday...
+samuel: The first day of the week...
+samuel: Well for some of us...
+samuel: I was here late last night again.
+- Show genuine appreciation
+	samuel: I appreciate that
+	samuel: You remember my son?
+	[text_input var="sons_name"]
+	samuel: Yes! {sons_name} has been talking about you
+	samuel: He said he wants to be a big important boss like you
+	[wait time="1.0"]
+	samuel: I wish he looked at me that way...
+	do power_manager.lose_moral(2.0)
+	do power_manager.gain_reputation(15.0)
+- Talk about your weekend
+	[wait time="0.6"]
+	samuel: well, isn't that just great.
+	samuel: You know I have a family too, right?
+	- Bluff
+		samuel: What is my sons name
+		[text_input var="sons_name"]
+		[wait time="0.6"]
+		samuel: huh...
+		samuel: You did remember {sons_name}
+		do power_manager.gain_reputation(15.0)
+	- Be Honest
+		samuel: I have a son...
+		samuel: You have met him before. Multiple times.
+		samuel: Remember...
+		[text_input var="sons_name"]
+		samuel: no.. his name is not {sons_name}
+		do power_manager.lose_reputation(15.0)

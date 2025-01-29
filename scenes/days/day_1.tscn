@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://mmn6waqwcev6"]
+[gd_scene load_steps=41 format=4 uid="uid://mmn6waqwcev6"]
 
 [ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="1_ldd72"]
 [ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="2_2054p"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ckyid1ktvlc6s" path="res://scenes/billy.tscn" id="27_tclcr"]
 [ext_resource type="PackedScene" uid="uid://dsenf41d5nhyc" path="res://scenes/carl.tscn" id="28_bkmgy"]
 [ext_resource type="PackedScene" uid="uid://cofqirycwlylf" path="res://scenes/chet.tscn" id="29_8qqgp"]
+[ext_resource type="PackedScene" uid="uid://d3ktigb2aq74d" path="res://scenes/samuel.tscn" id="29_wds4h"]
 [ext_resource type="PackedScene" uid="uid://ycbyy6kn1yln" path="res://scenes/ui.tscn" id="30_pxwr0"]
 [ext_resource type="Shader" path="res://shaders/steinberg.gdshader" id="31_oac5q"]
 [ext_resource type="Shader" path="res://shaders/dither.gdshader" id="32_1wult"]
@@ -203,6 +204,9 @@ position = Vector2(384, 336)
 [node name="vendor" parent="." instance=ExtResource("27_ecqhf")]
 position = Vector2(544, 256)
 
+[node name="samuel" parent="." instance=ExtResource("29_wds4h")]
+position = Vector2(304, 400)
+
 [node name="Player" parent="." instance=ExtResource("25_k7o1p")]
 position = Vector2(544, 272)
 
@@ -218,7 +222,6 @@ pause_between_stats = 0.66
 [node name="Shaders" type="CanvasLayer" parent="."]
 
 [node name="Dither" type="CanvasLayer" parent="Shaders"]
-visible = false
 
 [node name="Steinberg" type="ColorRect" parent="Shaders/Dither"]
 material = SubResource("ShaderMaterial_0txfy")
@@ -239,7 +242,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Palette" type="CanvasLayer" parent="Shaders"]
-visible = false
 
 [node name="DitherPalette" type="ColorRect" parent="Shaders/Palette"]
 material = SubResource("ShaderMaterial_7e04y")

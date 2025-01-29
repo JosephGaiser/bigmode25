@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6gr8utcwqexg"]
+
+[ext_resource type="Script" path="res://dialouge/styles/SimpleTextInputBox/text_input_layer.gd" id="1_7ahrn"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/TextInput/node_text_input.gd" id="1_mxdep"]
+[ext_resource type="FontFile" uid="uid://v51lfg2pxryq" path="res://dialouge/styles/Vaticanus-G3yVG.ttf" id="3_1nmar"]
+[ext_resource type="Theme" uid="uid://bghathf6glpnu" path="res://misc/ui_theme.tres" id="3_ctt7x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dpjm"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8xwp1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0x0lo"]
+font = ExtResource("3_1nmar")
+font_size = 32
+
+[node name="TextInputLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7ahrn")
+
+[node name="DialogicNode_TextInput" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -50.0
+offset_right = 210.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mxdep")
+input_line_edit = NodePath("TextInputPanel/VBoxContainer/InputField")
+text_label = NodePath("TextInputPanel/VBoxContainer/TextLabel")
+confirmation_button = NodePath("TextInputPanel/VBoxContainer/ConfirmationButton")
+metadata/_edit_layout_mode = 1
+
+[node name="TextInputPanel" type="PanelContainer" parent="DialogicNode_TextInput"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ctt7x")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3dpjm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogicNode_TextInput/TextInputPanel"]
+layout_mode = 2
+theme = ExtResource("3_ctt7x")
+
+[node name="TextLabel" type="Label" parent="DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_8xwp1")
+text = "Please enter some text:"
+label_settings = SubResource("LabelSettings_0x0lo")
+autowrap_mode = 3
+
+[node name="InputField" type="LineEdit" parent="DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
+layout_mode = 2
+text = "this is a name"
+max_length = 16
+flat = true
+caret_blink = true
+caret_force_displayed = true
+
+[node name="ConfirmationButton" type="Button" parent="DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Confirm"
+flat = true
