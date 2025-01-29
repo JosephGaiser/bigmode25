@@ -29,13 +29,15 @@ directories/dch_directory={
 "Rae": "res://dialouge/characters/Rae.dch",
 "billy": "res://dialouge/characters/billy.dch",
 "boss": "res://dialouge/characters/boss.dch",
-"chet": "res://dialouge/characters/chet.dch"
+"chet": "res://dialouge/characters/chet.dch",
+"director": "res://dialouge/characters/director.dch"
 }
 directories/dtl_directory={
 "BillyTech": "res://dialouge/timelines/BillyTech.dtl",
 "CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl",
 "ChetChurch": "res://dialouge/timelines/ChetChurch.dtl",
-"RaePinter": "res://dialouge/timelines/RaePrinter.dtl"
+"RaePinter": "res://dialouge/timelines/RaePrinter.dtl",
+"intro": "res://dialouge/timelines/intro.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialouge/styles/custom_bubble.tres", "res://misc/New_File.tres"]
@@ -49,6 +51,9 @@ variables={
 },
 "Chet": {
 "day_1": false
+},
+"Director": {
+"intro": false
 },
 "Rae": {
 "day_1": false

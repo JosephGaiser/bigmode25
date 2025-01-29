@@ -28,146 +28,293 @@ font = ExtResource("3_j3kob")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" node_paths=PackedStringArray("morale_bar", "profits_bar", "reputation_bar", "authorithy_bar", "audio_player")]
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -720.0
-offset_right = -640.0
-offset_bottom = -720.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 0
 size_flags_horizontal = 4
 script = ExtResource("1_blk7w")
+morale_bar = NodePath("Report/Bars/MoraleBar")
+profits_bar = NodePath("Report/Bars/ProfitsBar")
+reputation_bar = NodePath("Report/Bars/ReputationBar")
+authorithy_bar = NodePath("Report/Bars/AuthorithyBar")
+audio_player = NodePath("Report/AudioStreamPlayer")
 slow_change_sound = ExtResource("2_dqhyj")
 medium_change_sound = ExtResource("3_xfh00")
 fast_change_sound = ExtResource("4_rl17i")
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="Monday" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="ColorRect3" type="ColorRect" parent="Monday"]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 287.0
-offset_right = 95.0
-offset_bottom = 327.0
-scale = Vector2(1.24175, 2.34757)
+offset_left = 53.0
+offset_top = 282.0
+offset_right = 93.0
+offset_bottom = 322.0
+scale = Vector2(1.12175, 2.34757)
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="."]
+[node name="ColorRect4" type="ColorRect" parent="Monday"]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 290.0
-offset_right = 98.0
-offset_bottom = 330.0
-scale = Vector2(1.07566, 3.48784)
+offset_left = 56.0
+offset_top = 285.0
+offset_right = 96.0
+offset_bottom = 325.0
+scale = Vector2(0.95566, 3.48784)
 
-[node name="Day" type="Label" parent="."]
+[node name="Day" type="Label" parent="Monday"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 292.0
-offset_right = 145.0
-offset_bottom = 315.0
+offset_left = 60.0
+offset_top = 287.0
+offset_right = 140.0
+offset_bottom = 310.0
 text = "MON"
 label_settings = SubResource("LabelSettings_yk1jc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Tuesday" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 80.0
+offset_bottom = 48.0
+
+[node name="ColorRect3" type="ColorRect" parent="Tuesday"]
 layout_mode = 0
-offset_left = 327.0
-offset_top = 237.0
-offset_right = 367.0
-offset_bottom = 277.0
+offset_left = 53.0
+offset_top = 282.0
+offset_right = 93.0
+offset_bottom = 322.0
+scale = Vector2(1.12175, 2.34757)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Tuesday"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 285.0
+offset_right = 96.0
+offset_bottom = 325.0
+scale = Vector2(0.95566, 3.48784)
+
+[node name="Day" type="Label" parent="Tuesday"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 287.0
+offset_right = 140.0
+offset_bottom = 310.0
+text = "TUE
+"
+label_settings = SubResource("LabelSettings_yk1jc")
+
+[node name="Wednesday" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 48.0
+
+[node name="ColorRect3" type="ColorRect" parent="Wednesday"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 282.0
+offset_right = 93.0
+offset_bottom = 322.0
+scale = Vector2(1.12175, 2.34757)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Wednesday"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 285.0
+offset_right = 96.0
+offset_bottom = 325.0
+scale = Vector2(0.95566, 3.48784)
+
+[node name="Day" type="Label" parent="Wednesday"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 287.0
+offset_right = 140.0
+offset_bottom = 310.0
+text = "WED"
+label_settings = SubResource("LabelSettings_yk1jc")
+
+[node name="Thursday" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 176.0
+offset_top = 48.0
+offset_right = 176.0
+offset_bottom = 48.0
+
+[node name="ColorRect3" type="ColorRect" parent="Thursday"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 282.0
+offset_right = 93.0
+offset_bottom = 322.0
+scale = Vector2(1.12175, 2.34757)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Thursday"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 285.0
+offset_right = 96.0
+offset_bottom = 325.0
+scale = Vector2(0.95566, 3.48784)
+
+[node name="Day" type="Label" parent="Thursday"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 287.0
+offset_right = 140.0
+offset_bottom = 310.0
+text = "THU"
+label_settings = SubResource("LabelSettings_yk1jc")
+
+[node name="Friday" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 224.0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 48.0
+
+[node name="ColorRect3" type="ColorRect" parent="Friday"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 282.0
+offset_right = 93.0
+offset_bottom = 322.0
+scale = Vector2(1.12175, 2.34757)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Friday"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 285.0
+offset_right = 96.0
+offset_bottom = 325.0
+scale = Vector2(0.95566, 3.48784)
+
+[node name="Day" type="Label" parent="Friday"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 287.0
+offset_right = 140.0
+offset_bottom = 310.0
+text = "FRI
+"
+label_settings = SubResource("LabelSettings_yk1jc")
+
+[node name="Report" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 80.0
+
+[node name="ColorRect" type="ColorRect" parent="Report"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 232.0
+offset_right = 365.0
+offset_bottom = 272.0
 scale = Vector2(5.70714, 4.89162)
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="Report"]
 layout_mode = 0
-offset_left = 330.0
-offset_top = 240.0
-offset_right = 370.0
-offset_bottom = 280.0
+offset_left = 328.0
+offset_top = 235.0
+offset_right = 368.0
+offset_bottom = 275.0
 scale = Vector2(5.55523, 4.70311)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Bars" type="VBoxContainer" parent="Report"]
 layout_mode = 1
-offset_left = 377.0
-offset_top = 266.0
-offset_right = 546.0
-offset_bottom = 306.0
+offset_left = 375.0
+offset_top = 261.0
+offset_right = 544.0
+offset_bottom = 301.0
 scale = Vector2(1, 1.08)
 
-[node name="MoraleBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="MoraleBar" type="ProgressBar" parent="Report/Bars"]
 layout_mode = 2
 theme = ExtResource("2_nw3mq")
 value = 10.0
 show_percentage = false
 
-[node name="ProfitsBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="ProfitsBar" type="ProgressBar" parent="Report/Bars"]
 layout_mode = 2
 theme = ExtResource("2_nw3mq")
 value = 10.0
 show_percentage = false
 
-[node name="ReputationBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="ReputationBar" type="ProgressBar" parent="Report/Bars"]
 layout_mode = 2
 theme = ExtResource("2_nw3mq")
 value = 10.0
 show_percentage = false
 
-[node name="AuthorithyBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="AuthorithyBar" type="ProgressBar" parent="Report/Bars"]
 layout_mode = 2
 theme = ExtResource("2_nw3mq")
 value = 10.0
 show_percentage = false
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="Labels" type="VBoxContainer" parent="Report"]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 266.0
-offset_right = 375.0
-offset_bottom = 310.0
+offset_left = 333.0
+offset_top = 261.0
+offset_right = 373.0
+offset_bottom = 305.0
 
-[node name="Morale" type="Label" parent="VBoxContainer2"]
+[node name="Morale" type="Label" parent="Report/Labels"]
 layout_mode = 2
 text = "Morale"
 label_settings = SubResource("LabelSettings_fekwl")
 
-[node name="Profit" type="Label" parent="VBoxContainer2"]
+[node name="Profit" type="Label" parent="Report/Labels"]
 layout_mode = 2
 text = "Profit"
 label_settings = SubResource("LabelSettings_fekwl")
 
-[node name="Reputation" type="Label" parent="VBoxContainer2"]
+[node name="Reputation" type="Label" parent="Report/Labels"]
 layout_mode = 2
 text = "Reputation"
 label_settings = SubResource("LabelSettings_fekwl")
 
-[node name="Authority" type="Label" parent="VBoxContainer2"]
+[node name="Authority" type="Label" parent="Report/Labels"]
 layout_mode = 2
 text = "Authority
 "
 label_settings = SubResource("LabelSettings_fekwl")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="Report"]
 layout_mode = 0
-offset_left = 334.0
-offset_top = 244.0
-offset_right = 468.0
-offset_bottom = 267.0
+offset_left = 332.0
+offset_top = 239.0
+offset_right = 466.0
+offset_bottom = 262.0
 text = "IMPORTANT REPORT"
 label_settings = SubResource("LabelSettings_6b4v8")
 
-[node name="sub label" type="Label" parent="."]
+[node name="sub label" type="Label" parent="Report"]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 257.0
-offset_right = 487.0
-offset_bottom = 280.0
+offset_left = 333.0
+offset_top = 252.0
+offset_right = 485.0
+offset_bottom = 275.0
 text = "Import-tant co. ltd."
 label_settings = SubResource("LabelSettings_duc72")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Report"]
 volume_db = -9.0
 bus = &"Sfx"

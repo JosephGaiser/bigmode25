@@ -1,0 +1,38 @@
+set {Director.intro} = true
+director: Good, you answered.
+director: As you know the board doesn't like to be kept waiting.
+[wait time=".3"]
+director: You are to prove your ability to be a big fish
+director: in a small pond.
+director: A very small pond.
+director: Do this, and you may see how truly small your pond was...
+[wait time=".3"]
+director: Fail us and...
+director: You would be wise to not fail us...
+[wait time="1.0"]
+director: You have been doing well... Just know the board is always watching.
+- Respond Enthusiastically
+	director: I see
+	director: Your first decison has been Naive.
+- Remain Silent
+	director: I see
+	director: Your first decision has been wise.
+director: Your decisions will matter more than you realize.
+director: Make the wrong decisions...
+do power_manager.lose_authority(25.0)
+[wait time="1.0"]
+director: Make the right decisions...
+do power_manager.gain_profits(25.0)
+[wait time="1.0"]
+director: Make a tough decision...
+do power_manager.lose_reputation(25.0)
+do power_manager.gain_moral(25.0)
+[wait time="1.0"]
+director: you understand....
+[wait time="0.5"]
+director: we will call you.
+do power_manager.gain_authority(25.0)
+do power_manager.lose_profits(25.0)
+do power_manager.gain_reputation(25.0)
+do power_manager.lose_moral(25.0)
+

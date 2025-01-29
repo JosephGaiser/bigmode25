@@ -2,10 +2,11 @@ class_name Ui
 extends Control
 
 @export_group("Progress Bars")
-@onready var morale_bar: ProgressBar = $VBoxContainer/MoraleBar
-@onready var profits_bar: ProgressBar = $VBoxContainer/ProfitsBar
-@onready var reputation_bar: ProgressBar = $VBoxContainer/ReputationBar
-@onready var authorithy_bar: ProgressBar = $VBoxContainer/AuthorithyBar
+@export var morale_bar: ProgressBar
+@export var profits_bar: ProgressBar
+@export var reputation_bar: ProgressBar
+@export var authorithy_bar: ProgressBar
+@export var audio_player: AudioStreamPlayer
 
 @export_group("Sound Effects")
 @export var slow_change_sound: AudioStream
@@ -16,7 +17,7 @@ extends Control
 @export var tween_duration: float = 1.0  # Duration of each bar's animation
 @export var pause_between_stats: float = 0.5  # Pause between each stat update
 
-@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 # Store previous values to detect changes
 var previous_values: Dictionary = {}

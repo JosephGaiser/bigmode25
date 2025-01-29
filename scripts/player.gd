@@ -18,6 +18,18 @@ var interacting: bool = false
 
 func _ready():
 	animated_sprite_2d.play("idle_down")
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	#interacting = true
+	#var layout: Node = Dialogic.start("intro")
+	#layout.register_character("director", animated_sprite_2d)
+
+
+func _on_timeline_ended():
+	interacting = false
+
+func _on_dialogic_signal(arg: String):
+	return
 
 
 func _physics_process(delta: float) -> void:

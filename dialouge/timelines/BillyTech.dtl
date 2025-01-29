@@ -13,8 +13,8 @@ billy: Hey Boss! What's up!?
 	[wait time="3.0"]
 	billy: You're CRAZY man, like really! Really had me going there...
 	billy: ha.
-	do power_manager.lose_moral()
-	do power_manager.gain_authority()
+	do power_manager.lose_moral(3.0)
+	do power_manager.gain_authority(7.0)
 - Ask him about his weekend
 	[wait time="1.0"]
 	billy: I have been spending a lot of time stocking and bonding.
@@ -27,21 +27,21 @@ billy: Hey Boss! What's up!?
 	billy: Yea {coin_name}! Fuckin A!
 	billy: sorry... sorry! That was unprofessional, sorry.
 	billy: That really sucked. Anyway about {coin_name}...
-	do power_manager.lose_profits()
-	do power_manager.gain_moral()
+	do power_manager.lose_reputation(4.0)
+	do power_manager.gain_moral(2.0)
 - Be Honest
 	billy: Im good too...
 	[wait time="0.3"]
 	billy: You are still planning on "cutting the fat" right?
 	billy: I love highly dynamic workplace environments!
 	billy: LETS GET DYNAMIC!
-	do power_manager.lose_reputation()
-	do power_manager.gain_moral()
+	do power_manager.lose_reputation(5.0)
+	do power_manager.gain_profits(3.0)
 - Discuss work
 	billy: Oh you need those reports done already?
 	billy: I was actually just parking, most of this morning. so...
 	[wait time="0.6"]
 	billy: I actually need to go make sure I still have the best spot.
-	do power_manager.lose_moral()
+	do power_manager.lose_moral(3.0)
 	do power_manager.gain_profits()
 [signal arg="end"]
