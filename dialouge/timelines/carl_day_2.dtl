@@ -1,0 +1,16 @@
+set 
+Carl: Not feeling well today
+[wait time="1.0"]
+Carl: I guess I have not felt well in... a while.
+[wait time="1.0"]
+Carl: ...
+- Send Carl home early
+	[wait time="1.0"]
+	Carl: \:)
+	do power_manager.gain_moral(20.0)
+	do power_manager.lose_authority(5.0)
+- Wish him well
+	[wait time="1.5"]
+	Carl: ... ok boss
+	do power_manager.gain_authority(5.0)
+	do power_manager.lose_reputation(25.0)

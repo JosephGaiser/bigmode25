@@ -30,33 +30,59 @@ directories/dch_directory={
 "billy": "res://dialouge/characters/billy.dch",
 "boss": "res://dialouge/characters/boss.dch",
 "chet": "res://dialouge/characters/chet.dch",
-"director": "res://dialouge/characters/director.dch"
+"director": "res://dialouge/characters/director.dch",
+"vendor": "res://dialouge/characters/vendor.dch"
 }
 directories/dtl_directory={
 "BillyTech": "res://dialouge/timelines/BillyTech.dtl",
 "CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl",
 "ChetChurch": "res://dialouge/timelines/ChetChurch.dtl",
 "RaePinter": "res://dialouge/timelines/RaePrinter.dtl",
-"intro": "res://dialouge/timelines/intro.dtl"
+"carl_day_1": "res://dialouge/timelines/carl_day_1.dtl",
+"carl_day_2": "res://dialouge/timelines/carl_day_2.dtl",
+"intro": "res://dialouge/timelines/intro.dtl",
+"vendor": "res://dialouge/timelines/vendor.dtl",
+"vendor_sell": "res://dialouge/timelines/vendor_sell.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialouge/styles/custom_bubble.tres", "res://misc/New_File.tres"]
 layout/default_style="res://dialouge/styles/custom_bubble.tres"
 variables={
 "Billy": {
-"day_1": false
+"day_1": false,
+"day_2": false,
+"day_3": false,
+"day_4": false,
+"day_5": false
 },
 "Carl": {
-"day_1": false
+"day_1": false,
+"day_2": false,
+"day_3": false,
+"day_4": false,
+"day_5": false
 },
 "Chet": {
-"day_1": false
+"day_1": false,
+"day_2": "",
+"day_3": "",
+"day_4": "",
+"day_5": ""
 },
 "Director": {
+"day_1": "",
+"day_2": "",
+"day_3": "",
+"day_4": "",
+"day_5": "",
 "intro": false
 },
 "Rae": {
-"day_1": false
+"day_1": false,
+"day_2": "",
+"day_3": "",
+"day_4": "",
+"day_5": ""
 },
 "church_name": "foo church",
 "coin_name": "foo coin"

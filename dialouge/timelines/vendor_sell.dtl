@@ -1,0 +1,15 @@
+vendor: What can I get you?
+- Cheery Cola
+	vendor: A crowd favorite!
+	do power_manager.gain_moral(15.0)
+- Dictator Pepper
+	vendor: Yes Sir!
+	do power_manager.gain_authority(15.0)
+- Rooted Beer
+	vendor: A refined palate.
+	do power_manager.gain_reputation(15.0)
+- Nevermind
+	[end_timeline]
+do power_manager.lose_profits(5.0)
+[wait time="1.0"]
+vendor: Thank you, Come again!

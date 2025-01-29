@@ -1,0 +1,137 @@
+[gd_scene load_steps=15 format=3 uid="uid://cw0ndq55r02og"]
+
+[ext_resource type="Script" path="res://scripts/vendor.gd" id="1_gn77g"]
+[ext_resource type="Texture2D" uid="uid://otd34044xy0t" path="res://assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_175.png" id="2_yu3v3"]
+[ext_resource type="PackedScene" uid="uid://dxwb1rs2anlj6" path="res://components/footstep_component.tscn" id="3_kyjdv"]
+[ext_resource type="AudioStream" uid="uid://1xpa7kb27wei" path="res://assets/sfx/Shoe Step Stone Medium A.wav" id="4_vgo2b"]
+[ext_resource type="AudioStream" uid="uid://koai304wqcus" path="res://assets/sfx/Shoe Step Stone Medium B.wav" id="5_citca"]
+[ext_resource type="AudioStream" uid="uid://1dvn6i50upn1" path="res://assets/sfx/Shoe Step Stone Medium C.wav" id="6_7kup4"]
+[ext_resource type="AudioStream" uid="uid://bbhuwpp2febdv" path="res://assets/sfx/Shoe Step Stone Medium D.wav" id="7_q8nn3"]
+[ext_resource type="AudioStream" uid="uid://dbmpioi776p7t" path="res://assets/sfx/Shoe Step Stone Medium E.wav" id="8_4kylb"]
+[ext_resource type="AudioStream" uid="uid://dtwp7hs8by6jn" path="res://assets/sfx/Inverter Buzz Loop.wav" id="9_a81w5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du6xs"]
+atlas = ExtResource("2_yu3v3")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1c73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6xs")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CurveTexture" id="CurveTexture_0bkwi"]
+width = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8lt1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjaq8"]
+size = Vector2(16, 16)
+
+[node name="vendor" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_gn77g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -8)
+sprite_frames = SubResource("SpriteFrames_t1c73")
+animation = &"walk_up"
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.168627)
+position = Vector2(8, 8)
+scale = Vector2(0.390625, 5.75)
+texture = SubResource("CurveTexture_0bkwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_w8lt1")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_mjaq8")
+debug_color = Color(0.729412, 0.913725, 0, 0.0666667)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, -16)
+
+[node name="FootstepComponent" parent="." instance=ExtResource("3_kyjdv")]
+footstep_sounds = Array[AudioStream]([ExtResource("4_vgo2b"), ExtResource("5_citca"), ExtResource("6_7kup4"), ExtResource("7_q8nn3"), ExtResource("8_4kylb")])
+
+[node name="Fridge_buzz" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(576, 256)
+stream = ExtResource("9_a81w5")
+volume_db = -2.84
+autoplay = true
+max_distance = 200.0
+attenuation = 9.18959
+bus = &"Ambient"
