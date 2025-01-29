@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://oyi1kf4b3krq"]
+
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_cqeyy"]
+[ext_resource type="Theme" uid="uid://c4m08a7hcdcyk" path="res://misc/custom_choices.tres" id="1_l513b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbyqg"]
+font_size = 86
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 44
+shadow_color = Color(0, 0, 0, 0.619608)
+shadow_offset = Vector2(21.255, 17.68)
+
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("start_button", "title_label", "transition_animation")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqeyy")
+intro_scene_path = "res://scenes/days/intro.tscn"
+start_button = NodePath("VBoxContainer/StartButton")
+title_label = NodePath("TitleLabel")
+transition_animation = NodePath("AnimationPlayer")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.5
+offset_top = -104.0
+offset_right = 424.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "VERY IMPORTANT BOSS"
+label_settings = SubResource("LabelSettings_tbyqg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -8.0
+offset_right = 176.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l513b")
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "SETTINGS
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "QUIT
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

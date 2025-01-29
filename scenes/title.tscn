@@ -1,0 +1,137 @@
+[gd_scene load_steps=18 format=3 uid="uid://cw0dpjrwm41c1"]
+
+[ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="1_3wofh"]
+[ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="2_bmvyt"]
+[ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="3_odg3j"]
+[ext_resource type="Shader" path="res://shaders/checker.gdshader" id="4_p5eo4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_if0d3"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_bgh0w"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_v12tw"]
+[ext_resource type="PackedScene" uid="uid://oyi1kf4b3krq" path="res://scenes/title_ui.tscn" id="8_qh8iq"]
+[ext_resource type="Shader" path="res://shaders/steinberg.gdshader" id="20_rfnqg"]
+[ext_resource type="Shader" path="res://shaders/dither.gdshader" id="21_kygem"]
+[ext_resource type="Texture2D" uid="uid://dj4in72c40yjb" path="res://assets/toasted40-32x.png" id="22_k6b3l"]
+[ext_resource type="Shader" path="res://shaders/ditherpalette.gdshader" id="23_s1d5m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j4ws5"]
+shader = ExtResource("4_p5eo4")
+shader_parameter/size = 45.0
+shader_parameter/color1 = Color(0, 0, 0, 1)
+shader_parameter/color2 = Color(0.377919, 0.377919, 0.377919, 1)
+shader_parameter/speed = 0.5
+shader_parameter/direction_x = -1.0
+shader_parameter/direction_y = 1.0
+
+[sub_resource type="Resource" id="Resource_po3wk"]
+script = ExtResource("7_v12tw")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j6w38"]
+shader = ExtResource("20_rfnqg")
+shader_parameter/lookup_size = 64.0
+shader_parameter/error_carry = 0.3
+shader_parameter/dither_threshold = 0.595
+shader_parameter/luminance_weights = Vector3(0.218, 0.815, 0.072)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2g4vo"]
+shader = ExtResource("21_kygem")
+shader_parameter/quantize_size = 0.0
+shader_parameter/handle_scale = true
+shader_parameter/handle_subpixels = true
+shader_parameter/dither_enabled = true
+shader_parameter/bayer_pattern = 1.0
+shader_parameter/divisions = 1.0
+shader_parameter/contrast = 4.0
+shader_parameter/shift = 0.0
+shader_parameter/grayscale = true
+shader_parameter/use_palette = false
+shader_parameter/palette = ExtResource("22_k6b3l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecmy6"]
+shader = ExtResource("23_s1d5m")
+shader_parameter/color_dark = Color(0.133333, 0.137255, 0.137255, 1)
+shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
+
+[node name="title" type="Node2D"]
+
+[node name="WorldAudioManager" type="Node" parent="."]
+script = ExtResource("1_3wofh")
+
+[node name="Office Ambiance" type="AudioStreamPlayer" parent="WorldAudioManager"]
+stream = ExtResource("2_bmvyt")
+volume_db = -5.0
+autoplay = true
+bus = &"Ambient"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_odg3j")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_j4ws5")
+offset_left = -876.0
+offset_top = -551.0
+offset_right = 1796.0
+offset_bottom = 1081.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(544, 272)
+zoom = Vector2(2.5, 2.5)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_if0d3")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+top_level = true
+position = Vector2(544, 272)
+script = ExtResource("6_bgh0w")
+follow_mode = 1
+zoom = Vector2(2.5, 2.5)
+snap_to_pixel = true
+tween_resource = SubResource("Resource_po3wk")
+draw_limits = true
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TitleScreen" parent="Menu" instance=ExtResource("8_qh8iq")]
+
+[node name="Shaders" type="CanvasLayer" parent="."]
+
+[node name="Dither" type="CanvasLayer" parent="Shaders"]
+
+[node name="Steinberg" type="ColorRect" parent="Shaders/Dither"]
+material = SubResource("ShaderMaterial_j6w38")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="JankyDither" type="ColorRect" parent="Shaders/Dither"]
+visible = false
+material = SubResource("ShaderMaterial_2g4vo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Palette" type="CanvasLayer" parent="Shaders"]
+
+[node name="DitherPalette" type="ColorRect" parent="Shaders/Palette"]
+material = SubResource("ShaderMaterial_ecmy6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://cfq7c486r7knn"]
+[gd_scene load_steps=36 format=4 uid="uid://cfq7c486r7knn"]
 
 [ext_resource type="Script" path="res://scenes/days/intro.gd" id="1_h4grr"]
 [ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="1_katx0"]
@@ -30,7 +30,6 @@
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="27_50wfe"]
 [ext_resource type="TileSet" uid="uid://jjg3gcm10oh6" path="res://tilesets/bathroom.tres" id="28_cfboh"]
 [ext_resource type="PackedScene" uid="uid://dtb1vpuaceedn" path="res://scenes/player.tscn" id="29_olwj7"]
-[ext_resource type="AudioStream" uid="uid://cghtskdsx5iwv" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Cut 30.wav" id="30_tk6cb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tqjhs"]
 shader = ExtResource("4_jyh81")
@@ -73,9 +72,9 @@ shader = ExtResource("10_6cquq")
 shader_parameter/color_dark = Color(0.133333, 0.137255, 0.137255, 1)
 shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
 
-[node name="Intro" type="Node2D" node_paths=PackedStringArray("intro_position")]
+[node name="Intro" type="Node2D"]
 script = ExtResource("1_h4grr")
-intro_position = NodePath("Phone")
+day_1_scene_path = "res://scenes/days/day_1.tscn"
 
 [node name="WorldAudioManager" type="Node" parent="."]
 script = ExtResource("1_katx0")
@@ -183,18 +182,6 @@ tile_set = ExtResource("28_cfboh")
 [node name="bathroom2" type="TileMapLayer" parent="Tiles"]
 tile_map_data = PackedByteArray("AAAhABYAAAAAACUAAAAhABcAAAAAACYAAAAhABgAAAAAACcAAAAiABcAAAABACYAAAAiABgAAAABACcAAAAjABYAAAACACUAAAAjABcAAAACACYAAAAjABgAAAACACcAAAAkABcAAAAFACsAAAAkABgAAAAFACwAAAAlABcAAAAGACsAAAAlABgAAAAGACwAAAAkABkAAAAFAC0AAAAlABYAAAAHACUAAAA=")
 tile_set = ExtResource("28_cfboh")
-
-[node name="Phone" type="Marker2D" parent="."]
-position = Vector2(296, 160)
-
-[node name="Ringtone" type="AudioStreamPlayer2D" parent="Phone"]
-stream = ExtResource("30_tk6cb")
-volume_db = -10.145
-autoplay = true
-max_distance = 250.0
-attenuation = 5.65687
-panning_strength = 2.18
-bus = &"Ambient"
 
 [node name="Player" parent="." instance=ExtResource("29_olwj7")]
 position = Vector2(288, 128)
