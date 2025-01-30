@@ -8,20 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://h3e2wm1f8tvc" path="res://scenes/days/day_3.tscn" id="5_5afpq"]
 [ext_resource type="PackedScene" uid="uid://cxt4qroel7ucd" path="res://scenes/days/day_4.tscn" id="6_j28qp"]
 [ext_resource type="PackedScene" uid="uid://btwj6i287dcmd" path="res://scenes/days/day_5.tscn" id="7_145wv"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_tbyqg"]
-font_size = 86
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 44
-shadow_color = Color(0, 0, 0, 0.619608)
-shadow_offset = Vector2(21.255, 17.68)
-
-[sub_resource type="LabelSettings" id="LabelSettings_b2026"]
-font_size = 32
-shadow_size = 8
-shadow_color = Color(0, 0, 0, 0.615686)
-shadow_offset = Vector2(3, 3)
+[ext_resource type="LabelSettings" uid="uid://b5rxtjim27lwl" path="res://misc/large_label.tres" id="8_qhulj"]
+[ext_resource type="LabelSettings" uid="uid://d1gg0b14v1h44" path="res://scenes/small_label.tres" id="10_dgke6"]
 
 [node name="TitleScreen" type="Control" node_paths=PackedStringArray("start_button", "skip_button", "title_label", "main_menu", "days_menu", "day_1", "day_2", "day_3", "day_4", "day_5", "skip_back")]
 layout_mode = 3
@@ -64,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "VERY IMPORTANT BOSS"
-label_settings = SubResource("LabelSettings_tbyqg")
+label_settings = ExtResource("8_qhulj")
 
 [node name="main" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -119,7 +107,7 @@ theme = ExtResource("1_l513b")
 [node name="Warning" type="Label" parent="days"]
 layout_mode = 2
 text = "Warning: For best experience, play from beginning"
-label_settings = SubResource("LabelSettings_b2026")
+label_settings = ExtResource("10_dgke6")
 
 [node name="Day1" type="Button" parent="days"]
 layout_mode = 2

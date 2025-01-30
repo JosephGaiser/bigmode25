@@ -1,6 +1,7 @@
 if {Rae.day_2} == true:
 	Rae: Not right now.
 set {Rae.day_2} = true
+do power_manager.lose_moral(100.0)
 Rae: The office has been feeling a little tense.
 Rae: Don't you think we ought to cheer people up?
 Rae: Do you party?
@@ -18,7 +19,7 @@ Rae: Do you party?
 Rae: An Office Birthday Party!
 Rae: Isn't that something!
 label whose_bday
-rae: It was someones birthday recently, right?
+Rae: It was someones birthday recently, right?
 - Carl
 	set {birthday} = "carl"
 	Rae: Great! He is going to love this.

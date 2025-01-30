@@ -17,6 +17,9 @@ var cooldown_timer: Timer
 var check_timer: Timer
 
 
+func is_complete() -> bool:
+	return _get_completion_conditions()
+
 # Virtual method to be overridden by child classes
 func _get_completion_conditions() -> bool:
 	push_error("_get_completion_conditions must be implemented in child class")

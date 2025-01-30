@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0670h6vk3bju"]
+
+[ext_resource type="Script" path="res://scenes/game_over_ui.gd" id="1_17bi8"]
+[ext_resource type="LabelSettings" uid="uid://b5rxtjim27lwl" path="res://misc/large_label.tres" id="1_vpfqq"]
+[ext_resource type="LabelSettings" uid="uid://d1gg0b14v1h44" path="res://scenes/small_label.tres" id="2_fpsbj"]
+[ext_resource type="PackedScene" uid="uid://cw0dpjrwm41c1" path="res://scenes/title.tscn" id="2_ib58t"]
+[ext_resource type="Theme" uid="uid://c4m08a7hcdcyk" path="res://misc/custom_choices.tres" id="3_uj1ta"]
+[ext_resource type="PackedScene" uid="uid://cfq7c486r7knn" path="res://scenes/days/intro.tscn" id="3_xhuur"]
+[ext_resource type="PackedScene" uid="uid://mmn6waqwcev6" path="res://scenes/days/day_1.tscn" id="4_y6k7y"]
+[ext_resource type="PackedScene" uid="uid://wyp6pwen1eps" path="res://scenes/days/day_2.tscn" id="5_ftb6c"]
+[ext_resource type="PackedScene" uid="uid://h3e2wm1f8tvc" path="res://scenes/days/day_3.tscn" id="6_s23nk"]
+[ext_resource type="PackedScene" uid="uid://cxt4qroel7ucd" path="res://scenes/days/day_4.tscn" id="7_cuvi7"]
+[ext_resource type="PackedScene" uid="uid://btwj6i287dcmd" path="res://scenes/days/day_5.tscn" id="8_2ud6m"]
+
+[node name="GameOverUI" type="CanvasLayer" node_paths=PackedStringArray("retry_button", "main_menu_button")]
+layer = 0
+script = ExtResource("1_17bi8")
+title_scene = ExtResource("2_ib58t")
+intro_scene = ExtResource("3_xhuur")
+day_1_scene = ExtResource("4_y6k7y")
+day_2_scene = ExtResource("5_ftb6c")
+day_3_scene = ExtResource("6_s23nk")
+day_4_scene = ExtResource("7_cuvi7")
+day_5_scene = ExtResource("8_2ud6m")
+retry_button = NodePath("Buttons/RetryButton")
+main_menu_button = NodePath("Buttons/MainMenuButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -42.0
+offset_right = 240.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameover_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = ExtResource("1_vpfqq")
+
+[node name="reason_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Your decisions did not please the Director"
+label_settings = ExtResource("2_fpsbj")
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 88.0
+offset_right = 128.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_uj1ta")
+
+[node name="RetryButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "RETRY DAY"
+
+[node name="MainMenuButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "MAIN MENU"

@@ -75,7 +75,9 @@ func trigger_game_over(failed_axis: String) -> void:
 										}
 
 	emit_signal("game_over", game_over_reasons[failed_axis])
-	get_tree().change_scene_to_packed(GAME_OVER)
+	await get_tree().create_timer(3.0).timeout
+	Dialogic.end_timeline()
+	load_scene(GAME_OVER)
 
 
 func get_current_status() -> Dictionary:
@@ -86,6 +88,10 @@ func get_current_status() -> Dictionary:
 		"authority": authority
 	}
 
+func load_scene(scene: PackedScene) -> void:
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().change_scene_to_packed(scene)
 
 # Helper method for dialogue interactions
 func process_dialogue_choice(choice_effects: Dictionary) -> void:
