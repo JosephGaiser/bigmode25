@@ -41,6 +41,7 @@ directories/dtl_directory={
 "RaePinter": "res://dialouge/timelines/RaePrinter.dtl",
 "carl_day_1": "res://dialouge/timelines/carl_day_1.dtl",
 "carl_day_2": "res://dialouge/timelines/carl_day_2.dtl",
+"day_1_end": "res://dialouge/timelines/day_1/day_1_end.dtl",
 "intro": "res://dialouge/timelines/intro.dtl",
 "samuel": "res://dialouge/timelines/day_1/samuel.dtl",
 "samuel_day_1": "res://dialouge/timelines/samuel_day_1.dtl",

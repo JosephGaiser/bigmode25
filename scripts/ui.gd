@@ -8,6 +8,13 @@ extends Control
 @export var authorithy_bar: ProgressBar
 @export var audio_player: AudioStreamPlayer
 
+@export_group("Days")
+@export var monday: Control
+@export var tuesday: Control
+@export var wednesday: Control
+@export var thursday: Control
+@export var friday: Control
+
 @export_group("Sound Effects")
 @export var slow_change_sound: AudioStream
 @export var medium_change_sound: AudioStream
@@ -26,6 +33,11 @@ const CHANGE_THRESHOLDS = {
 									  "medium": 15.0, # Changes up to 15 points
 									  "fast": 100.0   # Changes above 15 points
 								  }
+
+var day_positions: Dictionary = {}
+var current_day: Control = null
+const DAY_RAISE_AMOUNT = 25  # Pixels to raise the selected day
+const DAY_TWEEN_DURATION = 1.0  # Duration of the day change animation
 
 # Define the order of updates
 var update_order = ["morale", "profits", "reputation", "authority"]
@@ -51,6 +63,10 @@ func _ready():
 			var bar = get_bar_for_stat(stat_name)
 			if bar:
 				bar.value = float(initial_status[stat_name])
+
+	for day_node in [monday, tuesday, wednesday, thursday, friday]:
+		if day_node:
+			day_positions[day_node] = day_node.position
 
 func get_bar_for_stat(stat_name: String) -> ProgressBar:
 	match stat_name:
@@ -119,3 +135,47 @@ func update_ui_values() -> void:
 
 func _on_update_ui_values():
 	update_ui_values()
+
+func set_current_day(day_name: String) -> void:
+	var day_node: Control = _get_day_node(day_name)
+	if !day_node:
+		push_error("Invalid day name: " + day_name)
+		return
+
+	var tween: Tween = create_tween()
+	tween.set_parallel(true)  # Allow multiple properties to animate simultaneously
+
+	# If there was a previously selected day, move it back
+	if current_day && current_day != day_node:
+		tween.tween_property(
+			current_day,
+			"position",
+			day_positions[current_day],
+			DAY_TWEEN_DURATION
+		).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+	# Move the new day up
+	var target_position = day_positions[day_node] - Vector2(0, DAY_RAISE_AMOUNT)
+	tween.tween_property(
+		day_node,
+		"position",
+		target_position,
+		DAY_TWEEN_DURATION
+	).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+
+	# Update current day reference
+	current_day = day_node
+
+func _get_day_node(day_name: String) -> Control:
+	match day_name.to_lower():
+		"monday":
+			return monday
+		"tuesday":
+			return tuesday
+		"wednesday":
+			return wednesday
+		"thursday":
+			return thursday
+		"friday":
+			return friday
+	return null

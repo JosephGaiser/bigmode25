@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dl4spoai0n6jn"
+path="res://.godot/imported/Water Droplet B.wav-909b2dcb88e89e83728f79d101a7b2df.sample"
+
+[deps]
+
+source_file="res://assets/sfx/ambient/Water Droplet B.wav"
+dest_files=["res://.godot/imported/Water Droplet B.wav-909b2dcb88e89e83728f79d101a7b2df.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rj83vtls655e"
+path="res://.godot/imported/Bedside Alarm Beep A.wav-54faef898b429bcb1bd2ecdea3ae460b.sample"
+
+[deps]
+
+source_file="res://assets/sfx/ambient/Bedside Alarm Beep A.wav"
+dest_files=["res://.godot/imported/Bedside Alarm Beep A.wav-54faef898b429bcb1bd2ecdea3ae460b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

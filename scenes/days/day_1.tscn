@@ -1,7 +1,6 @@
-[gd_scene load_steps=41 format=4 uid="uid://mmn6waqwcev6"]
+[gd_scene load_steps=46 format=4 uid="uid://mmn6waqwcev6"]
 
-[ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="1_ldd72"]
-[ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="2_2054p"]
+[ext_resource type="Script" path="res://scenes/days/day_1.gd" id="1_kcut6"]
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="3_0nv5w"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="4_ujdm4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_qebjq"]
@@ -18,12 +17,18 @@
 [ext_resource type="AudioStream" uid="uid://cvfpwtttqsxd7" path="res://assets/sfx/Computer Stuff/Mouse Double Click B.wav" id="17_3xbxj"]
 [ext_resource type="AudioStream" uid="uid://chgax4uxqofh" path="res://assets/sfx/Computer Stuff/Mouse Double Click A.wav" id="18_27re2"]
 [ext_resource type="AudioStream" uid="uid://bbmbeoqe1kfs6" path="res://assets/sfx/Computer Stuff/Disk Insert A.wav" id="19_dmjos"]
-[ext_resource type="AudioStream" uid="uid://cuibervjg6tfw" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 2.wav" id="20_syi1m"]
+[ext_resource type="AudioStream" uid="uid://bfa8r7cifu2ru" path="res://assets/sfx/ambient/Toilet Flush A.wav" id="19_nxj0m"]
+[ext_resource type="AudioStream" uid="uid://br5th36hijcs8" path="res://assets/sfx/ambient/Water Droplet A.wav" id="20_c5hb4"]
 [ext_resource type="TileSet" uid="uid://dnchfrlmh2ep" path="res://tilesets/office.tres" id="21_uu8ak"]
+[ext_resource type="AudioStream" uid="uid://dl4spoai0n6jn" path="res://assets/sfx/ambient/Water Droplet B.wav" id="21_y5l6b"]
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="22_7gsb8"]
+[ext_resource type="AudioStream" uid="uid://ct2ucthpokfse" path="res://assets/sfx/ambient/Water Droplet C.wav" id="22_c84cf"]
 [ext_resource type="TileSet" uid="uid://jjg3gcm10oh6" path="res://tilesets/bathroom.tres" id="23_5kysw"]
-[ext_resource type="AudioStream" uid="uid://cghtskdsx5iwv" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Cut 30.wav" id="24_8yj1s"]
+[ext_resource type="AudioStream" uid="uid://bbk0b2h1gt6mr" path="res://assets/sfx/ambient/Water Droplet D.wav" id="23_8m143"]
+[ext_resource type="AudioStream" uid="uid://vinkw66gw57o" path="res://assets/sfx/ambient/Filter Coffee Machine Dripping.wav" id="24_ttyl4"]
 [ext_resource type="PackedScene" uid="uid://dtb1vpuaceedn" path="res://scenes/player.tscn" id="25_k7o1p"]
+[ext_resource type="AudioStream" uid="uid://bkodx6qqnxmtu" path="res://assets/sfx/ambient/Filter Coffee Maker.wav" id="25_rh7vm"]
+[ext_resource type="AudioStream" uid="uid://c84e4h2sg31lc" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 1.wav" id="26_p6q5m"]
 [ext_resource type="PackedScene" uid="uid://dcp3mwi5vdrui" path="res://scenes/Rae.tscn" id="26_ute4x"]
 [ext_resource type="PackedScene" uid="uid://cw0ndq55r02og" path="res://scenes/vendor.tscn" id="27_ecqhf"]
 [ext_resource type="PackedScene" uid="uid://ckyid1ktvlc6s" path="res://scenes/billy.tscn" id="27_tclcr"]
@@ -77,16 +82,11 @@ shader = ExtResource("34_pe3yv")
 shader_parameter/color_dark = Color(0.133333, 0.137255, 0.137255, 1)
 shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
 
-[node name="day_1" type="Node2D"]
-
-[node name="WorldAudioManager" type="Node" parent="."]
-script = ExtResource("1_ldd72")
-
-[node name="Office Ambiance" type="AudioStreamPlayer" parent="WorldAudioManager"]
-stream = ExtResource("2_2054p")
-volume_db = -5.0
-autoplay = true
-bus = &"Ambient"
+[node name="day_1" type="Node2D" node_paths=PackedStringArray("interface")]
+script = ExtResource("1_kcut6")
+interface = NodePath("UI/UI")
+day = "monday"
+next_scene_path = "res://scenes/days/day_2.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_0nv5w")
@@ -124,22 +124,32 @@ draw_limits = true
 
 [node name="Audio" type="Node2D" parent="."]
 
-[node name="RandomAmbientSfx" parent="Audio" instance=ExtResource("9_w6w4q")]
+[node name="RaeDesk" parent="Audio" instance=ExtResource("9_w6w4q")]
 position = Vector2(208, 272)
 sounds = Array[AudioStream]([ExtResource("10_0tx6e"), ExtResource("11_h0821"), ExtResource("12_r7nyk"), ExtResource("13_w7h5i"), ExtResource("14_l0mb8"), ExtResource("15_po8x7"), ExtResource("16_b4isy"), ExtResource("17_3xbxj")])
 
-[node name="RandomAmbientSfx2" parent="Audio" instance=ExtResource("9_w6w4q")]
+[node name="ChetDesk" parent="Audio" instance=ExtResource("9_w6w4q")]
 position = Vector2(352, 320)
 sounds = Array[AudioStream]([ExtResource("10_0tx6e"), ExtResource("11_h0821"), ExtResource("12_r7nyk"), ExtResource("13_w7h5i"), ExtResource("14_l0mb8"), ExtResource("15_po8x7"), ExtResource("16_b4isy"), ExtResource("17_3xbxj"), ExtResource("18_27re2"), ExtResource("19_dmjos")])
 audio_max_distance = 150.0
 
+[node name="Bathroom" parent="Audio" instance=ExtResource("9_w6w4q")]
+position = Vector2(576, 384)
+sounds = Array[AudioStream]([ExtResource("19_nxj0m"), ExtResource("20_c5hb4"), ExtResource("21_y5l6b"), ExtResource("22_c84cf"), ExtResource("23_8m143")])
+min_interval = 4.0
+
+[node name="BreakRoom" parent="Audio" instance=ExtResource("9_w6w4q")]
+position = Vector2(592, 256)
+sounds = Array[AudioStream]([ExtResource("24_ttyl4"), ExtResource("25_rh7vm")])
+min_interval = 8.0
+audio_max_distance = 150.0
+
 [node name="Radio" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(448, 240)
-stream = ExtResource("20_syi1m")
+stream = ExtResource("26_p6q5m")
 volume_db = -10.145
-autoplay = true
 max_distance = 250.0
-attenuation = 5.65687
+attenuation = 3.3636
 panning_strength = 2.18
 bus = &"Ambient"
 
@@ -176,18 +186,6 @@ tile_set = ExtResource("23_5kysw")
 [node name="bathroom2" type="TileMapLayer" parent="Tiles"]
 tile_map_data = PackedByteArray("AAAhABYAAAAAACUAAAAhABcAAAAAACYAAAAhABgAAAAAACcAAAAiABcAAAABACYAAAAiABgAAAABACcAAAAjABYAAAACACUAAAAjABcAAAACACYAAAAjABgAAAACACcAAAAkABcAAAAFACsAAAAkABgAAAAFACwAAAAlABcAAAAGACsAAAAlABgAAAAGACwAAAAkABkAAAAFAC0AAAAlABYAAAAHACUAAAA=")
 tile_set = ExtResource("23_5kysw")
-
-[node name="Phone" type="Marker2D" parent="."]
-position = Vector2(296, 160)
-
-[node name="Ringtone" type="AudioStreamPlayer2D" parent="Phone"]
-stream = ExtResource("24_8yj1s")
-volume_db = -10.145
-autoplay = true
-max_distance = 250.0
-attenuation = 5.65687
-panning_strength = 2.18
-bus = &"Ambient"
 
 [node name="rae" parent="." instance=ExtResource("26_ute4x")]
 position = Vector2(192, 288)

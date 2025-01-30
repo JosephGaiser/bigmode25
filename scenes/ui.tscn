@@ -28,7 +28,7 @@ font = ExtResource("3_j3kob")
 font_size = 8
 font_color = Color(0, 0, 0, 1)
 
-[node name="UI" type="Control" node_paths=PackedStringArray("morale_bar", "profits_bar", "reputation_bar", "authorithy_bar", "audio_player")]
+[node name="UI" type="Control" node_paths=PackedStringArray("morale_bar", "profits_bar", "reputation_bar", "authorithy_bar", "audio_player", "monday", "tuesday", "wednesday", "thursday", "friday")]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
@@ -38,6 +38,11 @@ profits_bar = NodePath("Report/Bars/ProfitsBar")
 reputation_bar = NodePath("Report/Bars/ReputationBar")
 authorithy_bar = NodePath("Report/Bars/AuthorithyBar")
 audio_player = NodePath("Report/AudioStreamPlayer")
+monday = NodePath("Monday")
+tuesday = NodePath("Tuesday")
+wednesday = NodePath("Wednesday")
+thursday = NodePath("Thursday")
+friday = NodePath("Friday")
 slow_change_sound = ExtResource("2_dqhyj")
 medium_change_sound = ExtResource("3_xfh00")
 fast_change_sound = ExtResource("4_rl17i")
@@ -46,9 +51,9 @@ fast_change_sound = ExtResource("4_rl17i")
 layout_mode = 2
 anchors_preset = 0
 offset_left = 32.0
-offset_top = 32.0
+offset_top = 48.0
 offset_right = 32.0
-offset_bottom = 32.0
+offset_bottom = 48.0
 
 [node name="ColorRect3" type="ColorRect" parent="Monday"]
 layout_mode = 0

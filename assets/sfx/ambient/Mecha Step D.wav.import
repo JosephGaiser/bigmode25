@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxfwqg0luevb1"
+path="res://.godot/imported/Mecha Step D.wav-6c80ab3718e349cd2f56e9954fd164fe.sample"
+
+[deps]
+
+source_file="res://assets/sfx/ambient/Mecha Step D.wav"
+dest_files=["res://.godot/imported/Mecha Step D.wav-6c80ab3718e349cd2f56e9954fd164fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

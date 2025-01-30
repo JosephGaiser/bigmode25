@@ -3,5 +3,5 @@ vendor: Hello! Its me Vendor, how can I help you today?
 	vendor: oh sick, lets see...
 	[wait time="0.4"]
 	jump vendor_sell/
-- Nevermind
+- Never mind
 	vendor: No problem, come back soon!

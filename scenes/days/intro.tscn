@@ -72,8 +72,9 @@ shader = ExtResource("10_6cquq")
 shader_parameter/color_dark = Color(0.133333, 0.137255, 0.137255, 1)
 shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
 
-[node name="Intro" type="Node2D"]
+[node name="Intro" type="Node2D" node_paths=PackedStringArray("interface")]
 script = ExtResource("1_h4grr")
+interface = NodePath("UI/UI")
 day_1_scene_path = "res://scenes/days/day_1.tscn"
 
 [node name="WorldAudioManager" type="Node" parent="."]
