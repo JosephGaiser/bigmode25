@@ -17,7 +17,7 @@ if {fired} == "vendor":
 		chet: of course...
 		chet: Dearly beloved..
 		[wait time="1.0"]
-		- Interupt
+		- Interrupt
 			chet: oh...
 			chet: amen.
 			do power_manager.gain_authority(30)
@@ -28,15 +28,15 @@ if {fired} == "vendor":
 			chet: Watch over this person, keep them safe
 			chet: Don't let a bullet strike their heart.
 			chet: Nor an arrow piece their heart.
-			chet: Nor a canonball strike their heart.
+			chet: Nor a cannonball strike their heart.
 			chet: Nor...
-			- Interupt
+			- Interrupt
 				chet: oh...
 				chet: amen.
 				do power_manager.gain_authority(30)
 				do power_manager.gain_moral(30)
 			- Remain Silent
-				chet: Nor a bumbled bee needle their ventricales
+				chet: Nor a bumbled bee needle their ventricles
 				chet: that lead to their heart.
 				chet: bless their heart.
 				chet: amen.

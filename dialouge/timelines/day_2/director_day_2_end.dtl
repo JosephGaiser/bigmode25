@@ -9,7 +9,7 @@ director: Office
 director: Party
 [wait time="1.0"]
 director: Its a shame someone won't be making it
-director: Thats right...
+director: That's right...
 [wait time=".5"]
 director: Don't freak out
 [wait time=".5"]
@@ -17,7 +17,7 @@ director: You can still attend...
 [wait time="1.0"]
 director: Its a shame someone ELSE won't be making it
 director: That's right, we are doing a strategic reorganization of the company
-director: We detected very weak dyanmics and synergy coming from the office
+director: We detected very weak dynamics and synergy coming from the office
 director: Who will it be?
 director: Who are we letting go?
 - Samuel
@@ -37,7 +37,7 @@ director: Who are we letting go?
 	director: oh, him?
 	[wait time=".3"]
 	director: Vendor? Wait!
-	director: Fuck I dind't realize her was still there.
+	director: Fuck I didn't realize her was still there.
 	director: Yeah just send him back here...
 	director: er...
 	director: Fire him...

@@ -12,7 +12,7 @@ Rae: Do you party?
 	Rae: Something drugs can't simulate.
 - Be normal
 	Rae: Yeah, Okay ya old suit and tie.
-	Rae: Like I would beleive that.
+	Rae: Like I would believe that.
 	Rae: Well you might still like this...
 [wait time="1.0"]
 Rae: An Office Birthday Party!
@@ -37,7 +37,7 @@ rae: It was someones birthday recently, right?
 	set {birthday} = "boss"
 	Rae: OMG! I did not know it was your birthday!
 	Rae: Happy Birthday! ya ol suit and tie.
-Rae: So its setteled then.
+Rae: So its settled then.
 Rae: We can just do a Belated Office Birthday Party!
 if {birthday} == "samuel":
 	Rae: sigh....

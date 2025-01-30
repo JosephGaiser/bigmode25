@@ -8,7 +8,7 @@ Rae: Anyway...
 		[wait time=".4"]
 		billy: HOLY SHIT!
 		billy: I am updating my LockedIn Profile right now!
-		billy: Mr. Vice Principal Billy rolls right off the toungue
+		billy: Mr. Vice Principal Billy rolls right off the tongue
 		Rae: no..
 		[wait time=".5"]
 		samuel: Finally some recognition, I won't let you down!
@@ -16,7 +16,7 @@ Rae: Anyway...
 		do power_manager.gain_moral(30)
 		do power_manager.lose_authority(40)
 	- Bonus checks!
-		billy: No way! I was just looking into a new investment opertunity
+		billy: No way! I was just looking into a new investment opportunity
 		samuel: I'm putting in a pool
 		Rae: It's not quite that much Sam...
 		samuel: ... alright, its above ground
@@ -29,7 +29,7 @@ Rae: Anyway...
 		do power_manager.lose_profits(10)
 - Have Rae Break Bad News
 	Rae: As you all know, {fired}...
-	Rae: was strategically reasigned to a non working position at the company
+	Rae: was strategically reassigned to a non working position at the company
 	billy: rest in peace.
 	Rae: They didn't die, billy.
 	[wait time=".5"]
@@ -39,7 +39,7 @@ Rae: Anyway...
 		Rae: Exactly...
 		Rae: There is nothing to worry about
 		Carl: Can we eat now?
-		samuel: What a releif, its a good thing you are here boss.
+		samuel: What a relief, its a good thing you are here boss.
 		samuel: Really, I feel much better knowing that you have our backs.
 		do power_manager.lose_authority(15)
 		do power_manager.gain_moral(40)

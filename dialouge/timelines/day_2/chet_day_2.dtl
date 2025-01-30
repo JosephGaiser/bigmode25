@@ -6,20 +6,20 @@ if {Chet.day_1_decision} == "lie":
 		[wait time="1.0"]
 		chet: Oh... I'm sorry, I had no idea
 		chet: I am sorry, I really flew off the handle there.
-		chet: I really can't beleive I would assume.
+		chet: I really can't believe I would assume.
 		chet: There Chet goes, jumping the gun again...
 		chet: Oh... my bad
 		chet: That is a little insensitive...
 		chet: I hope they catch that sick fuck...
 		chet: To think our lord would allow it...
 		[wait time="1.0"]
-		chet: I almost.. don't beleive it.
+		chet: I almost.. don't believe it.
 		chet: You know the good book says doubt is a sin.
 		chet: I better go...
 		do power_manager.gain_reputation(20.0)
 		[end_timeline]
 	- Honest
-		chet: Really hard to beleive that you would lie like that
+		chet: Really hard to believe that you would lie like that
 		chet: It's not like you. A man like you...
 		chet: I feel like lately you just have changed..
 		chet: It doesn't even feel like the boss I know is...
@@ -50,7 +50,7 @@ if {Chet.day_1_decision} == "decline":
 	chet: I was the Church Photographer for 12 years.
 	[wait time="1.0"]
 	chet: They didn't understand my vision.
-	chet: "Creative differeneces"
+	chet: "Creative differences"
 	chet: You would understand.
 if {Chet.day_1_decision} == "church":
 	chet: I didn't see you at {church_name} last night...

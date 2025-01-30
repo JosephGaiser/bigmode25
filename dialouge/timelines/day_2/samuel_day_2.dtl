@@ -15,7 +15,7 @@ samuel: Joking of course
 	samuel: Instead of old suit and tie over there...
 	do power_manager.gain_moral(20.0)
 	do power_manager.gain_reputation(20.0)
-- Embarass Samuel
+- Embarrass Samuel
 	samuel: ...
 	[wait time="3.0"]
 	do power_manager.lose_reputation(30.0)
