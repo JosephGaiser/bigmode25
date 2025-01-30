@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=4 uid="uid://cfq7c486r7knn"]
+[gd_scene load_steps=37 format=4 uid="uid://cfq7c486r7knn"]
 
 [ext_resource type="Script" path="res://scenes/days/intro.gd" id="1_h4grr"]
 [ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="1_katx0"]
+[ext_resource type="PackedScene" uid="uid://mmn6waqwcev6" path="res://scenes/days/day_1.tscn" id="2_pmuuk"]
 [ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="2_qtgvv"]
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="3_vxhki"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="4_jyh81"]
@@ -75,7 +76,7 @@ shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
 [node name="Intro" type="Node2D" node_paths=PackedStringArray("interface")]
 script = ExtResource("1_h4grr")
 interface = NodePath("UI/UI")
-day_1_scene_path = "res://scenes/days/day_1.tscn"
+next_scene = ExtResource("2_pmuuk")
 
 [node name="WorldAudioManager" type="Node" parent="."]
 script = ExtResource("1_katx0")

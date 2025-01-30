@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://oyi1kf4b3krq"]
+[gd_scene load_steps=11 format=3 uid="uid://oyi1kf4b3krq"]
 
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_cqeyy"]
 [ext_resource type="Theme" uid="uid://c4m08a7hcdcyk" path="res://misc/custom_choices.tres" id="1_l513b"]
+[ext_resource type="PackedScene" uid="uid://cfq7c486r7knn" path="res://scenes/days/intro.tscn" id="2_1w57y"]
+[ext_resource type="PackedScene" uid="uid://mmn6waqwcev6" path="res://scenes/days/day_1.tscn" id="3_ocq8y"]
+[ext_resource type="PackedScene" uid="uid://wyp6pwen1eps" path="res://scenes/days/day_2.tscn" id="4_8r3n4"]
+[ext_resource type="PackedScene" uid="uid://h3e2wm1f8tvc" path="res://scenes/days/day_3.tscn" id="5_5afpq"]
+[ext_resource type="PackedScene" uid="uid://cxt4qroel7ucd" path="res://scenes/days/day_4.tscn" id="6_j28qp"]
+[ext_resource type="PackedScene" uid="uid://btwj6i287dcmd" path="res://scenes/days/day_5.tscn" id="7_145wv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbyqg"]
 font_size = 86
@@ -11,7 +17,13 @@ shadow_size = 44
 shadow_color = Color(0, 0, 0, 0.619608)
 shadow_offset = Vector2(21.255, 17.68)
 
-[node name="TitleScreen" type="Control" node_paths=PackedStringArray("start_button", "title_label", "transition_animation")]
+[sub_resource type="LabelSettings" id="LabelSettings_b2026"]
+font_size = 32
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.615686)
+shadow_offset = Vector2(3, 3)
+
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("start_button", "skip_button", "title_label", "main_menu", "days_menu", "day_1", "day_2", "day_3", "day_4", "day_5", "skip_back")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +31,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cqeyy")
-intro_scene_path = "res://scenes/days/intro.tscn"
-start_button = NodePath("VBoxContainer/StartButton")
+intro_scene = ExtResource("2_1w57y")
+day_1_scene = ExtResource("3_ocq8y")
+day_2_scene = ExtResource("4_8r3n4")
+day_3_scene = ExtResource("5_5afpq")
+day_4_scene = ExtResource("6_j28qp")
+day_5_scene = ExtResource("7_145wv")
+start_button = NodePath("main/StartButton")
+skip_button = NodePath("main/SkipButton")
 title_label = NodePath("TitleLabel")
-transition_animation = NodePath("AnimationPlayer")
+main_menu = NodePath("main")
+days_menu = NodePath("days")
+day_1 = NodePath("days/Day1")
+day_2 = NodePath("days/Day2")
+day_3 = NodePath("days/Day3")
+day_4 = NodePath("days/Day4")
+day_5 = NodePath("days/Day5")
+skip_back = NodePath("days/SkipBack")
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
@@ -41,7 +66,7 @@ size_flags_horizontal = 4
 text = "VERY IMPORTANT BOSS"
 label_settings = SubResource("LabelSettings_tbyqg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="main" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,20 +81,69 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l513b")
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="main"]
 layout_mode = 2
 text = "START"
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
+[node name="SkipButton" type="Button" parent="main"]
+layout_mode = 2
+text = "SKIP TO DAY"
+
+[node name="Settings" type="Button" parent="main"]
 layout_mode = 2
 disabled = true
 text = "SETTINGS
 "
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="main"]
 layout_mode = 2
 disabled = true
 text = "QUIT
+"
+
+[node name="days" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -8.0
+offset_right = 312.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l513b")
+
+[node name="Warning" type="Label" parent="days"]
+layout_mode = 2
+text = "Warning: For best experience, play from beginning"
+label_settings = SubResource("LabelSettings_b2026")
+
+[node name="Day1" type="Button" parent="days"]
+layout_mode = 2
+text = "MONDAY"
+
+[node name="Day2" type="Button" parent="days"]
+layout_mode = 2
+text = "TUESDAY"
+
+[node name="Day3" type="Button" parent="days"]
+layout_mode = 2
+text = "WEDNESDAY"
+
+[node name="Day4" type="Button" parent="days"]
+layout_mode = 2
+text = "THURSDAY"
+
+[node name="Day5" type="Button" parent="days"]
+layout_mode = 2
+text = "FRIDAY"
+
+[node name="SkipBack" type="Button" parent="days"]
+layout_mode = 2
+text = "BACK
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

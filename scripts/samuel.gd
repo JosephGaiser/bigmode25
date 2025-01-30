@@ -17,7 +17,7 @@ func interact(caller: Player):
 	self.player = caller
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
-	var layout: Node = Dialogic.start("samuel")
+	var layout: Node = Dialogic.start(self.current_timeline)
 	layout.register_character(self.character, animated_sprite_2d)
 
 	# Disable wandering during interaction

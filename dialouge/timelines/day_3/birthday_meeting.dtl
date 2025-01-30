@@ -6,6 +6,7 @@ if {fired} == "vendor":
 	[wait time="1.0"]
 	Rae: no, it's just regular crust
 	Carl: Ok.
+	Rae: How about we just get this party started?
 	label start
 	- Ask Chet to say grace
 		if {fired} == "chet":
@@ -42,7 +43,7 @@ if {fired} == "vendor":
 				Carl: The pizza is cold...
 				do power_manager.lose_moral(30)
 	- Tight 5
-		[sound path="res://assets/sfx/Bigger Gasp.wav" volume="0.0"]
+		[sound path="res://assets/sfx/Bigger Gasp.wav" volume="-10.0" bus="Sfx"]
 		[wait time="2.0"]
 		Carl: Really improved honestly
 		samuel: Good thing my son isn't here today

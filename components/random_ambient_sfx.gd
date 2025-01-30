@@ -21,6 +21,7 @@ func _ready() -> void:
 	add_child(_audio_player)
 	_audio_player.max_distance = audio_max_distance
 	_audio_player.volume_db = volume_db
+	_audio_player.bus = "Sfx"
 	
 	# Set up timer for random intervals
 	_timer = Timer.new()

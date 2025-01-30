@@ -1,6 +1,9 @@
 class_name BaseNPC
 extends Node2D
 
+@export var current_timeline: String = "rae_day_1"
+@export var wander_enabled: bool = true
+@export_group("movement")
 @export var tile_size: int = 16
 @export var speed: float = 0.4
 
@@ -17,7 +20,6 @@ extends Node2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 
 var moving: bool               = false
-var wander_enabled: bool       = true
 var directions: Array[Vector2] = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 
 

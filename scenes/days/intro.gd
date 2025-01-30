@@ -3,7 +3,7 @@ extends Node2D
 @onready var player: Player = $Player
 @export var intro_timeline: String = "intro"
 @export var interface: Ui
-@export_file("*.tscn") var day_1_scene_path: String
+@export var next_scene: PackedScene
 
 func _ready() -> void:
 	start_intro_sequence()
@@ -32,8 +32,10 @@ func _on_timeline_ended() -> void:
 	Dialogic.signal_event.disconnect(_on_dialogue_signal)
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 
-	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file(day_1_scene_path)
+	await get_tree().create_timer(1.5).timeout
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().change_scene_to_packed(next_scene)
 
 func _on_dialogue_signal(argument: String) -> void:
 	pass

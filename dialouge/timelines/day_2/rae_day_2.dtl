@@ -18,7 +18,7 @@ Rae: Do you party?
 Rae: An Office Birthday Party!
 Rae: Isn't that something!
 label whose_bday
-It was someones birthday recently, right?
+rae: It was someones birthday recently, right?
 - Carl
 	set {birthday} = "carl"
 	Rae: Great! He is going to love this.

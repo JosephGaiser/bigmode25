@@ -1,21 +1,84 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://fudhxhgbx7s7"]
+[gd_resource type="AudioBusLayout" load_steps=9 format=3 uid="uid://fudhxhgbx7s7"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_3i6h6"]
+resource_name = "Reverb"
+room_size = 0.3
+wet = 0.1
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_7trl2"]
+resource_name = "EQ"
+band_db/32_hz = 2.0
+band_db/100_hz = 2.0
+band_db/320_hz = 1.0
+band_db/3200_hz = -3.0
+band_db/10000_hz = -12.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_kpykl"]
+resource_name = "Compressor"
+ratio = 2.0
+release_ms = 50.0
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_gt4vx"]
+resource_name = "Distortion"
+mode = 2
+drive = 0.3
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_ckdgm"]
+resource_name = "LowPassFilter"
+resonance = 0.7
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_w7l7u"]
+resource_name = "EQ"
+band_db/32_hz = 2.0
+band_db/100_hz = 1.0
+band_db/320_hz = -2.0
+band_db/1000_hz = -4.0
+band_db/3200_hz = -8.0
+band_db/10000_hz = -12.0
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_kvaje"]
+resource_name = "Reverb"
+hipass = 1.0
+dry = 0.7
+wet = 0.3
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_jo6l7"]
+resource_name = "Compressor"
+threshold = -20.0
+gain = 2.0
 
 [resource]
 bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = -4.003
 bus/1/send = &"Master"
 bus/2/name = &"Sfx"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = 0.0
+bus/2/volume_db = 0.267241
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_3i6h6")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectEQ_7trl2")
+bus/2/effect/1/enabled = true
+bus/2/effect/2/effect = SubResource("AudioEffectCompressor_kpykl")
+bus/2/effect/2/enabled = true
+bus/2/effect/3/effect = SubResource("AudioEffectDistortion_gt4vx")
+bus/2/effect/3/enabled = true
 bus/3/name = &"Ambient"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = 0.0
+bus/3/volume_db = -2.91905
 bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectLowPassFilter_ckdgm")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectEQ_w7l7u")
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectReverb_kvaje")
+bus/3/effect/2/enabled = true
+bus/3/effect/3/effect = SubResource("AudioEffectCompressor_jo6l7")
+bus/3/effect/3/enabled = true
