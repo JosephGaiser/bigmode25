@@ -11,6 +11,7 @@ else:
 		do power_manager.lose_profits(5.0)
 		do power_manager.gain_authority(1.0)
 	- Buy a new printer
+		set {new_printer} = true
 		Rae: Seriously! Wow.
 		[wait time="0.5"]
 		Rae: I did not expect that

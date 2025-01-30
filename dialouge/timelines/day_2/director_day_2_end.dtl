@@ -1,0 +1,45 @@
+set {Director.day_2} = true
+[sound pth="res://assets/sfx/phone/Steampunk Clock Bells.wav" volume="-10.0" bus="Sfx"]
+[wait time="4.0"]
+[sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="0.0" bus="Sfx"]
+director: Another job well done.
+director: I look forward to your little...
+[wait time="1.0"]
+director: Office
+director: Party
+[wait time="1.0"]
+director: Its a shame someone won't be making it
+director: Thats right...
+[wait time=".5"]
+director: Don't freak out
+[wait time=".5"]
+director: You can still attend...
+[wait time="1.0"]
+director: Its a shame someone ELSE won't be making it
+director: That's right, we are doing a strategic reorganization of the company
+director: We detected very weak dyanmics and synergy coming from the office
+director: Who will it be?
+director: Who are we letting go?
+- Samuel
+	set {fired} = "samuel"
+	[wait time="5.0"]
+	director: Samuel, Samuel, Samuel.
+	director: Oh... Samuel
+- Chet
+	set {fired} = "chet"
+	[wait time="5.0"]
+	director: Chet, very well.
+- Billy
+	director: Shame.
+	set {fired} = "billy"
+- Vendor
+	set {fired} = "vendor"
+	director: oh, him?
+	[wait time=".3"]
+	director: Vendor? Wait!
+	director: Fuck I dind't realize her was still there.
+	director: Yeah just send him back here...
+	director: er...
+	director: Fire him...
+
+[sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="0.0" bus="Sfx"]

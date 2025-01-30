@@ -1,0 +1,58 @@
+if {Chet.day_1_decision} == "lie":
+	chet: WHERE WERE YOU?!
+	chet: You said you would come!?
+	- Lie
+		label lie
+		[wait time="1.0"]
+		chet: Oh... I'm sorry, I had no idea
+		chet: I am sorry, I really flew off the handle there.
+		chet: I really can't beleive I would assume.
+		chet: There Chet goes, jumping the gun again...
+		chet: Oh... my bad
+		chet: That is a little insensitive...
+		chet: I hope they catch that sick fuck...
+		chet: To think our lord would allow it...
+		[wait time="1.0"]
+		chet: I almost.. don't beleive it.
+		chet: You know the good book says doubt is a sin.
+		chet: I better go...
+		do power_manager.gain_reputation(20.0)
+		[end_timeline]
+	- Honest
+		chet: Really hard to beleive that you would lie like that
+		chet: It's not like you. A man like you...
+		chet: I feel like lately you just have changed..
+		chet: It doesn't even feel like the boss I know is...
+		chet: This sounds crazy but,
+		chet: I feel like I am talking to a whole different person
+		do power_manager.lose_reputation(20.0)
+if {Chet.day_1_decision} == "carl":
+	chet: carl didn't show.
+	chet: Said he wasn't feeling well.
+	chet: He didn't even come in today.
+	chet: Hope he is alright, he's in my prayers.
+	chet: I have this get well card, we are passing it around
+	chet: You can sign it and hand it to the next person
+	- Sign it
+		do power_manager.gain_moral(10.0)
+	- Toss it
+		chet: Oh, I get it. Because he is the..
+		[wait time="1.0"]
+		chet: the janitor..
+		do power_manager.lose_moral(10.0)
+		do power_manager.gain_authority(10.0)
+if {Chet.day_1_decision} == "decline":
+	chet: I took some notes
+	chet: I arranged them into a quick presentation
+	chet: Should be shared with you, if you check your inbox
+	chet: I can send you some stills too, if you want.
+	chet: It was a beautiful service.
+	chet: I was the Church Photographer for 12 years.
+	[wait time="1.0"]
+	chet: They didn't understand my vision.
+	chet: "Creative differeneces"
+	chet: You would understand.
+if {Chet.day_1_decision} == "church":
+	chet: I didn't see you at {church_name} last night...
+	chet: Did something happen?
+	jump lie

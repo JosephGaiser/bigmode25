@@ -1,0 +1,58 @@
+if {fired} == "vendor":
+	Carl: Wow... a whole pizza?
+	Carl: What is that? a LARGE?!
+	[wait time="1.0"]
+	Carl: STUFFED CRUST?!
+	[wait time="1.0"]
+	Rae: no, it's just regular crust
+	Carl: Ok.
+	label start
+	- Ask Chet to say grace
+		if {fired} == "chet":
+			do power_manager.lose_moral(10.0)
+			[wait time="1.0"]
+			Carl: ...
+			jump start
+		chet: of course...
+		chet: Dearly beloved..
+		[wait time="1.0"]
+		- Interupt
+			chet: oh...
+			chet: amen.
+			do power_manager.gain_authority(30)
+			do power_manager.gain_moral(30)
+		- Remain Silent
+			chet: This really is a special day
+			chet: We gather to celebrate {birthday}
+			chet: Watch over this person, keep them safe
+			chet: Don't let a bullet strike their heart.
+			chet: Nor an arrow piece their heart.
+			chet: Nor a canonball strike their heart.
+			chet: Nor...
+			- Interupt
+				chet: oh...
+				chet: amen.
+				do power_manager.gain_authority(30)
+				do power_manager.gain_moral(30)
+			- Remain Silent
+				chet: Nor a bumbled bee needle their ventricales
+				chet: that lead to their heart.
+				chet: bless their heart.
+				chet: amen.
+				Carl: The pizza is cold...
+				do power_manager.lose_moral(30)
+	- Tight 5
+		[sound path="res://assets/sfx/Bigger Gasp.wav" volume="0.0"]
+		[wait time="2.0"]
+		Carl: Really improved honestly
+		samuel: Good thing my son isn't here today
+		Rae: I can't include any of that in the minutes...
+		Rae: I am just going to start the minutes over.
+		director: Holy shit! That fucking ruled!
+		Carl: Who was that?
+		billy: That's my boss, taking important calls.
+		billy: even on someone's birthday...
+		billy: we should clap.
+		do power_manager.lose_reputation(20.0)
+		do power_manager.gain_moral(30.0)
+jump birthday_meeting_2/

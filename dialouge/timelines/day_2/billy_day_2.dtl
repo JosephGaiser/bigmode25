@@ -1,0 +1,43 @@
+billy: Morning boss!
+billy: Had to get a quad shot espresso this morning...
+billy: Was up allllllllllllllllllll night. Trading of course
+billy: There is this girl at the coffee shop.
+billy: I think she is really great actually...
+billy: I think about her.
+[wait time="1.0"]
+billy: I doubt she even notices
+billy: I go every day, maybe she noticed....
+billy: Her name is european I think
+billy: CremeBrulee
+billy: I think its pronounced like Kimberly, but its spelled like....
+billy: you get it...
+- Offer to wingman
+	billy: Seriously! 
+- Make a joke about Europeans
+	billy: hahahaha!
+	- Ask billy to explain the joke
+		billy: Well...
+		billy: Be.. cause..
+		[wait time="1.0"]
+		do power_manager.gain_authority(20.0)
+	- Laugh
+		do power_manager.gain_moral()
+		do power_manager.lose_reputation(30.0)
+- Give bad advice
+	billy: That would work?
+	[wait time="2.0"]
+	billy: I don't think I could afford that.
+	billy: could you lend me some money?
+	- Lend a lot
+		billy: WOW!
+		do power_manager.gain_reputation(40)
+		do power_manager.lose_profits(40)
+	- Lend a little
+		billy: Well... that should help.
+		billy: In a few weeks I should have enough.
+		do power_manager.gain_reputation()
+		do power_manager.lose_profits()
+- Assert dominance
+	billy: Im sorry.
+	billy: I don't know what I was thinking...
+	do power_manager.gain_authority(30.0)

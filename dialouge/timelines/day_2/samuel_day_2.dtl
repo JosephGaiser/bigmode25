@@ -1,0 +1,40 @@
+if {Samuel.day_2} == true:
+	samuel: Busy right now...
+set {Billy.day_2} = true
+samuel: As you can see {sons_name} will be joining us for today.
+samuel: Terrible about what happened to the school...
+[wait time="0.6"]
+samuel: Don't worry about {sons_name}, hes a quick learner
+samuel: By Friday he will have your job!
+samuel: Joking of course
+- Glaze Samuel
+	samuel: Hear that {sons_name}?!
+	[wait time="1.0"]
+	samuel: Your old dad is pretty cool, huh.
+	samuel: You might need to start looking up to me
+	samuel: Instead of old suit and tie over there...
+	do power_manager.gain_moral(20.0)
+	do power_manager.gain_reputation(20.0)
+- Embarass Samuel
+	samuel: ...
+	[wait time="3.0"]
+	do power_manager.lose_reputation(30.0)
+	do power_manager.gain_authority(20.0)
+- Fire Samuel Right Now
+	samuel: I was just joking about my son...
+	[wait time="1.0"]
+	samuel: You cant be serious?
+	- Serious
+		samuel: You're the boss...
+		[wait time="1.0"]
+		samuel: I'll just collect my things I guess...
+		samuel: {sons_name}....
+		[wait time="1.0"]
+		samuel: im sorry {sons_name}....
+		do power_manager.lose_moral(30.0)
+		do power_manager.gain_authority(50.0)
+	- Joking
+		samuel: ha....
+		[wait time="1.0"]
+		do power_manager.lose_moral(10.0)
+		do power_manager.lose_reputation(10.0)

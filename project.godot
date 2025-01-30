@@ -32,6 +32,7 @@ directories/dch_directory={
 "chet": "res://dialouge/characters/chet.dch",
 "director": "res://dialouge/characters/director.dch",
 "samuel": "res://dialouge/characters/samuel.dch",
+"samuel_son": "res://dialouge/characters/samuel_son.dch",
 "vendor": "res://dialouge/characters/vendor.dch"
 }
 directories/dtl_directory={
@@ -39,12 +40,22 @@ directories/dtl_directory={
 "CarlCleaning": "res://dialouge/timelines/CarlCleaning.dtl",
 "ChetChurch": "res://dialouge/timelines/ChetChurch.dtl",
 "RaePinter": "res://dialouge/timelines/RaePrinter.dtl",
+"billy_day_2": "res://dialouge/timelines/day_2/billy_day_2.dtl",
+"birthday_meeting": "res://dialouge/timelines/day_3/birthday_meeting.dtl",
+"birthday_meeting_2": "res://dialouge/timelines/day_3/birthday_meeting_2.dtl",
+"birthday_meeting_3": "res://dialouge/timelines/day_3/birthday_meeting_3.dtl",
 "carl_day_1": "res://dialouge/timelines/carl_day_1.dtl",
-"carl_day_2": "res://dialouge/timelines/carl_day_2.dtl",
+"chet_day_2": "res://dialouge/timelines/day_2/chet_day_2.dtl",
 "day_1_end": "res://dialouge/timelines/day_1/day_1_end.dtl",
+"day_2/carl_day_2": "res://dialouge/timelines/day_2/carl_day_2.dtl",
+"director_day_2_end": "res://dialouge/timelines/day_2/director_day_2_end.dtl",
+"director_day_5": "res://dialouge/timelines/day_5/director_day_5.dtl",
 "intro": "res://dialouge/timelines/intro.dtl",
+"rae_day_2": "res://dialouge/timelines/day_2/rae_day_2.dtl",
 "samuel": "res://dialouge/timelines/day_1/samuel.dtl",
 "samuel_day_1": "res://dialouge/timelines/samuel_day_1.dtl",
+"samuel_day_2": "res://dialouge/timelines/day_2/samuel_day_2.dtl",
+"samuel_day_4": "res://dialouge/timelines/day_4/samuel_day_4.dtl",
 "vendor": "res://dialouge/timelines/vendor.dtl",
 "vendor_sell": "res://dialouge/timelines/vendor_sell.dtl"
 }
@@ -68,6 +79,7 @@ variables={
 },
 "Chet": {
 "day_1": false,
+"day_1_decision": "church",
 "day_2": false,
 "day_3": false,
 "day_4": false,
@@ -95,8 +107,11 @@ variables={
 "day_4": false,
 "day_5": false
 },
+"birthday": "chet",
 "church_name": "foo church",
 "coin_name": "foo coin",
+"fired": "vendor",
+"new_printer": false,
 "sons_name": "foo"
 }
 extensions_folder="res://addons/dialogic_additions"

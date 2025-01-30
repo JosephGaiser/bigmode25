@@ -102,7 +102,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(544, 272)
+position = Vector2(288, 128)
 zoom = Vector2(2.5, 2.5)
 process_callback = 0
 
@@ -113,7 +113,7 @@ script = ExtResource("5_qebjq")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(544, 272)
+position = Vector2(288, 128)
 script = ExtResource("6_l1dpo")
 follow_mode = 1
 follow_target = NodePath("../Player")
@@ -206,7 +206,7 @@ position = Vector2(544, 256)
 position = Vector2(304, 400)
 
 [node name="Player" parent="." instance=ExtResource("25_k7o1p")]
-position = Vector2(544, 272)
+position = Vector2(288, 128)
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 0
@@ -242,6 +242,7 @@ grow_vertical = 2
 [node name="Palette" type="CanvasLayer" parent="Shaders"]
 
 [node name="DitherPalette" type="ColorRect" parent="Shaders/Palette"]
+visible = false
 material = SubResource("ShaderMaterial_7e04y")
 anchors_preset = 15
 anchor_right = 1.0

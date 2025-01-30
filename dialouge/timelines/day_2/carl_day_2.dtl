@@ -6,7 +6,8 @@ Carl: I guess I have not felt well in... a while.
 Carl: ...
 - Send Carl home early
 	[wait time="1.0"]
-	Carl: \:)
+	Carl: You're not jokeing this time, right?
+	Carl: I'll wrap up a few things here first.
 	do power_manager.gain_moral(20.0)
 	do power_manager.lose_authority(5.0)
 - Wish him well

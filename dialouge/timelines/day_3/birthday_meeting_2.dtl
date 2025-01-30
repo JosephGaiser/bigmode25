@@ -1,0 +1,55 @@
+Rae: Anyway...
+- Have Rae Break the Good News
+	Rae: What?
+	Rae: What was the good news?
+	- Lie
+		Rae: ok...
+		Rae: So you are telling me, we are all VPs now
+		[wait time=".4"]
+		billy: HOLY SHIT!
+		billy: I am updating my LockedIn Profile right now!
+		billy: Mr. Vice Principal Billy rolls right off the toungue
+		Rae: no..
+		[wait time=".5"]
+		samuel: Finally some recognition, I won't let you down!
+		chet: A rising tide lifts all boats!
+		do power_manager.gain_moral(30)
+		do power_manager.lose_authority(40)
+	- Bonus checks!
+		billy: No way! I was just looking into a new investment opertunity
+		samuel: I'm putting in a pool
+		Rae: It's not quite that much Sam...
+		samuel: ... alright, its above ground
+		samuel: Is that all you want to hear?
+		samuel: We can't all have nice things.
+		if {new_printer}:
+			samuel: Miss new printer....
+			do power_manager.gain_moral(5)
+		do power_manager.gain_moral(60)
+		do power_manager.lose_profits(10)
+- Have Rae Break Bad News
+	Rae: As you all know, {fired}...
+	Rae: was strategically reasigned to a non working position at the company
+	billy: rest in peace.
+	Rae: They didn't die, billy.
+	[wait time=".5"]
+	billy: Right.
+	do power_manager.lose_moral(20)
+	- Comforting words
+		Rae: Exactly...
+		Rae: There is nothing to worry about
+		Carl: Can we eat now?
+		samuel: What a releif, its a good thing you are here boss.
+		samuel: Really, I feel much better knowing that you have our backs.
+		do power_manager.lose_authority(15)
+		do power_manager.gain_moral(40)
+	- Be Honest
+		Rae: Oh. I did not expect that.
+		billy: I thought the company was doing well?
+		samuel: It's my fault.
+		samuel: I left too early Sunday night.
+		Carl: one less desk to clean.
+		do power_manager.lose_authority(15)
+		do power_manager.gain_reputation(40)
+		
+jump birthday_meeting_3/

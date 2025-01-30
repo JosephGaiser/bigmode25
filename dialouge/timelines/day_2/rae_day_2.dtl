@@ -1,0 +1,51 @@
+if {Rae.day_2} == true:
+	Rae: Not right now.
+set {Rae.day_2} = true
+Rae: The office has been feeling a little tense.
+Rae: Don't you think we ought to cheer people up?
+Rae: Do you party?
+- Be cool
+	Rae: Grow up.
+	Rae: We need something real, something big.
+	Rae: Something that people are going to be talking about
+	Rae: An experience, something money can't buy.
+	Rae: Something drugs can't simulate.
+- Be normal
+	Rae: Yeah, Okay ya old suit and tie.
+	Rae: Like I would beleive that.
+	Rae: Well you might still like this...
+[wait time="1.0"]
+Rae: An Office Birthday Party!
+Rae: Isn't that something!
+label whose_bday
+It was someones birthday recently, right?
+- Carl
+	set {birthday} = "carl"
+	Rae: Great! He is going to love this.
+- Chet
+	set {birthday} = "chet"
+	Rae: chet.. got it.
+- Samuel
+	Rae: Dear god...
+	Rae: Can we pick someone else?
+	- YES
+		jump whose_bday
+	- NO
+		set {birthday} = "samuel"
+		Rae: fine...
+- Lie
+	set {birthday} = "boss"
+	Rae: OMG! I did not know it was your birthday!
+	Rae: Happy Birthday! ya ol suit and tie.
+Rae: So its setteled then.
+Rae: We can just do a Belated Office Birthday Party!
+if {birthday} == "samuel":
+	Rae: sigh....
+	Rae: Just had to be Samuel huh....
+if {birthday} == "chet" or {birthday} == "samuel":
+	Rae: {birthday} is going to love this!
+else:
+	Rae: You are going to love this!
+do power_manager.lose_profits(20.0)
+do power_manager.gain_reputation()
+do power_manager.gain_moral()
