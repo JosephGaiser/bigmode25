@@ -221,9 +221,9 @@ label_settings = SubResource("LabelSettings_yk1jc")
 
 [node name="Report" type="Control" parent="."]
 anchors_preset = 0
-offset_top = 40.0
+offset_top = 48.0
 offset_right = 40.0
-offset_bottom = 80.0
+offset_bottom = 88.0
 
 [node name="ColorRect" type="ColorRect" parent="Report"]
 layout_mode = 0

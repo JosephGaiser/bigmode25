@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://wyp6pwen1eps"]
+[gd_scene load_steps=48 format=4 uid="uid://wyp6pwen1eps"]
 
 [ext_resource type="Script" path="res://scenes/days/day_2.gd" id="1_mc6qc"]
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="2_0xmnp"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ktigb2aq74d" path="res://scenes/samuel.tscn" id="34_07ke4"]
 [ext_resource type="PackedScene" uid="uid://dtb1vpuaceedn" path="res://scenes/player.tscn" id="35_75c0b"]
 [ext_resource type="PackedScene" uid="uid://ycbyy6kn1yln" path="res://scenes/ui.tscn" id="36_kkk1e"]
+[ext_resource type="PackedScene" uid="uid://dmwdnhcg6cxh7" path="res://scenes/samuel_son.tscn" id="36_mrbmk"]
 [ext_resource type="Shader" path="res://shaders/steinberg.gdshader" id="37_fnw75"]
 [ext_resource type="Shader" path="res://shaders/dither.gdshader" id="38_0n1ks"]
 [ext_resource type="Texture2D" uid="uid://dj4in72c40yjb" path="res://assets/toasted40-32x.png" id="39_f3ret"]
@@ -102,7 +103,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(288, 128)
+position = Vector2(288, 88)
 zoom = Vector2(2.5, 2.5)
 process_callback = 0
 
@@ -113,13 +114,14 @@ script = ExtResource("4_7n6xe")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(288, 128)
+position = Vector2(288, 88)
 script = ExtResource("5_kf47v")
-follow_mode = 1
+follow_mode = 2
 follow_target = NodePath("../Player")
 zoom = Vector2(2.5, 2.5)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_5cb2k")
+follow_offset = Vector2(0, -40)
 draw_limits = true
 
 [node name="Audio" type="Node2D" parent="."]
@@ -210,6 +212,10 @@ current_timeline = "vendor"
 [node name="samuel" parent="." instance=ExtResource("34_07ke4")]
 position = Vector2(304, 400)
 current_timeline = "samuel_day_2"
+
+[node name="samuel_son" parent="." instance=ExtResource("36_mrbmk")]
+position = Vector2(272, 400)
+current_timeline = "samuel_son"
 
 [node name="Player" parent="." instance=ExtResource("35_75c0b")]
 position = Vector2(288, 128)

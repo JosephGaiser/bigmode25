@@ -1,3 +1,11 @@
+if {Billy.day_2} == true:
+	billy: That little {sons_name}....
+	billy: Smart kid, he has some real potential.
+	billy: Its a shame really.
+	[wait time=".5"]
+	billy: Him being Samuels son and all...
+	[end_timeline]
+set {Billy.day_2} = true
 billy: Morning boss!
 billy: Had to get a quad shot espresso this morning...
 billy: Was up allllllllllllllllllll night. Trading of course

@@ -12,4 +12,5 @@ func _get_completion_conditions() -> bool:
 	and Dialogic.VAR.Billy.day_2 \
 	and Dialogic.VAR.Carl.day_2 \
 	and Dialogic.VAR.Chet.day_2 \
-	and Dialogic.VAR.Samuel.day_2
+	and Dialogic.VAR.Samuel.day_2 \
+	and Dialogic.VAR.Samuel.son \

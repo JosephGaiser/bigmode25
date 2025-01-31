@@ -133,5 +133,5 @@ stream = ExtResource("9_a81w5")
 volume_db = -2.84
 autoplay = true
 max_distance = 200.0
-attenuation = 9.18959
+attenuation = 4.2871
 bus = &"Ambient"

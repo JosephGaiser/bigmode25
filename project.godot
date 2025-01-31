@@ -56,6 +56,7 @@ directories/dtl_directory={
 "samuel_day_1": "res://dialouge/timelines/day_1/samuel_day_1.dtl",
 "samuel_day_2": "res://dialouge/timelines/day_2/samuel_day_2.dtl",
 "samuel_day_4": "res://dialouge/timelines/day_4/samuel_day_4.dtl",
+"samuel_son": "res://dialouge/timelines/day_2/samuel_son.dtl",
 "vendor": "res://dialouge/timelines/vendor.dtl",
 "vendor_sell": "res://dialouge/timelines/vendor_sell.dtl"
 }
@@ -105,15 +106,16 @@ variables={
 "day_2": false,
 "day_3": false,
 "day_4": false,
-"day_5": false
+"day_5": false,
+"son": false
 },
 "birthday": "chet",
-"church_name": "foo church",
-"coin_name": "foo coin",
+"church_name": "Church of Suit andTie",
+"coin_name": "AssCoin",
 "fired": "vendor",
 "new_printer": false,
 "party_over": false,
-"sons_name": "foo"
+"sons_name": "Terry"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.04

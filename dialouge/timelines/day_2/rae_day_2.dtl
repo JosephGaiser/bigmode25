@@ -1,7 +1,6 @@
 if {Rae.day_2} == true:
 	Rae: Not right now.
 set {Rae.day_2} = true
-do power_manager.lose_moral(100.0)
 Rae: The office has been feeling a little tense.
 Rae: Don't you think we ought to cheer people up?
 Rae: Do you party?

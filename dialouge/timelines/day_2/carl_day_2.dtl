@@ -1,3 +1,8 @@
+if {Carl.day_2} == true:
+	Carl: I got this splitting pain in my head...
+	[wait time="1.0"]
+	Carl: I think I'll be okay.
+	[end_timeline]
 set {Carl.day_2} = true
 Carl: Not feeling well today
 [wait time="1.0"]

@@ -5,6 +5,7 @@ signal game_over(reason: String)
 signal update_ui_values()
 
 const GAME_OVER = preload("res://scenes/days/game_over.tscn")
+var current_day = "day_1"
 
 # Power axes
 var morale: float     = 50.0
@@ -79,6 +80,20 @@ func trigger_game_over(failed_axis: String) -> void:
 	Dialogic.end_timeline()
 	load_scene(GAME_OVER)
 
+func get_current_day() -> String:
+	return self.current_day
+	
+func set_current_day(day: String) -> void:
+	self.current_day = day
+
+func reset() -> void:
+	morale     = 50.0
+	profits    = 50.0
+	reputation = 50.0
+	authority  = 50.0
+
+	# Reset the UI
+	update_ui_values.emit()
 
 func get_current_status() -> Dictionary:
 	return {

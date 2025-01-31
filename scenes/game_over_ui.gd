@@ -18,7 +18,18 @@ func _ready() -> void:
 	main_menu_button.pressed.connect(_on_menu_button_pressed)
 
 func _on_retry_button_pressed() -> void:
-	load_scene(day_1_scene)
+	power_manager.reset()
+	match power_manager.get_current_day().to_lower():
+		"monday":
+			load_scene(day_1_scene)
+		"tuesday":
+			load_scene(day_2_scene)
+		"wednesday":
+			load_scene(day_3_scene)
+		"thursday":
+			load_scene(day_4_scene)
+		"friday":
+			load_scene(day_5_scene)
 
 func _on_menu_button_pressed() -> void: load_scene(title_scene)
 

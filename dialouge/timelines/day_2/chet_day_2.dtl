@@ -1,3 +1,7 @@
+if {Chet.day_2} == true:
+	chet: Sorry can't talk...
+	[end_timeline]
+set {Chet.day_2} = true
 if {Chet.day_1_decision} == "lie":
 	chet: WHERE WERE YOU?!
 	chet: You said you would come!?

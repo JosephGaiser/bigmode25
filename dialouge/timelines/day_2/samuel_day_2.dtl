@@ -1,6 +1,6 @@
 if {Samuel.day_2} == true:
 	samuel: Busy right now...
-set {Billy.day_2} = true
+set {Samuel.day_2} = true
 samuel: As you can see {sons_name} will be joining us for today.
 samuel: Terrible about what happened to the school...
 [wait time="0.6"]

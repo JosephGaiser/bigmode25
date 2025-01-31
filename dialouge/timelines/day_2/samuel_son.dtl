@@ -1,0 +1,24 @@
+if {Samuel.son}:
+	samuel_son: ttyl dog...
+	[end_timeline]
+set {Samuel.son} = true
+samuel_son: HI! Its ME!
+samuel_son: {sons_name}, Remember?
+samuel_son: Im really happy I get to be in the cool office today
+samuel_son: Instead of that horrible school. They don't teach us anything
+samuel_son: Billy was showing me some investing tricks earlier.
+samuel_son: My Dad say's I am too young to be a night trader...
+samuel_son: He said, "No {sons_name}, maybe when you are older".
+[wait time="1.5"]
+samuel_son: What does he know...
+[wait time="1.0"]
+samuel_son: If you were my dad, you would let me be a night trader, right!?
+- Warn about the risks of highly speculative assets
+	samuel_son: oh....
+	samuel_son: I think I need to go ask billy how to undo something...
+	do power_manager.gain_reputation(20)
+- Down play the risks of highly speculative assets
+	samuel_son: I knew it!
+	samuel_son: Billy already helped me invest Dad's retirement!
+	samuel_son: He is going to be so excited when he see's what I did!
+	do power_manager.gain_profits(20)

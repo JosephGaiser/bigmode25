@@ -28,6 +28,7 @@ func _get_completion_conditions() -> bool:
 
 func _ready() -> void:
 	interface.set_current_day(day)
+	power_manager.set_current_day(day)
 	_setup_timers()
 	# Connect to Dialogic signals
 	Dialogic.timeline_ended.connect(_on_any_dialogue_ended)
