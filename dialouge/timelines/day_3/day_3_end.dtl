@@ -1,3 +1,13 @@
+set {Director.day_3} = true
 director: Wow... 
 director: That certainly went well.
-
+director: I was really suprised things held together
+if {fired} == "vendor":
+	director: gotta say.
+	director: Still can't beleive Vendor was there...
+	director: Let me guess, just sitting in the break room.
+	director: classic Vendor
+if {fired} != "vendor:
+	director: Considering {fired} is gone...
+director: Tomorrow is where you will really be put to the test
+director: Steel yourself...

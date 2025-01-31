@@ -9,20 +9,20 @@ else:
 	- Call a handyman
 		Rae: I will have someone come by as soon as possible.
 		do power_manager.lose_profits(5.0)
-		do power_manager.gain_authority(1.0)
+		do power_manager.gain_authority(10.0)
 	- Buy a new printer
 		set {new_printer} = true
 		Rae: Seriously! Wow.
 		[wait time="0.5"]
 		Rae: I did not expect that
-		do power_manager.lose_profits(1.0)
-		do power_manager.gain_moral(5.0)
+		do power_manager.lose_profits(5.0)
+		do power_manager.gain_moral(10.0)
 	- Have Carl take a look
 		Rae: This is why nothing around here works.
-		do power_manager.lose_moral(3.0)
-		do power_manager.gain_authority(1.0)
+		do power_manager.lose_moral(10.0)
+		do power_manager.gain_authority(5.0)
 	- Hit the printer
 		Rae: What was that supposed to do?
-		do power_manager.lose_reputation(3.0)
-		do power_manager.gain_authority(1.0)
+		do power_manager.lose_reputation(10.0)
+		do power_manager.gain_authority(5.0)
 [signal arg="end"]

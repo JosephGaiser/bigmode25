@@ -127,11 +127,9 @@ target_position = Vector2(0, -16)
 [node name="FootstepComponent" parent="." instance=ExtResource("3_kyjdv")]
 footstep_sounds = Array[AudioStream]([ExtResource("4_vgo2b"), ExtResource("5_citca"), ExtResource("6_7kup4"), ExtResource("7_q8nn3"), ExtResource("8_4kylb")])
 
-[node name="Fridge_buzz" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(576, 256)
+[node name="buzzin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_a81w5")
-volume_db = -2.84
 autoplay = true
 max_distance = 200.0
-attenuation = 4.2871
+attenuation = 3.03143
 bus = &"Ambient"

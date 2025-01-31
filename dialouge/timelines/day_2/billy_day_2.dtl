@@ -29,8 +29,8 @@ billy: you get it...
 		[wait time="1.0"]
 		do power_manager.gain_authority(20.0)
 	- Laugh
-		do power_manager.gain_moral()
-		do power_manager.lose_reputation(30.0)
+		do power_manager.gain_moral(10)
+		do power_manager.lose_reputation(20.0)
 - Give bad advice
 	billy: That would work?
 	[wait time="2.0"]
@@ -38,8 +38,8 @@ billy: you get it...
 	billy: could you lend me some money?
 	- Lend a lot
 		billy: WOW!
-		do power_manager.gain_reputation(40)
-		do power_manager.lose_profits(40)
+		do power_manager.gain_reputation(35)
+		do power_manager.lose_profits(25)
 	- Lend a little
 		billy: Well... that should help.
 		billy: In a few weeks I should have enough.
@@ -48,4 +48,5 @@ billy: you get it...
 - Assert dominance
 	billy: Im sorry.
 	billy: I don't know what I was thinking...
+	do power_manager.lose_reputation(5.0)
 	do power_manager.gain_authority(30.0)

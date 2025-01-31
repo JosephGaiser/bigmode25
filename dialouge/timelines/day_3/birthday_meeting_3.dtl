@@ -1,1 +1,40 @@
-billy: *sings*
+Rae: I think we should just sing Happy Birthday and wrap this up.
+Rae: Don't you all think?
+Rae: Now, who is the best singer?
+label singer_choice
+- Vendor
+	if {fired} == "vendor":
+		[wait time=".5"]
+		Rae: ...
+		jump singer_choice
+	[wait time=".5"]
+	vendor: How did you know?
+	vendor: I have been practicing at night, when no one was around
+	Carl: I hear you most nights.
+	if {fired} != "samuel"
+		samuel: same...
+	if {fired} != "billy":
+		billy: VENDOR! Why didn't you say something
+		billy: This is so SICK
+		Carl: I would level those expectations...
+	Rae: Thats very sweet Vendor
+- Chet
+	if {fired} == "chet":
+		[wait time=".5"]
+		Rae: ...
+		jump singer_choice
+	chet: I was in honor choir you know.
+	if {fired} != "billy":
+		billy: I was on the varsity football team
+		[wait time=".5"]
+	chet: ok billy.
+- Samuel
+	Rae: Be serious
+	Carl: HA!
+	jump singer_choice
+- Carl
+	Carl: Dont sing much, but I can try
+	Carl: Just promise...
+	Carl: No one go falling in love with me.
+	
+set {party_over} = true

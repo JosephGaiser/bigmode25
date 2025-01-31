@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://mmn6waqwcev6"]
+[gd_scene load_steps=48 format=4 uid="uid://mmn6waqwcev6"]
 
 [ext_resource type="Script" path="res://scenes/days/day_1.gd" id="1_kcut6"]
 [ext_resource type="PackedScene" uid="uid://wyp6pwen1eps" path="res://scenes/days/day_2.tscn" id="2_547t7"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://c84e4h2sg31lc" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 1.wav" id="26_p6q5m"]
 [ext_resource type="PackedScene" uid="uid://dcp3mwi5vdrui" path="res://scenes/Rae.tscn" id="26_ute4x"]
 [ext_resource type="PackedScene" uid="uid://cw0ndq55r02og" path="res://scenes/vendor.tscn" id="27_ecqhf"]
+[ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="27_f3y1a"]
 [ext_resource type="PackedScene" uid="uid://ckyid1ktvlc6s" path="res://scenes/billy.tscn" id="27_tclcr"]
 [ext_resource type="PackedScene" uid="uid://dsenf41d5nhyc" path="res://scenes/carl.tscn" id="28_bkmgy"]
 [ext_resource type="PackedScene" uid="uid://cofqirycwlylf" path="res://scenes/chet.tscn" id="29_8qqgp"]
@@ -140,7 +141,7 @@ sounds = Array[AudioStream]([ExtResource("19_nxj0m"), ExtResource("20_c5hb4"), E
 min_interval = 4.0
 
 [node name="BreakRoom" parent="Audio" instance=ExtResource("9_w6w4q")]
-position = Vector2(592, 256)
+position = Vector2(640, 288)
 sounds = Array[AudioStream]([ExtResource("24_ttyl4"), ExtResource("25_rh7vm")])
 min_interval = 8.0
 audio_max_distance = 150.0
@@ -152,6 +153,11 @@ volume_db = -10.145
 max_distance = 250.0
 attenuation = 3.3636
 panning_strength = 2.18
+bus = &"Ambient"
+
+[node name="office_sounds" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_f3y1a")
+volume_db = -3.245
 bus = &"Ambient"
 
 [node name="Tiles" type="Node2D" parent="."]
@@ -203,13 +209,12 @@ current_timeline = "chet_day_1"
 position = Vector2(624, 400)
 current_timeline = "carl_day_1"
 
-[node name="vendor" parent="." instance=ExtResource("27_ecqhf")]
-position = Vector2(544, 256)
-current_timeline = "vendor"
-
 [node name="samuel" parent="." instance=ExtResource("29_wds4h")]
 position = Vector2(304, 400)
 current_timeline = "samuel_day_1"
+
+[node name="vendor" parent="." instance=ExtResource("27_ecqhf")]
+position = Vector2(544, 256)
 
 [node name="Player" parent="." instance=ExtResource("25_k7o1p")]
 position = Vector2(288, 128)

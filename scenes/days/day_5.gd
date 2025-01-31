@@ -8,4 +8,4 @@ func _ready() -> void:
 
 
 func _get_completion_conditions() -> bool:
-	return Dialogic.VAR.director.day_5
+	return Dialogic.VAR.Director.day_5

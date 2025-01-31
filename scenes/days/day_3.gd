@@ -18,7 +18,6 @@ func _ready() -> void:
 		billy.queue_free()
 	if Dialogic.VAR.fired == "vendor":
 		vendor.queue_free()
-
 	end_day_timeline = "day_3_end"
 	day = "wednesday"
 	super._ready()

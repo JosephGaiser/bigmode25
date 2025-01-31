@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cw0dpjrwm41c1"]
+[gd_scene load_steps=17 format=3 uid="uid://cw0dpjrwm41c1"]
 
-[ext_resource type="Script" path="res://scripts/world_audio_manager.gd" id="1_3wofh"]
-[ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="2_bmvyt"]
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="3_odg3j"]
 [ext_resource type="Shader" path="res://shaders/checker.gdshader" id="4_p5eo4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_if0d3"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_bgh0w"]
+[ext_resource type="AudioStream" uid="uid://l0humiw7t6i6" path="res://assets/sfx/ambient/Small Room Tone Loop.wav" id="6_ya0rc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_v12tw"]
 [ext_resource type="PackedScene" uid="uid://oyi1kf4b3krq" path="res://scenes/title_ui.tscn" id="8_qh8iq"]
 [ext_resource type="Shader" path="res://shaders/steinberg.gdshader" id="20_rfnqg"]
@@ -56,15 +55,6 @@ shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
 
 [node name="title" type="Node2D"]
 
-[node name="WorldAudioManager" type="Node" parent="."]
-script = ExtResource("1_3wofh")
-
-[node name="Office Ambiance" type="AudioStreamPlayer" parent="WorldAudioManager"]
-stream = ExtResource("2_bmvyt")
-volume_db = -5.0
-autoplay = true
-bus = &"Ambient"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_odg3j")
 
@@ -95,6 +85,11 @@ zoom = Vector2(2.5, 2.5)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_po3wk")
 draw_limits = true
+
+[node name="office_sounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ya0rc")
+autoplay = true
+bus = &"Ambient"
 
 [node name="Menu" type="CanvasLayer" parent="."]
 layer = 0

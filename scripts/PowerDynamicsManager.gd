@@ -14,8 +14,8 @@ var reputation: float = 50.0
 var authority: float  = 50.0
 # Configurable limits
 const MIN_VALUE: float           = 0.0
-const MAX_VALUE: float           = 100.0
-const GAME_OVER_THRESHOLD: float = 10.0
+const MAX_VALUE: float           = 150.0
+const GAME_OVER_THRESHOLD: float = 0.0
 
 func gain_moral(amount := 10.0) -> void:
 	adjust_power_axes({"morale": amount})
@@ -62,7 +62,7 @@ func adjust_power_axes(changes: Dictionary) -> void:
 			set(axis, new_value)
 
 			# Check for game over conditions
-			if new_value <= GAME_OVER_THRESHOLD or new_value >= (MAX_VALUE - GAME_OVER_THRESHOLD):
+			if new_value <= GAME_OVER_THRESHOLD:
 				trigger_game_over(axis)
 	update_ui_values.emit()
 
@@ -76,7 +76,7 @@ func trigger_game_over(failed_axis: String) -> void:
 										}
 
 	emit_signal("game_over", game_over_reasons[failed_axis])
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	Dialogic.end_timeline()
 	load_scene(GAME_OVER)
 
@@ -105,6 +105,7 @@ func get_current_status() -> Dictionary:
 
 func load_scene(scene: PackedScene) -> void:
 	Transition.transition()
+	Dialogic.end_timeline()
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_packed(scene)
 

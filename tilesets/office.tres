@@ -213,6 +213,7 @@ texture = ExtResource("1_k6myi")
 13:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ql4en")
 14:6/0 = 0
 14:6/0/terrain_set = 0
+14:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ql4en")
 15:6/0 = 0
 15:6/0/terrain_set = 0

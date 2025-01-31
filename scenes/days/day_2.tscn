@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://wyp6pwen1eps"]
+[gd_scene load_steps=49 format=4 uid="uid://wyp6pwen1eps"]
 
 [ext_resource type="Script" path="res://scenes/days/day_2.gd" id="1_mc6qc"]
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="2_0xmnp"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://c84e4h2sg31lc" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 1.wav" id="25_7qt4f"]
 [ext_resource type="TileSet" uid="uid://dnchfrlmh2ep" path="res://tilesets/office.tres" id="26_vvidm"]
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="27_66vxk"]
+[ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="27_f3yfg"]
 [ext_resource type="TileSet" uid="uid://jjg3gcm10oh6" path="res://tilesets/bathroom.tres" id="28_aawla"]
 [ext_resource type="PackedScene" uid="uid://dcp3mwi5vdrui" path="res://scenes/Rae.tscn" id="29_uhc8w"]
 [ext_resource type="PackedScene" uid="uid://ckyid1ktvlc6s" path="res://scenes/billy.tscn" id="30_v1wg5"]
@@ -153,6 +154,11 @@ volume_db = -10.145
 max_distance = 250.0
 attenuation = 3.3636
 panning_strength = 2.18
+bus = &"Ambient"
+
+[node name="office_sounds" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_f3yfg")
+volume_db = -3.245
 bus = &"Ambient"
 
 [node name="Tiles" type="Node2D" parent="."]

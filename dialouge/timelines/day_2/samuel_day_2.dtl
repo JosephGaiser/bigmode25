@@ -18,7 +18,7 @@ samuel: Joking of course
 - Embarrass Samuel
 	samuel: ...
 	[wait time="3.0"]
-	do power_manager.lose_reputation(30.0)
+	do power_manager.lose_reputation(20.0)
 	do power_manager.gain_authority(20.0)
 - Fire Samuel Right Now
 	samuel: I was just joking about my son...
@@ -31,8 +31,8 @@ samuel: Joking of course
 		samuel: {sons_name}....
 		[wait time="1.0"]
 		samuel: im sorry {sons_name}....
-		do power_manager.lose_moral(30.0)
-		do power_manager.gain_authority(50.0)
+		do power_manager.lose_moral(25.0)
+		do power_manager.gain_authority(35.0)
 	- Joking
 		samuel: ha....
 		[wait time="1.0"]

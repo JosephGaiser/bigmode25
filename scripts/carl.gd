@@ -1,6 +1,8 @@
 class_name Carl
 extends BaseNPC
 
+@export var clone_name: String = "Carl"
+
 var player : Player
 var character: String = "Carl"
 
@@ -11,15 +13,18 @@ func setup_initial_state():
 
 
 func on_movement_blocked():
-	animated_sprite_2d.play("clean")
+	self.animated_sprite_2d.play("clean")
 
 
 func interact(caller: Player):
 	self.player = caller
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	Dialogic.timeline_ended.connect(_on_timeline_ended, CONNECT_ONE_SHOT)
 	var layout: Node = Dialogic.start(self.current_timeline)
-	layout.register_character(self.character, animated_sprite_2d)
+	if self.clone_name:
+		layout.register_character(self.clone_name, self.animated_sprite_2d)
+	else:
+		layout.register_character(self.character, self.animated_sprite_2d)
 
 	# Disable wandering during interaction
 	toggle_wandering(false)

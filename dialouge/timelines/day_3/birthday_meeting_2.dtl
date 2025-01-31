@@ -1,55 +1,73 @@
-Rae: Anyway...
+Rae: Anyway..
+Rae: Not sure how we could top that.
+Rae: Boss?
 - Have Rae Break the Good News
 	Rae: What?
 	Rae: What was the good news?
 	- Lie
 		Rae: ok...
-		Rae: So you are telling me, we are all VPs now
+		Rae: So you are telling me, we are all VPs now?
 		[wait time=".4"]
-		billy: HOLY SHIT!
-		billy: I am updating my LockedIn Profile right now!
-		billy: Mr. Vice Principal Billy rolls right off the tongue
-		Rae: no..
+		if {fired} != "billy":
+			billy: HOLY SHIT!
+			billy: I am updating my LockedIn Profile right now!
+			billy: Mr. Vice Principal Billy rolls right off the tongue
+			Rae: no..
 		[wait time=".5"]
-		samuel: Finally some recognition, I won't let you down!
-		chet: A rising tide lifts all boats!
+		if {fired} != "samuel":
+			samuel: Finally some recognition, I won't let you down!
+		if {fired} != "chet":
+			chet: A rising tide lifts all boats!
 		do power_manager.gain_moral(30)
-		do power_manager.lose_authority(40)
+		do power_manager.lose_authority(20)
+		jump birthday_meeting_3/
 	- Bonus checks!
-		billy: No way! I was just looking into a new investment opportunity
-		samuel: I'm putting in a pool
-		Rae: It's not quite that much Sam...
-		samuel: ... alright, its above ground
-		samuel: Is that all you want to hear?
-		samuel: We can't all have nice things.
-		if {new_printer}:
-			samuel: Miss new printer....
-			do power_manager.gain_moral(5)
+		if {fired} != "chet":
+			chet: Oh shoot, I'll need to refigure this years Tithe...
+		if {fired} != "billy":
+			billy: No way! I was just looking into a new investment opportunity
+		if {fired} != "samuel":
+			samuel: I'm putting in a pool
+			Rae: It's not quite that much Sam...
+			samuel: ... alright, its above ground
+			samuel: Is that all you want to hear?
+			samuel: We can't all have nice things.
+			if {new_printer}:
+				samuel: Miss new printer....
+				do power_manager.gain_moral(5)
+		Carl: I almost forgot {fired} was even fired!
+		Carl: Hard to stay mad...
 		do power_manager.gain_moral(60)
 		do power_manager.lose_profits(10)
+		jump birthday_meeting_3/
 - Have Rae Break Bad News
-	Rae: As you all know, {fired}...
-	Rae: was strategically reassigned to a non working position at the company
-	billy: rest in peace.
-	Rae: They didn't die, billy.
-	[wait time=".5"]
-	billy: Right.
-	do power_manager.lose_moral(20)
+	Rae: As you all know, {fired}... was...
+	Rae: well, strategically reassigned to a non working position at the company
+	if {fired} != "billy":
+		billy: rest in peace.
+		Rae: They didn't die, billy.
+		[wait time=".5"]
+		billy: Right.
+	do power_manager.lose_moral(5)
 	- Comforting words
 		Rae: Exactly...
 		Rae: There is nothing to worry about
 		Carl: Can we eat now?
-		samuel: What a relief, its a good thing you are here boss.
-		samuel: Really, I feel much better knowing that you have our backs.
-		do power_manager.lose_authority(15)
+		if {fired} != "samuel":
+			samuel: What a relief, its a good thing you are here boss.
+			samuel: Really, I feel much better knowing that you have our backs.
+		do power_manager.lose_authority(5)
 		do power_manager.gain_moral(40)
+		jump birthday_meeting_3/
 	- Be Honest
 		Rae: Oh. I did not expect that.
-		billy: I thought the company was doing well?
-		samuel: It's my fault.
-		samuel: I left too early Sunday night.
+		if {fired} != "billy":
+			billy: I thought the company was doing well?
+		if {fired} != "samuel":
+			samuel: It's my fault.
+			samuel: I left too early Sunday night.
 		Carl: one less desk to clean.
-		do power_manager.lose_authority(15)
+		do power_manager.lose_authority(5)
 		do power_manager.gain_reputation(40)
-		
-jump birthday_meeting_3/
+		jump birthday_meeting_3/
+

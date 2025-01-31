@@ -37,13 +37,16 @@ directories/dch_directory={
 "vendor": "res://dialouge/characters/vendor.dch"
 }
 directories/dtl_directory={
+"billy_clone": "res://dialouge/timelines/day_4/billy_clone.dtl",
 "billy_day_1": "res://dialouge/timelines/day_1/billy_day_1.dtl",
 "billy_day_2": "res://dialouge/timelines/day_2/billy_day_2.dtl",
 "birthday_meeting": "res://dialouge/timelines/day_3/birthday_meeting.dtl",
 "birthday_meeting_2": "res://dialouge/timelines/day_3/birthday_meeting_2.dtl",
 "birthday_meeting_3": "res://dialouge/timelines/day_3/birthday_meeting_3.dtl",
+"carl": "res://dialouge/timelines/day_4/carl.dtl",
 "carl_day_1": "res://dialouge/timelines/day_1/carl_day_1.dtl",
 "carl_day_2": "res://dialouge/timelines/day_2/carl_day_2.dtl",
+"chet_clone": "res://dialouge/timelines/day_4/chet_clone.dtl",
 "chet_day_1": "res://dialouge/timelines/day_1/chet_day_1.dtl",
 "chet_day_2": "res://dialouge/timelines/day_2/chet_day_2.dtl",
 "day_1_end": "res://dialouge/timelines/day_1/day_1_end.dtl",
@@ -51,13 +54,17 @@ directories/dtl_directory={
 "director_day_2_end": "res://dialouge/timelines/day_2/director_day_2_end.dtl",
 "director_day_5": "res://dialouge/timelines/day_5/director_day_5.dtl",
 "intro": "res://dialouge/timelines/intro.dtl",
+"rae_clone": "res://dialouge/timelines/day_4/rae_clone.dtl",
 "rae_day_1": "res://dialouge/timelines/day_1/rae_day_1.dtl",
 "rae_day_2": "res://dialouge/timelines/day_2/rae_day_2.dtl",
+"samuel_clone": "res://dialouge/timelines/day_4/samuel_clone.dtl",
 "samuel_day_1": "res://dialouge/timelines/day_1/samuel_day_1.dtl",
 "samuel_day_2": "res://dialouge/timelines/day_2/samuel_day_2.dtl",
 "samuel_day_4": "res://dialouge/timelines/day_4/samuel_day_4.dtl",
 "samuel_son": "res://dialouge/timelines/day_2/samuel_son.dtl",
+"son_clone": "res://dialouge/timelines/day_4/son_clone.dtl",
 "vendor": "res://dialouge/timelines/vendor.dtl",
+"vendor_clone": "res://dialouge/timelines/day_4/vendor_clone.dtl",
 "vendor_sell": "res://dialouge/timelines/vendor_sell.dtl"
 }
 glossary/default_case_sensitive=true
