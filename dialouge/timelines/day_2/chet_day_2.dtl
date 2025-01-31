@@ -33,30 +33,61 @@ if {Chet.day_1_decision} == "lie":
 if {Chet.day_1_decision} == "carl":
 	chet: carl didn't show.
 	chet: Said he wasn't feeling well.
-	chet: He didn't even come in today.
 	chet: Hope he is alright, he's in my prayers.
-	chet: I have this get well card, we are passing it around
-	chet: You can sign it and hand it to the next person
+	chet: I have this get well card, we are passing it around.
+	chet: You can sign it and hand it to the next person!
 	- Sign it
 		do power_manager.gain_moral(10.0)
 	- Toss it
-		chet: Oh, I get it. Because he is the..
+		chet: Oh, I get it. Because he is the...
 		[wait time="1.0"]
-		chet: the janitor..
-		do power_manager.lose_moral(10.0)
+		chet: the janitor...
+		do power_manager.lose_moral(5.0)
 		do power_manager.gain_authority(10.0)
 if {Chet.day_1_decision} == "decline":
-	chet: I took some notes
-	chet: I arranged them into a quick presentation
-	chet: Should be shared with you, if you check your inbox
+	chet: I have some notes for you!
+	chet: Of the service, from last night.
+	chet: I arranged them into a quick presentation/
+	chet: I asked Rae to print it off, so should be on your desk.
+	[wait time="1"]
 	chet: I can send you some stills too, if you want.
+	[wait time=".4"]
 	chet: It was a beautiful service.
 	chet: I was the Church Photographer for 12 years.
-	[wait time="1.0"]
 	chet: They didn't understand my vision.
 	chet: "Creative differences"
-	chet: You would understand.
+	chet: Maybe I could be the office Photographer?
+	- Laugh
+		chet: ha...
+		do power_manager.lose_reputation(5)
+		do power_manager.gain_authority(10)
+	- Inquire
+		chet: I would take stills of our meetings
+		chet: And some candid shots of everyone working
+		chet: With a budget though....
+		- Big Budget
+			chet: REALLY!
+			do power_manager.lose_profits(10)
+			do power_manager.gain_moral(20)
+		- Small Budget
+			chet: I can bring in my personal Camera I guess...
+			do power_manager.lose_profits(5)
+			do power_manager.gain_moral(10)
+		- Refuse
+			chet: Yes boss... I'll get back to work now.
+			do power_manager.gain_moral(5)
 if {Chet.day_1_decision} == "church":
 	chet: I didn't see you at {church_name} last night...
-	chet: Did something happen?
-	jump lie
+	chet: You said you go there right?
+	chet: I asked around and nobody knew you?
+	- Lie
+		jump lie
+	- Come Clean
+		chet: Oh...
+		chet: I didn't mean to make you uncomfortable
+		chet: It was stupid of me to ask in the first place
+		chet: I am glad you told me
+		[wait time=".5"]
+		chet: Really.
+		do power_manager.gain_moral(30)
+		do power_manager.gain_reputation(30)

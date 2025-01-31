@@ -31,6 +31,8 @@ samuel: Joking of course
 		samuel: {sons_name}....
 		[wait time="1.0"]
 		samuel: im sorry {sons_name}....
+		set {fired} = "samuel"
+		set {fired_sam_early} = true
 		do power_manager.lose_moral(25.0)
 		do power_manager.gain_authority(35.0)
 	- Joking

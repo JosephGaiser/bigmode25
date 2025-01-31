@@ -116,10 +116,12 @@ variables={
 "day_5": false,
 "son": false
 },
+"big_budget_party": false,
 "birthday": "chet",
 "church_name": "Church of Suit andTie",
 "coin_name": "AssCoin",
 "fired": "vendor",
+"fired_sam_early": false,
 "new_printer": false,
 "party_over": false,
 "sons_name": "Terry"
@@ -152,6 +154,7 @@ choices/def_false_behaviour=1
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/always_on_top=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"

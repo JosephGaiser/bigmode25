@@ -88,6 +88,7 @@ shader_parameter/color_light = Color(0.941176, 0.964706, 0.941176, 1)
 script = ExtResource("1_iwvwg")
 next_scene = ExtResource("2_dytfx")
 interface = NodePath("UI/UI")
+end_day_timeline = "day_3_end"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_dc5uh")

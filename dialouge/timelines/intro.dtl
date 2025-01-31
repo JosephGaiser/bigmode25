@@ -32,7 +32,10 @@ do power_manager.gain_moral(25.0)
 [wait time="1.0"]
 director: you understand....
 [wait time="0.5"]
-director: we will call you.
+director: Don't let anything on that report go to zero...
+director: I would take that report into carful consideration when making decisions.
+director: They could be your last.
+director: we will call you when your decisions for the day are completed.
 [wait time="1"]
 [sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="-10.0" bus="Sfx"]
 do power_manager.gain_authority(25.0)

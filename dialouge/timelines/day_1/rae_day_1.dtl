@@ -3,7 +3,9 @@ if {Rae.day_1} == true:
 	[end_timeline]
 set {Rae.day_1} = true
 else:
-	Rae: I hate our printer.
+	Rae: God, I think I need a Cheery Cola...
+	[wait time=".3"]
+	Rae: Its that damn printer.
 	Rae: I really wish it would just work for once.
 	Rae: Seems like every day there is a new issue around here.
 	- Call a handyman
@@ -25,4 +27,3 @@ else:
 		Rae: What was that supposed to do?
 		do power_manager.lose_reputation(10.0)
 		do power_manager.gain_authority(5.0)
-[signal arg="end"]

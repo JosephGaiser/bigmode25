@@ -1,5 +1,6 @@
 if {Rae.day_2} == true:
 	Rae: Not right now.
+	[end_timeline]
 set {Rae.day_2} = true
 Rae: The office has been feeling a little tense.
 Rae: Don't you think we ought to cheer people up?
@@ -26,13 +27,18 @@ Rae: It was someones birthday recently, right?
 	set {birthday} = "chet"
 	Rae: chet.. got it.
 - Samuel
-	Rae: Dear god...
-	Rae: Can we pick someone else?
-	- YES
+	if {fired_sam_early} == true:
+		Rae: Didn't you just fire him?
+		Rae: In front of his kid...
 		jump whose_bday
-	- NO
-		set {birthday} = "samuel"
-		Rae: fine...
+	else:
+		Rae: Dear god...
+		Rae: Can we pick someone else?
+		- YES
+			jump whose_bday
+		- NO
+			set {birthday} = "samuel"
+			Rae: fine...
 - Lie
 	set {birthday} = "boss"
 	Rae: OMG! I did not know it was your birthday!
@@ -42,10 +48,18 @@ Rae: We can just do a Belated Office Birthday Party!
 if {birthday} == "samuel":
 	Rae: sigh....
 	Rae: Just had to be Samuel huh....
-if {birthday} == "chet" or {birthday} == "samuel":
+elif {birthday} == "chet" or {birthday} == "samuel":
 	Rae: {birthday} is going to love this!
 else:
 	Rae: You are going to love this!
-do power_manager.lose_profits(20.0)
-do power_manager.gain_reputation()
-do power_manager.gain_moral()
+Rae: Last thing, what's the budget?
+- HUGE
+	set {big_budget_party} = true
+	Rae: ALRIGHT!
+	do power_manager.lose_profits(15.0)
+	[end_timeline]
+- TINY
+	set {big_budget_party} = false
+	Rae: I can make it work
+	do power_manager.lose_profits(5.0)
+	[end_timeline]

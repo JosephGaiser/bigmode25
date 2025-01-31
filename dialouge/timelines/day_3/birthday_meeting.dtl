@@ -2,11 +2,24 @@ Rae: LETS PARTY EVERYONE!
 Carl: Wow... a whole pizza?
 Carl: What is that? a LARGE?!
 [wait time="1.0"]
-Carl: STUFFED CRUST?!
+Carl: Stuffed Crust?!
 [wait time="1.0"]
-Rae: no, it's just regular crust
-Carl: Ok.
-Rae: How about we get this party started?
+if {big_budget_party}:
+	Rae: Hell yea it is!
+	Rae: We had a little extra wiggle room in the budget
+	Carl: Nice.
+	do power_manager.gain_moral(5)
+else:
+	Rae: no, it's just regular crust
+	Rae: Budget was tight...
+	Carl: Ok.
+	do power_manager.lose_moral(5)
+Carl: This party is really great.
+Carl: Honestly I can hardly notice the splitting pain in my head...
+[wait time="1"]
+Rae: Still not feeling well huh... sorry carl...
+[wait time=".4"]
+Rae: How about we get this party started then?
 label start
 - Ask Chet to say grace
 	if {fired} == "chet":
