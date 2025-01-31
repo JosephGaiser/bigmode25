@@ -1,12 +1,12 @@
 if {Carl.day_1} == true:
-	Carl: ...
+	Carl: Vendor ate my money this morning...
 	[end_timeline]
 set {Carl.day_1} = true
-Carl (neutral): what?... need something cleaned up?
+Carl: what?... need something cleaned up?
 - Yes
 	Carl: Ugh...
 	[wait time="1.5"]
-	Carl (neutral): Where is it?
+	Carl: Where is it?
 	do power_manager.lose_moral(5.0)
 	do power_manager.gain_reputation(10.0)
 - No

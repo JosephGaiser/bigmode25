@@ -1,0 +1,42 @@
+Carl: Ready?
+Carl: Okay lets get this sorted...
+Carl: Who was at Rae's desk?
+- Rae
+- Carl
+- Chet
+- Billy
+- Samuel
+	set {ClonePuzzle.Q1} = true
+- {sons_name}
+- Vendor
+Carl: Who was in the meeting room?
+- Rae
+	set {ClonePuzzle.Q2} = true
+- Carl
+- Chet
+- Billy
+- Samuel
+- {sons_name}
+- Vendor
+Carl: Who was in the break room?
+- Rae
+- Carl
+- Chet
+	set {ClonePuzzle.Q3} = true
+- Billy
+- Samuel
+- {sons_name}
+- Vendor
+Carl: Who was by the pool table?
+- Rae
+- Carl
+- Chet
+- Billy
+- Samuel
+- {sons_name}
+	set {ClonePuzzle.4} = true
+- Vendor
+if {ClonePuzzle.Q1} == true and {ClonePuzzle.Q2} == true and {ClonePuzzle.Q3} == true and {ClonePuzzle.Q4} == true:
+	Carl: Okay I think I got a plan...
+Carl: Are you sure?
+Carl: I don't know... Go check again and come back.

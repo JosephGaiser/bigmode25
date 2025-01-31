@@ -9,7 +9,6 @@ var character: String = "Carl"
 func setup_initial_state():
 	super.setup_initial_state()
 	self.max_tiles_per_move = 2
-	toggle_wandering(true)
 
 
 func on_movement_blocked():
@@ -31,6 +30,8 @@ func interact(caller: Player):
 
 func _on_timeline_ended():
 	player.end_interaction()
+	if clone_name != "Carl":
+		return
 	toggle_wandering(true)
 
 func _on_dialogic_signal(arg: String):

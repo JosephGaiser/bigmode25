@@ -190,38 +190,38 @@ current_timeline = "carl"
 wander_enabled = false
 
 [node name="RaeClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(176, 288)
-clone_name = "Rae"
+position = Vector2(400, 128)
+clone_name = "clone_3"
 current_timeline = "rae_clone"
 wander_enabled = false
 
 [node name="ChetClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(384, 336)
-clone_name = "chet"
+position = Vector2(544, 256)
+clone_name = "clone_2"
 current_timeline = "chet_clone"
 wander_enabled = false
 
 [node name="SonClone" parent="." instance=ExtResource("31_g2bhf")]
 position = Vector2(192, 416)
-clone_name = "samuel_son"
+clone_name = "clone_5"
 current_timeline = "son_clone"
 wander_enabled = false
 
 [node name="SamuelClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(304, 400)
-clone_name = "samuel"
+position = Vector2(176, 288)
+clone_name = "clone_4"
 current_timeline = "samuel_clone"
 wander_enabled = false
 
 [node name="BillyClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(400, 128)
-clone_name = "billy"
+position = Vector2(304, 400)
+clone_name = "clone_1"
 current_timeline = "billy_clone"
 wander_enabled = false
 
 [node name="VendorClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(544, 256)
-clone_name = "vendor"
+position = Vector2(384, 336)
+clone_name = "clone_6"
 current_timeline = "vendor_clone"
 wander_enabled = false
 

@@ -9,6 +9,8 @@ Carl: Not feeling well today
 Carl: I guess I have not felt well in... a while.
 [wait time="1.0"]
 Carl: ...
+Carl: I tried to drink a Cheery Cola, to lift my spirits.
+Carl: Vendor just keeps eating my money...
 - Send Carl home early
 	[wait time="1.0"]
 	Carl: You're not joking this time, right?
@@ -20,3 +22,8 @@ Carl: ...
 	Carl: ... ok boss
 	do power_manager.gain_authority(5.0)
 	do power_manager.lose_reputation(25.0)
+- Confront Vendor
+	Carl: You would do that?
+	Carl: I don't want to start trouble...
+	set {confront_vendor} = true
+	do power_manager.gain_reputation(10)

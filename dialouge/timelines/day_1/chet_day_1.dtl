@@ -4,10 +4,10 @@ if {Chet.day_1} == true:
 set {Chet.day_1} = true
 chet: .. so, I know you Uhh..
 chet: ...
-[wait time="0.6"]
+[wait time="0.5"]
 chet: Uhh.. Would you maybe...
 chet: Well... It would be an honor if you visited my church for service... with me.
-[wait time="1.0"]
+[wait time=".5"]
 chet: or.. just I would see you there. I guess.
 - Say you will go, but don't.
 	set {Chet.day_1_decision} = "lie"

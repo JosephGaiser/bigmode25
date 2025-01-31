@@ -1,7 +1,18 @@
 vendor: Hello! Its me Vendor, how can I help you today?
+label start
 - Buy Something
 	vendor: oh sick, lets see...
-	[wait time="0.4"]
+	[wait time="0.3"]
 	jump vendor_sell/
+- Shake
+	vendor: Please don't do that...
+	jump start
 - Never mind
 	vendor: No problem, come back soon!
+- Confront Vendor | [if {confront_vendor} == true]
+	vendor: Oh...
+	vendor: My bad.
+	vendor: I did not realize it was so serious.
+	vendor: I'll make it right.
+	do power_manager.gain_profits(20)
+	do power_manager.gain_authority()

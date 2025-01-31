@@ -31,6 +31,12 @@ directories/dch_directory={
 "billy": "res://dialouge/characters/billy.dch",
 "boss": "res://dialouge/characters/boss.dch",
 "chet": "res://dialouge/characters/chet.dch",
+"clone_1": "res://dialouge/characters/clone_1.dch",
+"clone_2": "res://dialouge/characters/clone_2.dch",
+"clone_3": "res://dialouge/characters/clone_3.dch",
+"clone_4": "res://dialouge/characters/clone_4.dch",
+"clone_5": "res://dialouge/characters/clone_5.dch",
+"clone_6": "res://dialouge/characters/clone_6.dch",
 "director": "res://dialouge/characters/director.dch",
 "samuel": "res://dialouge/characters/samuel.dch",
 "samuel_son": "res://dialouge/characters/samuel_son.dch",
@@ -49,6 +55,7 @@ directories/dtl_directory={
 "chet_clone": "res://dialouge/timelines/day_4/chet_clone.dtl",
 "chet_day_1": "res://dialouge/timelines/day_1/chet_day_1.dtl",
 "chet_day_2": "res://dialouge/timelines/day_2/chet_day_2.dtl",
+"clone_puzzle": "res://dialouge/timelines/day_4/clone_puzzle.dtl",
 "day_1_end": "res://dialouge/timelines/day_1/day_1_end.dtl",
 "day_3_end": "res://dialouge/timelines/day_3/day_3_end.dtl",
 "director_day_2_end": "res://dialouge/timelines/day_2/director_day_2_end.dtl",
@@ -93,6 +100,12 @@ variables={
 "day_4": false,
 "day_5": false
 },
+"ClonePuzzle": {
+"Q1": false,
+"Q2": false,
+"Q3": false,
+"Q4": false
+},
 "Director": {
 "day_1": false,
 "day_2": false,
@@ -120,6 +133,7 @@ variables={
 "birthday": "chet",
 "church_name": "Church of Suit andTie",
 "coin_name": "AssCoin",
+"confront_vendor": false,
 "fired": "vendor",
 "fired_sam_early": false,
 "new_printer": false,
@@ -148,7 +162,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 save/autosave=false
 text/autocolor_names=false
-choices/def_false_behaviour=1
+choices/def_false_behaviour=0
 
 [display]
 
