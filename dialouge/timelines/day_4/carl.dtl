@@ -1,14 +1,27 @@
+if {Carl.day_4} == true:
+	Carl: Are you ready?
+	- YES
+		jump clone_puzzle/
+	- NO
+		Carl: Hurry up... They are freaking me out
+		[end_timeline]
+else:
+	set {Carl.day_4} = true
 Carl: Oh hey Boss!
 Carl: I don't know what happened, but I woke up feeling fantastic
 Carl: Whatever I had, I got over it
+label decision
 - Mention the Carls
 	Carl: What?
 	Carl: I thought something felt off...
 	Carl: But, I just felt so great I didn't think anything of it.
-	Carl: What should we do?
+	Carl: I know you are the boss... But I have an idea.
+	Carl: Go and talk to all the clones and come back when you are ready.
 - Talk about the weather
 	Carl: Oh the rain?
 	Carl: Yeah {fired} mentioned it was going to rain today and Friday...
 	[wait time=".5"]
-	Carl: I like the sound personally.
+	Carl: I like the sound personally...
+	jump decision
+
 	

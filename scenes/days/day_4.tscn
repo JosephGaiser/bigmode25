@@ -203,7 +203,7 @@ current_timeline = "chet_clone"
 wander_enabled = false
 
 [node name="SonClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(192, 416)
+position = Vector2(304, 400)
 clone_name = "clone_5"
 current_timeline = "son_clone"
 wander_enabled = false
@@ -215,7 +215,7 @@ current_timeline = "samuel_clone"
 wander_enabled = false
 
 [node name="BillyClone" parent="." instance=ExtResource("31_g2bhf")]
-position = Vector2(304, 400)
+position = Vector2(192, 416)
 clone_name = "clone_1"
 current_timeline = "billy_clone"
 wander_enabled = false

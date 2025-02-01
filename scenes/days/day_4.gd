@@ -24,4 +24,4 @@ func _ready() -> void:
 
 
 func _get_completion_conditions() -> bool:
-	return Dialogic.VAR.Carl.day_4
+	return Dialogic.VAR.finished_clone_puzzle
