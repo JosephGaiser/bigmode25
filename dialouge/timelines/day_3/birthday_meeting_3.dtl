@@ -17,7 +17,13 @@ label singer_choice
 		billy: VENDOR! Why didn't you say something
 		billy: This is so SICK
 		Carl: I would level those expectations...
-	Rae: Thats very sweet Vendor
+	Rae: Thats very sweet Vendor, go ahead.
+	vendor: Happy birthday to you
+	vendor: Happy birthday to you
+	vendor: Happy birthday dear {birthday}
+	vendor: Happy birthday to you
+	[wait time=".4"]
+	Rae: That was just great Vendor. Thank you.
 - Chet
 	if {fired} == "chet":
 		[wait time=".5"]
@@ -27,7 +33,13 @@ label singer_choice
 	if {fired} != "billy":
 		billy: I was on the varsity football team
 		[wait time=".5"]
-	chet: ok billy.
+		chet: ok billy.
+	chet: Happy birthday too you
+	chet: Happy birthday too you
+	chet: Happy birthday dear {birthday}
+	[wait time=".4"]
+	chet: HAPPPY BIRTHHHHDAYYYYYYYY toooooooo youuuuuuuuu
+	chet: Thank you, Thank you...
 - Samuel
 	Rae: Be serious
 	Carl: HA!
@@ -36,5 +48,12 @@ label singer_choice
 	Carl: Dont sing much, but I can try
 	Carl: Just promise...
 	Carl: No one go falling in love with me.
-	
+	[wait time=".3"]
+	chet: Happy birthday ta ya
+	chet: Happy birthday ta ya
+	chet: Happy birthday ta {birthday}
+	[wait time=".4"]
+	chet: Happy Birthday ta ya
+Carl: NOW LETS CUT THE CAKE
+Rae: You said it Carl!
 set {party_over} = true
