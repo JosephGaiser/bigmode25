@@ -18,12 +18,13 @@ label singer_choice
 		billy: This is so SICK
 		Carl: I would level those expectations...
 	Rae: Thats very sweet Vendor, go ahead.
-	vendor: Happy birthday to you
-	vendor: Happy birthday to you
-	vendor: Happy birthday dear {birthday}
-	vendor: Happy birthday to you
+	vendor: Happy day of manufacturing to you
+	vendor: Happy day of manufacturing to you
+	vendor: Happy day of manufacturing dear human {birthday}
+	vendor: Happy day of manufacturing to you
 	[wait time=".4"]
-	Rae: That was just great Vendor. Thank you.
+	Rae: That was just... great Vendor.
+	Carl: Thanks man.
 - Chet
 	if {fired} == "chet":
 		[wait time=".5"]
@@ -49,11 +50,35 @@ label singer_choice
 	Carl: Just promise...
 	Carl: No one go falling in love with me.
 	[wait time=".3"]
-	chet: Happy birthday ta ya
-	chet: Happy birthday ta ya
-	chet: Happy birthday ta {birthday}
+	Carl: Happy birthday ta ya
+	Carl: Happy birthday ta ya
+	Carl: Happy birthday ta {birthday}
 	[wait time=".4"]
-	chet: Happy Birthday ta ya
-Carl: NOW LETS CUT THE CAKE
-Rae: You said it Carl!
+	Carl: Happy Birthday ta ya
+
+Rae: Okay! Great...
+if {birthday} == {fired}:
+	Rae: I'll send our birthday wishes to {fired}...
+	[wait time=".5"]
+	Rae: Staring at the cake won't make this any less akward.
+	Carl: Lets EAT!
+if {birthday} == "billy" and {fired} != "billy":
+	billy: Awesome guys, really appreciate it.
+	billy: Was really starting to think you all forgot.
+if {birthday} == "chet" and {fired} != "chet":
+	chet: Everyone, this has been a blessing
+	chet: Let thine cake be cuteth
+if {birthday} == "samuel" and {fired} != "samuel":
+	samuel: Still just in shock we would gather to celebrate me
+	samuel: Me....
+	[wait time=".3"]
+	samuel: Samuel's Birthday...
+if {birthday} == "vendor" and {fired} != "vendor":
+	vendor: This is the first time I have celebrated my manufacture date
+	vendor: Thanks so much everyone!
+	vendor: I look forward to serving you all!
+if {birthday} == "carl":
+	Carl: Thanks everyone.
+	Carl: NOW LETS CUT THE CAKE
+	Rae: You said it Carl!
 set {party_over} = true

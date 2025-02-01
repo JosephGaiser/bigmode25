@@ -1,9 +1,10 @@
-Rae: LETS PARTY EVERYONE!
+Rae: As you all know, we gather here to celebrate {birthday}'s birthday today!
+Rae: So let's celebrate!
 Carl: Wow... a whole pizza?
 Carl: What is that? a LARGE?!
-[wait time="1.0"]
+[wait time=".5"]
 Carl: Stuffed Crust?!
-[wait time="1.0"]
+[wait time=".5"]
 if {big_budget_party}:
 	Rae: Hell yea it is!
 	Rae: We had a little extra wiggle room in the budget

@@ -158,6 +158,7 @@ bus = &"Ambient"
 [node name="office_sounds" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("27_f3y1a")
 volume_db = -3.245
+autoplay = true
 bus = &"Ambient"
 
 [node name="Tiles" type="Node2D" parent="."]
