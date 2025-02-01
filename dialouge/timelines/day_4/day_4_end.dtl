@@ -1,0 +1,15 @@
+set {Director.day_4} = true
+[sound path="res://assets/sfx/phone/Steampunk Clock Bells.wav" volume="-15.0" bus="Sfx"]
+[wait time="4.0"]
+[sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="-5.0" bus="Sfx"]
+director: Interesting...
+director: You noticed the carls...
+director: Very clever.
+director: Well done today, you have exceeded expectations
+director: Also please stop Carl, his plan is going to get us in legal trouble
+[wait time=".5"]
+director: Tomorrow will be your final test.
+director: I expect great things from you.
+director: Rest up tonight, you will need your strength.
+[wait time="1.0"]
+[sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="0.0" bus="Sfx"]
