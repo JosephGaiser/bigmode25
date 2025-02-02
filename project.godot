@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 power_manager="*res://scripts/PowerDynamicsManager.gd"
+enemy_power_manager="*res://scripts/EnemyPowerManager.gd"
 Transition="*res://scenes/transition.tscn"
 final_fight="*res://scripts/combat.gd"
 
@@ -114,6 +115,7 @@ variables={
 "Combat": {
 "director_hit": 0,
 "director_pick": "",
+"enemy_defeated": false,
 "last_hit": "none",
 "player_pick": "",
 "round_winner": ""

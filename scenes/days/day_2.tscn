@@ -199,6 +199,7 @@ tile_set = ExtResource("28_aawla")
 [node name="rae" parent="." instance=ExtResource("29_uhc8w")]
 position = Vector2(192, 288)
 current_timeline = "rae_day_2"
+wander_enabled = false
 
 [node name="billy" parent="." instance=ExtResource("30_v1wg5")]
 position = Vector2(400, 128)

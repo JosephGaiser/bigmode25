@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://btwj6i287dcmd"]
+[gd_scene load_steps=42 format=4 uid="uid://btwj6i287dcmd"]
 
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="1_3531j"]
 [ext_resource type="Script" path="res://scenes/days/day_5.gd" id="1_fg2qu"]
@@ -26,16 +26,17 @@
 [ext_resource type="AudioStream" uid="uid://bkodx6qqnxmtu" path="res://assets/sfx/ambient/Filter Coffee Maker.wav" id="23_x1isf"]
 [ext_resource type="AudioStream" uid="uid://c84e4h2sg31lc" path="res://assets/music/Wake Up (RT 4.200)/Funk Wake Up Intensity 1.wav" id="24_rhgj4"]
 [ext_resource type="TileSet" uid="uid://dnchfrlmh2ep" path="res://tilesets/office.tres" id="25_h31lw"]
+[ext_resource type="AudioStream" uid="uid://ck3r6m01quq7v" path="res://assets/sfx/combat/Unholy Church Loop.wav" id="25_q5e0p"]
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="26_b8evv"]
 [ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="26_khw4o"]
 [ext_resource type="AudioStream" uid="uid://o5der0bl6dt0" path="res://assets/sfx/ambient/Heavy Rain Ambience Loop.wav" id="26_lxvqi"]
 [ext_resource type="TileSet" uid="uid://jjg3gcm10oh6" path="res://tilesets/bathroom.tres" id="27_r6sxx"]
-[ext_resource type="AudioStream" uid="uid://dgc7tijhmclrm" path="res://assets/sfx/ambient/Ambience Biolab Loop.wav" id="28_gq25r"]
 [ext_resource type="PackedScene" uid="uid://dtb1vpuaceedn" path="res://scenes/player.tscn" id="29_5bl2m"]
 [ext_resource type="PackedScene" uid="uid://ycbyy6kn1yln" path="res://scenes/ui.tscn" id="29_fp7cx"]
 [ext_resource type="Shader" path="res://shaders/steinberg.gdshader" id="30_yfdve"]
 [ext_resource type="Shader" path="res://shaders/ditherpalette.gdshader" id="31_pdbmw"]
 [ext_resource type="PackedScene" uid="uid://cofqirycwlylf" path="res://scenes/chet.tscn" id="33_311at"]
+[ext_resource type="PackedScene" uid="uid://dpfo63jmdoccl" path="res://scenes/enemy_ui.tscn" id="35_tg40j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_athm7"]
 shader = ExtResource("2_xanth")
@@ -142,7 +143,7 @@ audio_max_distance = 150.0
 
 [node name="spooky" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(1088, 128)
-stream = ExtResource("28_gq25r")
+stream = ExtResource("25_q5e0p")
 volume_db = -7.0
 autoplay = true
 max_distance = 750.0
@@ -230,6 +231,9 @@ z_index = 10
 scale = Vector2(2, 2)
 tween_duration = 2.0
 pause_between_stats = 0.66
+
+[node name="DirectorUI" parent="UI" instance=ExtResource("35_tg40j")]
+scale = Vector2(2, 2)
 
 [node name="Shaders" type="CanvasLayer" parent="."]
 

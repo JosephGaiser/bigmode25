@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7pxlx256v7ws"
+path="res://.godot/imported/Bleak Reflection 004.wav-7f4812b45c40fb2f06681e3ba6062741.sample"
+
+[deps]
+
+source_file="res://assets/sfx/combat/Bleak Reflection 004.wav"
+dest_files=["res://.godot/imported/Bleak Reflection 004.wav-7f4812b45c40fb2f06681e3ba6062741.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

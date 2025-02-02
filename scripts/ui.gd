@@ -113,7 +113,7 @@ func update_single_stat(tween: Tween, stat_name: String, new_value: float) -> vo
 			"value",
 			new_value,
 			tween_duration
-		).set_trans(Tween.TRANS_EXPO)
+		).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 
 		if sound:
 			tween.tween_callback(func(): audio_player.stop())
@@ -152,7 +152,7 @@ func set_current_day(day_name: String) -> void:
 			"position",
 			day_positions[current_day],
 			DAY_TWEEN_DURATION
-		).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 
 	# Move the new day up
 	var target_position = day_positions[day_node] - Vector2(0, DAY_RAISE_AMOUNT)
@@ -161,7 +161,7 @@ func set_current_day(day_name: String) -> void:
 		"position",
 		target_position,
 		DAY_TWEEN_DURATION
-	).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+	).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
 
 	# Update current day reference
 	current_day = day_node

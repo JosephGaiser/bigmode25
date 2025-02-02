@@ -250,13 +250,13 @@ offset_right = 544.0
 offset_bottom = 301.0
 scale = Vector2(1, 1.08)
 
-[node name="MoraleBar" type="ProgressBar" parent="Report/Bars"]
+[node name="ProfitsBar" type="ProgressBar" parent="Report/Bars"]
 layout_mode = 2
 theme = ExtResource("2_nw3mq")
 value = 10.0
 show_percentage = false
 
-[node name="ProfitsBar" type="ProgressBar" parent="Report/Bars"]
+[node name="MoraleBar" type="ProgressBar" parent="Report/Bars"]
 layout_mode = 2
 theme = ExtResource("2_nw3mq")
 value = 10.0
@@ -281,14 +281,14 @@ offset_top = 261.0
 offset_right = 373.0
 offset_bottom = 305.0
 
-[node name="Morale" type="Label" parent="Report/Labels"]
-layout_mode = 2
-text = "Morale"
-label_settings = SubResource("LabelSettings_fekwl")
-
 [node name="Profit" type="Label" parent="Report/Labels"]
 layout_mode = 2
 text = "Profit"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Morale" type="Label" parent="Report/Labels"]
+layout_mode = 2
+text = "Morale"
 label_settings = SubResource("LabelSettings_fekwl")
 
 [node name="Reputation" type="Label" parent="Report/Labels"]

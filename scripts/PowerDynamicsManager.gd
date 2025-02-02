@@ -15,8 +15,10 @@ var reputation: float = 50.0
 var authority: float  = 50.0
 # Configurable limits
 const MIN_VALUE: float           = 0.0
-const MAX_VALUE: float           = 150.0
+const MAX_VALUE: float           = 100.0
 const GAME_OVER_THRESHOLD: float = 0.0
+
+var snapshot: Dictionary = {}
 
 func gain_moral(amount := 10.0) -> void:
 	adjust_power_axes({"morale": amount})
@@ -68,6 +70,16 @@ func adjust_power_axes(changes: Dictionary) -> void:
 	update_ui_values.emit()
 
 
+func snapshot_axes() -> void:
+	# Save the current state of the power axes
+	snapshot = {
+		"morale": morale,
+		"profits": profits,
+		"reputation": reputation,
+		"authority": authority,
+		"day": current_day
+	}
+
 func trigger_game_over(failed_axis: String) -> void:
 	var game_over_reasons: Dictionary = {
 											"morale": "Employee morale collapsed",
@@ -93,10 +105,18 @@ func set_current_day(day: String) -> void:
 	self.current_day = day
 
 func reset() -> void:
-	morale     = 50.0
-	profits    = 50.0
-	reputation = 50.0
-	authority  = 50.0
+	if snapshot:
+		morale     = snapshot["morale"]
+		profits    = snapshot["profits"]
+		reputation = snapshot["reputation"]
+		authority  = snapshot["authority"]
+		current_day = snapshot["day"]
+	else:
+		# Reset to default values
+		morale     = 50.0
+		profits    = 50.0
+		reputation = 50.0
+		authority  = 50.0
 
 	# Reset the UI
 	update_ui_values.emit()

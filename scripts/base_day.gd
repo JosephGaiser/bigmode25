@@ -71,6 +71,7 @@ func _on_cooldown_timer_timeout() -> void:
 
 
 func start_end_sequence() -> void:
+	power_manager.snapshot_axes()
 	check_timer.stop()
 	can_trigger_end = false
 	end_sequence_ready = false

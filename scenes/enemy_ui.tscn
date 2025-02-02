@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpfo63jmdoccl"]
+
+[ext_resource type="Script" path="res://scripts/EnemyUI.gd" id="1_1v7ii"]
+[ext_resource type="AudioStream" uid="uid://bhbpjdmjay5ja" path="res://assets/sfx/combat/Voice B Pain Grunt 001.wav" id="2_u6aql"]
+[ext_resource type="AudioStream" uid="uid://bw1hpodjljccy" path="res://assets/sfx/combat/Voice B Death Grunt.wav" id="3_nr8ml"]
+[ext_resource type="FontFile" uid="uid://v51lfg2pxryq" path="res://dialouge/styles/Vaticanus-G3yVG.ttf" id="5_ttt2p"]
+[ext_resource type="Theme" uid="uid://bghathf6glpnu" path="res://misc/ui_theme.tres" id="6_18fft"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fekwl"]
+font = ExtResource("5_ttt2p")
+font_size = 8
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6b4v8"]
+font = ExtResource("5_ttt2p")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_duc72"]
+font = ExtResource("5_ttt2p")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="EnemyUI" type="Control" node_paths=PackedStringArray("morale_bar", "profits_bar", "reputation_bar", "authority_bar", "audio_player")]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("1_1v7ii")
+morale_bar = NodePath("Report/Bars/MoraleBar")
+profits_bar = NodePath("Report/Bars/ProfitsBar")
+reputation_bar = NodePath("Report/Bars/ReputationBar")
+authority_bar = NodePath("Report/Bars/AuthorithyBar")
+audio_player = NodePath("Report/AudioStreamPlayer")
+damage_sound = ExtResource("2_u6aql")
+large_damage_sound = ExtResource("3_nr8ml")
+
+[node name="Report" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Report"]
+layout_mode = 0
+offset_left = -240.0
+offset_top = -117.0
+offset_right = -200.0
+offset_bottom = -77.0
+scale = Vector2(5.70714, 4.89162)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Report"]
+layout_mode = 0
+offset_left = -237.0
+offset_top = -114.0
+offset_right = -197.0
+offset_bottom = -74.0
+scale = Vector2(5.55523, 4.70311)
+
+[node name="Bars" type="VBoxContainer" parent="Report"]
+layout_mode = 1
+offset_left = -190.0
+offset_top = 32.0
+offset_right = -21.0001
+offset_bottom = 72.0
+scale = Vector2(1, 1.08)
+
+[node name="MoraleBar" type="ProgressBar" parent="Report/Bars"]
+layout_mode = 2
+theme = ExtResource("6_18fft")
+value = 10.0
+show_percentage = false
+
+[node name="ProfitsBar" type="ProgressBar" parent="Report/Bars"]
+visible = false
+layout_mode = 2
+theme = ExtResource("6_18fft")
+value = 10.0
+show_percentage = false
+
+[node name="ReputationBar" type="ProgressBar" parent="Report/Bars"]
+layout_mode = 2
+theme = ExtResource("6_18fft")
+value = 10.0
+show_percentage = false
+
+[node name="AuthorithyBar" type="ProgressBar" parent="Report/Bars"]
+layout_mode = 2
+theme = ExtResource("6_18fft")
+value = 10.0
+show_percentage = false
+
+[node name="Labels" type="VBoxContainer" parent="Report"]
+layout_mode = 0
+offset_left = -232.0
+offset_top = 32.0
+offset_right = -192.0
+offset_bottom = 76.0
+
+[node name="Morale" type="Label" parent="Report/Labels"]
+layout_mode = 2
+text = "Morale"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Profit" type="Label" parent="Report/Labels"]
+visible = false
+layout_mode = 2
+text = "Profit"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Reputation" type="Label" parent="Report/Labels"]
+layout_mode = 2
+text = "Reputation"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Authority" type="Label" parent="Report/Labels"]
+layout_mode = 2
+text = "Authority
+"
+label_settings = SubResource("LabelSettings_fekwl")
+
+[node name="Title" type="Label" parent="Report"]
+layout_mode = 0
+offset_left = -233.0
+offset_top = 9.99999
+offset_right = -99.0001
+offset_bottom = 33.0
+text = "DIRECTORS REPORT"
+label_settings = SubResource("LabelSettings_6b4v8")
+
+[node name="sub label" type="Label" parent="Report"]
+layout_mode = 0
+offset_left = -232.0
+offset_top = 23.0
+offset_right = -80.0001
+offset_bottom = 46.0
+text = "Import-tant co. ltd."
+label_settings = SubResource("LabelSettings_duc72")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Report"]
+volume_db = -9.0
+bus = &"Sfx"
