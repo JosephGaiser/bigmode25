@@ -4,7 +4,7 @@ set {Director.day_3} = true
 [sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="-5.0" bus="Sfx"]
 director: Wow...
 director: That certainly went well.
-director: I was really suprised things held together
+director: I was really surprised things held together
 if {fired} == "vendor":
 	director: gotta say.
 	director: Still can't beleive Vendor was there...

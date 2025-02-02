@@ -3,7 +3,7 @@ if {Billy.day_2} == true:
 	billy: Smart kid, he has some real potential.
 	billy: Its a shame really.
 	[wait time=".5"]
-	billy: Him being Samuels son and all...
+	billy: Him being Samuel's son and all...
 	[end_timeline]
 set {Billy.day_2} = true
 billy: Morning boss!

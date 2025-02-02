@@ -33,7 +33,7 @@ do power_manager.gain_moral(25.0)
 director: you understand....
 [wait time="0.5"]
 director: Don't let anything on that report go to zero...
-director: I would take that report into carful consideration when making decisions.
+director: I would take that report into careful consideration when making decisions.
 director: They could be your last.
 director: we will call you when your decisions for the day are completed.
 [wait time="1"]

@@ -23,7 +23,7 @@ Rae: Boss?
 		jump birthday_meeting_3/
 	- Bonus checks!
 		if {fired} != "chet":
-			chet: Oh shoot, I'll need to refigure this years Tithe...
+			chet: Oh shoot, I'll need to re-figure this years Tithe...
 		if {fired} != "billy":
 			billy: No way! I was just looking into a new investment opportunity
 		if {fired} != "samuel":
