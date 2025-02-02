@@ -5,6 +5,7 @@ signal game_over(reason: String)
 signal update_ui_values()
 
 const GAME_OVER = preload("res://scenes/days/game_over.tscn")
+const GAME_WIN = preload("res://scenes/days/win.tscn")
 var current_day = "day_1"
 
 # Power axes
@@ -79,6 +80,11 @@ func trigger_game_over(failed_axis: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	Dialogic.end_timeline()
 	load_scene(GAME_OVER)
+
+func win():
+	await get_tree().create_timer(1.0).timeout
+	Dialogic.end_timeline()
+	load_scene(GAME_WIN)
 
 func get_current_day() -> String:
 	return self.current_day

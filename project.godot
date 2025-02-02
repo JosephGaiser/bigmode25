@@ -22,6 +22,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 power_manager="*res://scripts/PowerDynamicsManager.gd"
 Transition="*res://scenes/transition.tscn"
+final_fight="*res://scripts/combat.gd"
 
 [dialogic]
 
@@ -56,12 +57,14 @@ directories/dtl_directory={
 "chet_day_1": "res://dialouge/timelines/day_1/chet_day_1.dtl",
 "chet_day_2": "res://dialouge/timelines/day_2/chet_day_2.dtl",
 "clone_puzzle": "res://dialouge/timelines/day_4/clone_puzzle.dtl",
+"combat": "res://dialouge/timelines/day_5/combat.dtl",
 "day_1_end": "res://dialouge/timelines/day_1/day_1_end.dtl",
 "day_3_end": "res://dialouge/timelines/day_3/day_3_end.dtl",
 "day_4_end": "res://dialouge/timelines/day_4/day_4_end.dtl",
 "director_day_2_end": "res://dialouge/timelines/day_2/director_day_2_end.dtl",
 "director_day_5": "res://dialouge/timelines/day_5/director_day_5.dtl",
 "intro": "res://dialouge/timelines/intro.dtl",
+"lose": "res://dialouge/timelines/day_5/lose.dtl",
 "rae_clone": "res://dialouge/timelines/day_4/rae_clone.dtl",
 "rae_day_1": "res://dialouge/timelines/day_1/rae_day_1.dtl",
 "rae_day_2": "res://dialouge/timelines/day_2/rae_day_2.dtl",
@@ -73,7 +76,8 @@ directories/dtl_directory={
 "son_clone": "res://dialouge/timelines/day_4/son_clone.dtl",
 "vendor": "res://dialouge/timelines/vendor.dtl",
 "vendor_clone": "res://dialouge/timelines/day_4/vendor_clone.dtl",
-"vendor_sell": "res://dialouge/timelines/vendor_sell.dtl"
+"vendor_sell": "res://dialouge/timelines/vendor_sell.dtl",
+"win": "res://dialouge/timelines/day_5/win.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialouge/styles/custom_bubble.tres", "res://misc/New_File.tres"]
@@ -106,6 +110,13 @@ variables={
 "Q2": false,
 "Q3": false,
 "Q4": false
+},
+"Combat": {
+"director_hit": 0,
+"director_pick": "",
+"last_hit": "none",
+"player_pick": "",
+"round_winner": ""
 },
 "Director": {
 "day_1": false,

@@ -1,0 +1,76 @@
+set {Combat.director_hit} = 0
+set {Combat.last_hit} = "none"
+director: You wish to fight...
+director: SO BE IT
+director: May his majesty shine his light upon me
+label round_start
+if {Combat.director_hit} == 5:
+	director: This... can't be
+	director: How....
+	director: ...
+	jump win/
+elif {Combat.director_hit} == 4:
+	director: You will die...
+elif {Combat.director_hit} == 3:
+	director: Now I am annoyed...
+elif {Combat.director_hit} == 2:
+	director: Ha! It's pointless...
+do final_fight.randomize_director_pick()
+label decision
+director: Make your decision...
+- Attack
+	director: interesting...
+	- Authority
+		set {Combat.player_pick} = "authority"
+	- Reputation
+		set {Combat.player_pick} = "reputation"
+	- Morale
+		set {Combat.player_pick} = "morale"
+	- Back
+		director: ...
+		jump decision
+- Defend
+	director: interesting...
+	- Authority
+		director: ...
+		set {Combat.player_pick} = "defend_authority"
+	- Reputation
+		director: ...
+		set {Combat.player_pick} = "defend_reputation"
+	- Morale
+		director: ...
+		set {Combat.player_pick} = "defend_morale"
+	- Back
+		director: ...
+		jump decision	
+- Pay to win
+	director: Damnit...
+	set {Combat.player_pick} = "P2W"
+	do power_manager.lose_profits(20)
+- Run
+	director: You can't run from me...
+	jump decision
+
+do final_fight.set_round_winner()
+if {Combat.round_winner} == "draw":
+	director: Damn you... I was going to attack your {Combat.director_pick} too
+	jump round_start
+elif {Combat.round_winner} == "player":
+	set {Combat.director_hit} += 1
+	set {Combat.last_hit} = "none"
+	if {Combat.player_pick} == "P2W":
+		director: Thats not fair...
+	else:
+		director: Ack! How did you know my {Combat.player_pick} would be vulnerable...
+elif {Combat.round_winner} == "director":
+	if {Combat.director_pick} == {Combat.last_hit}:
+		director: YES! It worked. Perhaps I should try it again...
+	else:
+		set {Combat.last_hit} = {Combat.director_pick}
+		director: HA! To think you could beat my {Combat.director_pick} with your {Combat.player_pick}
+elif  {Combat.round_winner} == "director_vulnerable"
+	director: HA! Now your {Combat.director_pick} will really hurt...
+else:
+	director: How did you know I would attack your {Combat.director_pick}...
+do final_fight.end_round()
+jump round_start

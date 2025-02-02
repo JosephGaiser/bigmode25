@@ -18,6 +18,8 @@ func interact(caller: Player):
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	var layout: Node = Dialogic.start(self.current_timeline)
+	if self.current_timeline == "director_day_5":
+		layout.register_character("director", animated_sprite_2d)
 	layout.register_character(self.character, animated_sprite_2d)
 
 	# Disable wandering during interaction

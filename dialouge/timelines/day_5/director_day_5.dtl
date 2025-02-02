@@ -1,3 +1,67 @@
-director: well well well...
-director: I hope you have been paying attention
-director: I have been..
+[wait time="1.0"]
+director: you made it.
+director: I am so glad to see you here.
+director: what a week.... huh
+- Chet!?
+	director: Yes... yes...
+	director: It was I, all along...
+	jump yappin
+- Attack
+	jump combat/
+- Remain Silent
+	label yappin
+	director: You know...
+	director: You walk where few ever have.
+	director: Lesser bosses could not stand where you stand
+	director: Many have tried...
+	director: Many have failed...
+	director: I am proud of you, you old suit and tie
+	- Attack
+		jump combat/
+	- Remain Silent
+		director: Pretty cool yesterday, huh
+		director: Still a few issues to work out.
+		director: They all turned out a little too...
+		director: Carl like
+		director: Makes sense given they were born from Carl
+		- Attack
+			jump combat/
+		- Remain Silent
+			director: Pretty neat isn't it
+			director: With these obedient employees there will be no more hassle
+			director: No more fuss.
+			director: These Carls will pay no mind to the office Moral
+			director: They have interest in bucking the status quo
+			director: They are perfect
+			director: Perfect little employees
+			director: Perfect little ants in my corporate ant farm
+			- Attack
+				jump combat/
+			- Remain Silent
+				director: So, you have seen behind the curtain
+				director: What will you do now?
+				director: It's Time for you to decide.
+				director: One. Last. Time...
+				- Attack
+					jump combat/
+				- Join him
+					director: What?
+					director: You thought I was offering you to join me?
+					[wait time="1.0"]
+					director: Why would I need you...
+					director: No, I was basically just asking you if you were ready to die...
+					director: I have been prepping you to be the next generation of clones.
+					director: I just need to harvest your cells.
+					[wait time="1.0"]
+					director: God, maybe you are actually too stupid...
+					director: I cant just let you leave though.
+					director: But also you are not really useful to me anymore...
+					director: You just kinda killed the mood.
+					director: The vibe is just off now.
+					director: Fuck
+					- Attack
+						jump combat/
+					- Remain Silent
+						director: Still not saying anything...
+						director: so be it.
+						jump combat/

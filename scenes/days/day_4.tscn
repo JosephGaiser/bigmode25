@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cxt4qroel7ucd"]
+[gd_scene load_steps=41 format=4 uid="uid://cxt4qroel7ucd"]
 
 [ext_resource type="Script" path="res://scenes/days/day_4.gd" id="1_awm3r"]
 [ext_resource type="PackedScene" uid="uid://btwj6i287dcmd" path="res://scenes/days/day_5.tscn" id="2_0fi8f"]
@@ -29,7 +29,6 @@
 [ext_resource type="TileSet" uid="uid://dnchfrlmh2ep" path="res://tilesets/office.tres" id="26_dvixm"]
 [ext_resource type="AudioStream" uid="uid://b83brukcp7544" path="res://assets/sfx/ambient/Light Rain Ambience Loop.wav" id="26_jyp2v"]
 [ext_resource type="TileSet" uid="uid://dff8o1c8qcs3" path="res://tilesets/props.tres" id="27_c5tyq"]
-[ext_resource type="AudioStream" uid="uid://o5der0bl6dt0" path="res://assets/sfx/ambient/Heavy Rain Ambience Loop.wav" id="27_dkvfe"]
 [ext_resource type="TileSet" uid="uid://jjg3gcm10oh6" path="res://tilesets/bathroom.tres" id="28_3vaop"]
 [ext_resource type="AudioStream" uid="uid://b60v7ljj8qmha" path="res://assets/sfx/Office Loop.wav" id="29_ktvq0"]
 [ext_resource type="PackedScene" uid="uid://dsenf41d5nhyc" path="res://scenes/carl.tscn" id="31_g2bhf"]
@@ -138,10 +137,6 @@ bus = &"Ambient"
 
 [node name="LightRain" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("26_jyp2v")
-bus = &"Ambient"
-
-[node name="HeavyRain" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("27_dkvfe")
 autoplay = true
 bus = &"Ambient"
 
