@@ -1,7 +1,7 @@
 vendor: Hello! Its me Vendor, how can I help you today?
 label start
 - Buy Something
-	vendor: oh sick, lets see...
+	vendor: oh sick, let's see...
 	[wait time="0.3"]
 	jump vendor_sell/
 - Shake
@@ -9,7 +9,8 @@ label start
 	jump start
 - Never mind
 	vendor: No problem, come back soon!
-- Confront Vendor | [if {confront_vendor} == true]
+- Confront Vendor | [if {confront_vendor} == true and {completed_vendor} == false]
+	set {completed_vendor} = true
 	vendor: Oh...
 	vendor: My bad.
 	vendor: I did not realize it was so serious.

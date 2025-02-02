@@ -8,11 +8,11 @@ extends DialogicEvent
 ### Settings
 
 ## The promt to be shown.
-var text := "Please enter some text:"
+var text := "What's the name?"
 ## The name/path of the variable to set.
 var variable := ""
 ## The placeholder text to show in the line edit.
-var placeholder := ""
+var placeholder := "type something here..."
 ## The value that should be in the line edit by default.
 var default := ""
 ## If true, the player can continue if nothing is entered.

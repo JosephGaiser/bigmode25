@@ -147,6 +147,7 @@ variables={
 "birthday": "chet",
 "church_name": "Church of Suit andTie",
 "coin_name": "AssCoin",
+"completed_vendor": false,
 "confront_vendor": false,
 "finished_clone_puzzle": false,
 "fired": "vendor",

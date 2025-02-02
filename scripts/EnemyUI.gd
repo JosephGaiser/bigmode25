@@ -28,6 +28,7 @@ func _ready() -> void:
 
 	# Connect to enemy power manager
 	enemy_power_manager.update_enemy_ui.connect(Callable(self, "_on_update_enemy_ui"))
+	enemy_power_manager.show_enemy_ui.connect(Callable(self, "_on_show_enemy_ui"))
 	enemy_power_manager.enemy_defeated.connect(_on_enemy_defeated)
 
 	# Initialize UI with starting values
@@ -99,6 +100,8 @@ func update_ui_values() -> void:
 		if status.has(stat_name):
 			update_single_stat(tween, stat_name, float(status[stat_name]))
 
+func _on_show_enemy_ui():
+	self.visible = true
 
 func _on_update_enemy_ui() -> void:
 	update_ui_values()

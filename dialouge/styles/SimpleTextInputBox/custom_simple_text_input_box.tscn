@@ -68,13 +68,13 @@ theme = ExtResource("3_ctt7x")
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_8xwp1")
-text = "Please enter some text:"
+text = "What's the name?"
 label_settings = SubResource("LabelSettings_0x0lo")
 autowrap_mode = 3
 
 [node name="InputField" type="LineEdit" parent="DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
 layout_mode = 2
-text = "this is a name"
+placeholder_text = "type something here..."
 max_length = 16
 flat = true
 caret_blink = true
@@ -83,5 +83,5 @@ caret_force_displayed = true
 [node name="ConfirmationButton" type="Button" parent="DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Confirm"
+text = "Commit"
 flat = true

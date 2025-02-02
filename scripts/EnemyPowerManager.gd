@@ -3,6 +3,8 @@ extends Node
 
 signal enemy_defeated(reason: String)
 signal update_enemy_ui()
+signal show_enemy_ui()
+
 # Power axes
 var morale: float     = 50.0
 var profits: float    = 50.0
@@ -31,6 +33,8 @@ func adjust_power_axes(changes: Dictionary) -> void:
 
 	update_enemy_ui.emit()
 
+func start():
+	show_enemy_ui.emit()
 
 func trigger_defeat(failed_axis: String) -> void:
 	var defeat_reasons: Dictionary = {

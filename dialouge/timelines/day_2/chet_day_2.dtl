@@ -47,7 +47,7 @@ if {Chet.day_1_decision} == "carl":
 if {Chet.day_1_decision} == "decline":
 	chet: I have some notes for you!
 	chet: Of the service, from last night.
-	chet: I arranged them into a quick presentation/
+	chet: I arranged them into a quick presentation
 	chet: I asked Rae to print it off, so should be on your desk.
 	[wait time="1"]
 	chet: I can send you some stills too, if you want.

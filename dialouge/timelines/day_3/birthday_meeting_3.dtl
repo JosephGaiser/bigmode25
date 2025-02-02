@@ -25,6 +25,7 @@ label singer_choice
 	[wait time=".4"]
 	Rae: That was just... great Vendor.
 	Carl: Thanks man.
+	jump end_song
 - Chet
 	if {fired} == "chet":
 		[wait time=".5"]
@@ -35,12 +36,13 @@ label singer_choice
 		billy: I was on the varsity football team
 		[wait time=".5"]
 		chet: ok billy.
-	chet: Happy birthday too you
-	chet: Happy birthday too you
+	chet: Happy birthday to you
+	chet: Happy birthday to you
 	chet: Happy birthday dear {birthday}
 	[wait time=".4"]
 	chet: HAPPY BIRTHDAYYYYYYYY toooooooo youuuuuuuuu
 	chet: Thank you, Thank you...
+	jump end_song
 - Samuel
 	Rae: Be serious
 	Carl: HA!
@@ -55,13 +57,15 @@ label singer_choice
 	Carl: Happy birthday ta {birthday}
 	[wait time=".4"]
 	Carl: Happy Birthday ta ya
+	jump end_song
 
+label end_song
 Rae: Okay! Great...
 if {birthday} == {fired}:
 	Rae: I'll send our birthday wishes to {fired}...
 	[wait time=".5"]
 	Rae: Staring at the cake won't make this any less akward.
-	Carl: Lets EAT!
+	Carl: Let's EAT!
 if {birthday} == "billy" and {fired} != "billy":
 	billy: Awesome guys, really appreciate it.
 	billy: Was really starting to think you all forgot.
@@ -79,6 +83,6 @@ if {birthday} == "vendor" and {fired} != "vendor":
 	vendor: I look forward to serving you all!
 if {birthday} == "carl":
 	Carl: Thanks everyone.
-	Carl: NOW LETS CUT THE CAKE
+	Carl: NOW LET'S CUT THE CAKE
 	Rae: You said it Carl!
 set {party_over} = true

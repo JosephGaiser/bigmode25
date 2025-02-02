@@ -34,7 +34,7 @@ billy: Hey Boss! What's up!?
 	[wait time="0.3"]
 	billy: You are still planning on "cutting the fat" right?
 	billy: I love highly dynamic workplace environments!
-	billy: LETS GET DYNAMIC!
+	billy: LET'S GET DYNAMIC!
 	do power_manager.lose_reputation(5.0)
 	do power_manager.gain_profits(10.0)
 - Discuss work

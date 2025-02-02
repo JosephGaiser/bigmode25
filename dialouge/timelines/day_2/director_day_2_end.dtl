@@ -47,7 +47,7 @@ if {fired_sam_early}:
 	director: oh, him?
 	[wait time="1.0"]
 	director: Vendor? Wait!
-	director: Fuck I didn't realize her was still there.
+	director: Fuck I didn't realize Vendor was still there.
 	director: Yeah just send him off...
 [sound path="res://assets/sfx/phone/Token Place Hard 004.wav" volume="0.0" bus="Sfx"]
 [end_timeline]

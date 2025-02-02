@@ -1,6 +1,7 @@
 set {Combat.director_hit} = 0
 set {Combat.last_hit} = "none"
 director: May his majesty shine his light upon me
+do enemy_power_manager.start()
 label round_start
 if {Combat.enemy_defeated} == true:
 	jump win/

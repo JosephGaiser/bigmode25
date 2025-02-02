@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://btwj6i287dcmd"]
+[gd_scene load_steps=43 format=4 uid="uid://btwj6i287dcmd"]
 
 [ext_resource type="Environment" uid="uid://wqtv320kmbni" path="res://misc/office_environment.tres" id="1_3531j"]
 [ext_resource type="Script" path="res://scenes/days/day_5.gd" id="1_fg2qu"]
@@ -36,6 +36,7 @@
 [ext_resource type="Shader" path="res://shaders/steinberg.gdshader" id="30_yfdve"]
 [ext_resource type="Shader" path="res://shaders/ditherpalette.gdshader" id="31_pdbmw"]
 [ext_resource type="PackedScene" uid="uid://cofqirycwlylf" path="res://scenes/chet.tscn" id="33_311at"]
+[ext_resource type="PackedScene" uid="uid://cw0ndq55r02og" path="res://scenes/vendor.tscn" id="34_ehqfm"]
 [ext_resource type="PackedScene" uid="uid://dpfo63jmdoccl" path="res://scenes/enemy_ui.tscn" id="35_tg40j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_athm7"]
@@ -83,7 +84,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(1088, 104)
+position = Vector2(288, 88)
 zoom = Vector2(2.5, 2.5)
 process_callback = 0
 
@@ -94,7 +95,7 @@ script = ExtResource("3_hbcah")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(1088, 104)
+position = Vector2(288, 88)
 script = ExtResource("4_2qt3i")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -217,7 +218,10 @@ position = Vector2(1088, 112)
 current_timeline = "director_day_5"
 
 [node name="Player" parent="." instance=ExtResource("29_5bl2m")]
-position = Vector2(1088, 144)
+position = Vector2(288, 128)
+
+[node name="vendor" parent="." instance=ExtResource("34_ehqfm")]
+position = Vector2(1120, 176)
 
 [node name="Cages" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AABAAA4ABwAOACcAAABAAA8ABwAOACgAAABBAA4ABwAPACcAAABBAA8ABwAPACgAAABAAAwABwAOACcAAABAAA0ABwAOACgAAABBAAwABwAPACcAAABBAA0ABwAPACgAAABAAAoABwAOACcAAABAAAsABwAOACgAAABBAAoABwAPACcAAABBAAsABwAPACgAAABHAAoABwAOACcAAABHAAsABwAOACgAAABIAAoABwAPACcAAABIAAsABwAPACgAAABHAAwABwAOACcAAABHAA0ABwAOACgAAABIAAwABwAPACcAAABIAA0ABwAPACgAAABHAA4ABwAOACcAAABHAA8ABwAOACgAAABIAA4ABwAPACcAAABIAA8ABwAPACgAAAA=")
@@ -233,6 +237,7 @@ tween_duration = 2.0
 pause_between_stats = 0.66
 
 [node name="DirectorUI" parent="UI" instance=ExtResource("35_tg40j")]
+visible = false
 scale = Vector2(2, 2)
 
 [node name="Shaders" type="CanvasLayer" parent="."]
